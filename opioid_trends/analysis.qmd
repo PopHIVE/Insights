@@ -1,0 +1,34 @@
+---
+title: "opioid trends"
+format: html
+editor: visual
+---
+
+```{r setup}
+library(tidyverse)
+library(arrow)
+
+```
+
+```{r}
+drugs_month <- read_parquet("https://github.com/PopHIVE/Ingest/raw/refs/heads/main/data/bundle_injury_overdose/dist/overdose_by_geography_and_source.parquet") 
+
+dw_export <- drugs_month %>%   
+  filter( source %in% c( "Google Health Trends","Epic Cosmos" ) &  geography=='New York' & age=='Total') 
+
+#export for datawrapper
+write_csv(dw_export, './data/ght_vs_epic_state.csv')
+
+```
+
+
+```{r}
+drugs_month %>%
+  filter( source %in% c( "Google Health Trends","Epic Cosmos" ) &  geography=='New York' & age=='Total') %>%
+  ggplot()+
+  # geom_line(aes(x=date, y=gtrends_naloxone/max(gtrends_naloxone)))+
+  geom_line(aes(x=date, y=value_scale, color=source, group=source))+
+    theme_classic()+
+  ylim(0,NA)+
+  ylab('Scaled value')
+```
