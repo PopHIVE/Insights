@@ -14,7 +14,9 @@ library(arrow)
 drugs_month <- read_parquet("https://github.com/PopHIVE/Ingest/raw/refs/heads/main/data/bundle_injury_overdose/dist/overdose_by_geography_and_source.parquet") 
 
 dw_export <- drugs_month %>%   
-  filter( source %in% c( "Google Health Trends","Epic Cosmos" ) &  geography=='New York' & age=='Total') 
+  filter( source %in% c( "Google Health Trends","Epic Cosmos" ) &  geography=='New York' & age=='Total') %>%
+  dplyr::select(date, source, value_scale) %>%
+  pivot_wider( names_from=source, values_from = value_scale, id_cols=c(date))
 
 #export for datawrapper
 write_csv(dw_export, './data/ght_vs_epic_state.csv')
