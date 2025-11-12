@@ -47,11 +47,11 @@ p4 <- ggplot(comp1) +
 comp2 <- pivot_wider(combined_diabetes, id_cols = c(geography, age, year, outcome_name), names_from=source, values_from=value) 
   
 
-# combined_diabetes %>%
-#   filter(age =='Total' & source == "Epic Cosmos: HbA1c" & outcome_name=='Diabetes' & geography %in% c('New York','Mississippi', 'Florida', 'Michigan','Ohio')) %>%
-#   ggplot()+
-#   geom_line(aes(x=year, y=value, group=geography, color=geography))+
-#   theme_minimal()
+combined_diabetes %>%
+  filter(age =='Total' & source == "Epic Cosmos: HbA1c" & outcome_name=='Diabetes' & geography %in% c('New York','Mississippi', 'Florida', 'Michigan','Ohio')) %>%
+  ggplot()+
+  geom_line(aes(x=year, y=value, group=geography, color=geography))+
+  theme_minimal()
 
 combined_diabetes %>%
   filter(age =='Total' & source == "Epic Cosmos: ICD10" & outcome_name=='Diabetes'& geography %in% c('New York','Mississippi', 'Florida', 'Michigan','Ohio')) %>%
@@ -74,7 +74,15 @@ combined_diabetes %>%
   ggplot()+
   geom_line(aes(x=year, y=value, group=source, color=source))+
   theme_minimal()+
-  ylim(10,17) +
+  ylim(10,20) +
+  facet_wrap(~geography)
+
+combined_diabetes %>%
+  filter(age =='Total' & source %in% c("CDC BRFSS","Epic Cosmos: ICD10") & outcome_name=='Diabetes'& geography %in% c('United States')) %>%
+  ggplot()+
+  geom_line(aes(x=year, y=value, group=source, color=source))+
+  theme_minimal()+
+  ylim(10,20) +
   facet_wrap(~geography)
 
 
