@@ -81,8 +81,8 @@ combined_diabetes %>%
   filter(age =='Total' & source %in% c("CDC BRFSS","Epic Cosmos: ICD10") & outcome_name=='Diabetes'& geography %in% c('United States')) %>%
   ggplot()+
   geom_line(aes(x=year, y=value, group=source, color=source))+
+  geom_errorbar(aes(x=year, ymin=value_lcl, ymax=value_ucl, color=source), width=0)+
   theme_minimal()+
-  ylim(10,20) +
-  facet_wrap(~geography)
+  ylim(10,20) 
 
 
