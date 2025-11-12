@@ -1,0 +1,24 @@
+---
+title: "analysis"
+format: html
+editor: visual
+---
+
+```{r setup}
+library(tidyverse)
+```
+
+## Example
+
+```{r}
+ds1 <- vroom::vroom("https://github.com/PopHIVE/Ingest/raw/refs/heads/main/data/wisqars/standard/data.csv.gz")
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
