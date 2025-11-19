@@ -2,4 +2,4 @@
 
 "Testing new branch"
 
-"Another trial"
+"Another test"
