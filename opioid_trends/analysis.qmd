@@ -132,6 +132,30 @@ top5_trends <- deaths_state %>%
 write_xlsx(top5_trends, "./data/top5_horserace_graph.xlsx") #for tableau
 ```
 
-<iframe src="https://public.tableau.com/views/Book1_17637377516820/Sheet3?:showVizHome=no&:embed=true"
-        width="100%" height="600"
-        frameborder="0"></iframe>
+<iframe src="https://public.tableau.com/views/Book1_17637377516820/Sheet3?:showVizHome=no&amp;:embed=true" width="100%" height="600" frameborder="0">
+
+</iframe>
+
+```{r}
+library(dplyr)
+library(ggplot2)
+
+geo_source = read_parquet("https://github.com/PopHIVE/Ingest/raw/refs/heads/main/data/bundle_injury_overdose/dist/overdose_by_geography_and_source.parquet")
+
+
+# Filter dataset first
+geo_source_filtered <- geo_source %>%
+  select(date, value, source, age, geography) %>%
+  filter(age %in% c("15-24 Years", "25-44 Years", "45-64 Years",
+                    "+65 Years", "<15 Years", "Total")) %>%
+  drop_na()
+
+# Plot faceted by source
+ggplot(geo_source_filtered, aes(x = date, y = value, color = age, group = age)) +
+  geom_line(size = 1) +
+  facet_wrap(~ source, scales = "free") +
+  labs(title = "Value over Time by Age Group",
+       x = "Date", y = "Value") +
+  theme_minimal()
+
+```
