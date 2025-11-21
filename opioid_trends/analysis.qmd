@@ -99,3 +99,18 @@ deaths_state %>%
 
 
 ```
+
+```{r}
+# map graph of overdose rates in April 2025
+
+library(dplyr)
+library(writexl)
+
+deaths_state_2025 <- deaths_state %>% filter(year == "2025")
+
+write_xlsx(deaths_state_2025, "./data/overdose_by_geography_and_source2025.xlsx") #for datawrapper
+```
+
+<iframe title="State-Level Overdose Mortality Rates in the U.S., April 2025" aria-label="Choropleth map" id="datawrapper-chart-9Ku4I" src="https://datawrapper.dwcdn.net/9Ku4I/1/" scrolling="no" frameborder="0" style="border: none;" width="600" height="545" data-external="1">
+
+</iframe>
