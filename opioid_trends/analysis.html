@@ -270,6 +270,35 @@ The following object is masked from 'package:utils':
 </div>
 <iframe src="https://public.tableau.com/views/Book1_17637377516820/Sheet3?:showVizHome=no&amp;:embed=true" width="100%" height="600" frameborder="0">
 </iframe>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>geo_source <span class="ot">=</span> <span class="fu">read_parquet</span>(<span class="st">"https://github.com/PopHIVE/Ingest/raw/refs/heads/main/data/bundle_injury_overdose/dist/overdose_by_geography_and_source.parquet"</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter dataset first</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>geo_source_filtered <span class="ot">&lt;-</span> geo_source <span class="sc">%&gt;%</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(date, value, source, age, geography) <span class="sc">%&gt;%</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(age <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"15-24 Years"</span>, <span class="st">"25-44 Years"</span>, <span class="st">"45-64 Years"</span>,</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"+65 Years"</span>, <span class="st">"&lt;15 Years"</span>, <span class="st">"Total"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot faceted by source</span></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(geo_source_filtered, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> value, <span class="at">color =</span> age, <span class="at">group =</span> age)) <span class="sc">+</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> source, <span class="at">scales =</span> <span class="st">"free"</span>) <span class="sc">+</span></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Value over Time by Age Group"</span>,</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Date"</span>, <span class="at">y =</span> <span class="st">"Value"</span>) <span class="sc">+</span></span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="analysis_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 
 </main>
 <!-- /main column -->
