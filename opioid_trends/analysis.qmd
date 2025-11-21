@@ -79,7 +79,6 @@ ggplot(top5_trends, aes(x = time, y = rate_deaths_overdose, color = geography)) 
   ) +
   theme_minimal(base_size = 12) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
-
 ```
 
 ```{r}
