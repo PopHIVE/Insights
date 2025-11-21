@@ -117,24 +117,25 @@ write_xlsx(deaths_state_2025, "./data/overdose_by_geography_and_source2025.xlsx"
 
 ```{r}
 
-# Identify top 5 states for each year
-top5_states_all_years <- deaths_state %>%
+# Identify top 15 states for each year
+top15_states_all_years <- deaths_state %>%
   group_by(year) %>%
   arrange(desc(rate_deaths_overdose)) %>%
-  slice_head(n = 5) %>%
+  slice_head(n = 15) %>%
   ungroup() %>%
   select(year, geography)
 
 # Filter for those states across all years
-top5_trends <- deaths_state %>%
-  semi_join(top5_states_all_years, by = c("year", "geography"))
+top15_trends <- deaths_state %>%
+  semi_join(top15_states_all_years, by = c("year", "geography"))
 
-write_xlsx(top5_trends, "./data/top5_horserace_graph.xlsx") #for tableau
+write_xlsx(top15_trends, "./data/top15_horserace_graph.xlsx") #for tableau
 ```
+<iframe src="https://public.tableau.com/views/Book3_17637546219550/Sheet6?:showVizHome=no&:embed=true"
+        width="100%" height="600"
+        frameborder="0"></iframe>
 
-<iframe src="https://public.tableau.com/views/Book1_17637377516820/Sheet3?:showVizHome=no&amp;:embed=true" width="100%" height="600" frameborder="0">
 
-</iframe>
 
 ```{r}
 library(dplyr)
