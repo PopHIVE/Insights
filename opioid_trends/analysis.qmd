@@ -23,7 +23,6 @@ write_csv(dw_export, './data/ght_vs_epic_state.csv')
 
 ```
 
-
 ```{r}
 drugs_month %>%
   filter( source %in% c( "Google Health Trends","Epic Cosmos" ) &  geography=='New York' & age=='Total') %>%
@@ -33,4 +32,146 @@ drugs_month %>%
     theme_classic()+
   ylim(0,NA)+
   ylab('Scaled value')
+```
+
+```{r}
+#Plot of line graph of top 5
+library(dplyr)
+library(ggplot2)
+
+
+# Create a year column
+deaths_state <- read_parquet("https://github.com/PopHIVE/Ingest/raw/refs/heads/main/data/bundle_injury_overdose/dist/overdose_deaths_state.parquet") %>%
+  mutate(year = format(time, "%Y"))
+
+# Identify top 5 states in 2025
+top5_states <- deaths_state %>%
+  filter(year == "2025") %>%
+  arrange(desc(rate_deaths_overdose)) %>%
+  slice_head(n = 5) %>%
+  pull(geography)
+
+# Filter for those states across all years
+top5_trends <- deaths_state %>%
+  filter(geography %in% top5_states)
+
+# Determine y-axis range for breaks
+y_min <- floor(min(top5_trends$rate_deaths_overdose, na.rm = TRUE) / 10) * 10
+y_max <- ceiling(max(top5_trends$rate_deaths_overdose, na.rm = TRUE) / 10) * 10
+
+# Plot
+ggplot(top5_trends, aes(x = time, y = rate_deaths_overdose, color = geography)) +
+  geom_line(size = 1.2) +
+  scale_x_date(
+    date_breaks = "1 year",
+    date_labels = "%Y",
+    limits = as.Date(c("2015-04-01", "2025-04-01"))
+  ) +
+  scale_y_continuous(
+    breaks = seq(y_min, y_max, by = 10),
+    limits = c(y_min, y_max)
+  ) +
+  labs(
+    title = "Overdose Death Rate Trends for Top 5 States (2015–2025)",
+    x = "Year",
+    y = "Deaths per 100,000",
+    color = "State"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+```{r}
+# plots of Overdose Death Rate Trends by State (2015–2025)
+
+deaths_state %>%
+  filter(!is.na(geography), geography != "United States") %>%   # remove NA and "United States"
+  ggplot(aes(x = time, y = rate_deaths_overdose)) +
+  geom_line(color = "darkgreen", size = 0.8) +
+  facet_wrap(~ geography, scales = "fixed") +
+  labs(
+    title = "Overdose Death Rate Trends by State (2015–2025)",
+    x = "Year",
+    y = "Deaths per 100,000"
+  ) +
+  theme_minimal(base_size = 10) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+
+```
+
+```{r}
+# map graph of overdose rates in April 2025
+
+library(dplyr)
+library(writexl)
+
+deaths_state_2025 <- deaths_state %>% filter(year == "2025")
+
+write_xlsx(deaths_state_2025, "./data/overdose_by_geography_and_source2025.xlsx") #for datawrapper
+```
+
+<iframe title="State-Level Overdose Mortality Rates in the U.S., April 2025" aria-label="Choropleth map" id="datawrapper-chart-9Ku4I" src="https://datawrapper.dwcdn.net/9Ku4I/1/" scrolling="no" frameborder="0" style="border: none;" width="600" height="545" data-external="1">
+
+</iframe>
+
+```{r}
+## # Rank all states for each year
+state_rank_all_years <- deaths_state %>%
+  group_by(year) %>%
+  arrange(desc(rate_deaths_overdose)) %>%
+  mutate(rank = row_number()) %>%   # assign rank to every state
+  ungroup() %>%
+  select(year, geography, rate_deaths_overdose, rank)
+
+# Save full ranking for Tableau
+write_xlsx(state_rank_all_years, "./data/state_rank_all_years.xlsx")
+
+# Rank all states per year
+ranked_states <- deaths_state %>%
+  group_by(year) %>%
+  arrange(desc(rate_deaths_overdose)) %>%
+  mutate(rank = row_number()) %>%
+  ungroup()
+
+# Filter top 10 per year
+top10_trends <- ranked_states %>%
+  filter(rank <= 10)
+
+write_xlsx(top10_trends, "./data/top10_horserace_graph.xlsx") #for tableau
+
+# Filter top 15 per year
+top15_trends <- ranked_states %>%
+  filter(rank <= 15)
+
+write_xlsx(top15_trends, "./data/top15_horserace_graph.xlsx") #for tableau
+```
+
+
+<iframe src="https://public.tableau.com/views/Overdosedeathratesfrom2015to2025/Sheet2?:showVizHome=no&:embed=true"width="800" height="600"
+ style="border:none;"></iframe>
+ 
+
+```{r}
+library(dplyr)
+library(ggplot2)
+
+geo_source = read_parquet("https://github.com/PopHIVE/Ingest/raw/refs/heads/main/data/bundle_injury_overdose/dist/overdose_by_geography_and_source.parquet")
+
+
+# Filter dataset first
+geo_source_filtered <- geo_source %>%
+  select(date, value, source, age, geography) %>%
+  filter(age %in% c("15-24 Years", "25-44 Years", "45-64 Years",
+                    "+65 Years", "<15 Years", "Total")) %>%
+  drop_na()
+
+# Plot faceted by source
+ggplot(geo_source_filtered, aes(x = date, y = value, color = age, group = age)) +
+  geom_line(size = 1) +
+  facet_wrap(~ source, scales = "free") +
+  labs(title = "Value over Time by Age Group",
+       x = "Date", y = "Value") +
+  theme_minimal()
+
 ```
