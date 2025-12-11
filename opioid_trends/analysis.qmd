@@ -116,7 +116,6 @@ write_xlsx(deaths_state_2025, "./data/overdose_by_geography_and_source2025.xlsx"
 </iframe>
 
 ```{r}
-<<<<<<< HEAD
 
 # Identify top 15 states for each year
 top15_states_all_years <- deaths_state %>%
@@ -132,12 +131,12 @@ top15_trends <- deaths_state %>%
 
 write_xlsx(top15_trends, "./data/top15_horserace_graph.xlsx") #for tableau
 ```
-<iframe src="https://public.tableau.com/views/Book3_17637546219550/Sheet6?:showVizHome=no&:embed=true"
-        width="100%" height="600"
-        frameborder="0"></iframe>
 
+<iframe src="https://public.tableau.com/views/Book3_17637546219550/Sheet6?:showVizHome=no&amp;:embed=true" width="100%" height="600" frameborder="0">
 
-=======
+</iframe>
+
+```{r}
 ## # Rank all states for each year
 state_rank_all_years <- deaths_state %>%
   group_by(year) %>%
@@ -169,11 +168,9 @@ top15_trends <- ranked_states %>%
 write_xlsx(top15_trends, "./data/top15_horserace_graph.xlsx") #for tableau
 ```
 
+<iframe src="https://public.tableau.com/views/Overdosedeathratesfrom2015to2025/Sheet2?:showVizHome=no&amp;:embed=true" width="800" height="600" style="border:none;">
 
-<iframe src="https://public.tableau.com/views/Overdosedeathratesfrom2015to2025/Sheet2?:showVizHome=no&:embed=true"width="800" height="600"
- style="border:none;"></iframe>
- 
->>>>>>> main
+</iframe>
 
 ```{r}
 library(dplyr)
