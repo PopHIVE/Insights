@@ -116,6 +116,7 @@ write_xlsx(deaths_state_2025, "./data/overdose_by_geography_and_source2025.xlsx"
 </iframe>
 
 ```{r}
+<<<<<<< HEAD
 
 # Identify top 15 states for each year
 top15_states_all_years <- deaths_state %>%
@@ -136,6 +137,43 @@ write_xlsx(top15_trends, "./data/top15_horserace_graph.xlsx") #for tableau
         frameborder="0"></iframe>
 
 
+=======
+## # Rank all states for each year
+state_rank_all_years <- deaths_state %>%
+  group_by(year) %>%
+  arrange(desc(rate_deaths_overdose)) %>%
+  mutate(rank = row_number()) %>%   # assign rank to every state
+  ungroup() %>%
+  select(year, geography, rate_deaths_overdose, rank)
+
+# Save full ranking for Tableau
+write_xlsx(state_rank_all_years, "./data/state_rank_all_years.xlsx")
+
+# Rank all states per year
+ranked_states <- deaths_state %>%
+  group_by(year) %>%
+  arrange(desc(rate_deaths_overdose)) %>%
+  mutate(rank = row_number()) %>%
+  ungroup()
+
+# Filter top 10 per year
+top10_trends <- ranked_states %>%
+  filter(rank <= 10)
+
+write_xlsx(top10_trends, "./data/top10_horserace_graph.xlsx") #for tableau
+
+# Filter top 15 per year
+top15_trends <- ranked_states %>%
+  filter(rank <= 15)
+
+write_xlsx(top15_trends, "./data/top15_horserace_graph.xlsx") #for tableau
+```
+
+
+<iframe src="https://public.tableau.com/views/Overdosedeathratesfrom2015to2025/Sheet2?:showVizHome=no&:embed=true"width="800" height="600"
+ style="border:none;"></iframe>
+ 
+>>>>>>> main
 
 ```{r}
 library(dplyr)
