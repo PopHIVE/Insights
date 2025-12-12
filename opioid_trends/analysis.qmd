@@ -194,4 +194,38 @@ ggplot(geo_source_filtered, aes(x = date, y = value, color = age, group = age)) 
        x = "Date", y = "Value") +
   theme_minimal()
 
+write_xlsx(geo_source_filtered, "./data/geo_source_filtered.xlsx") #for tableau
+```
+
+```{r}
+library(tidyverse)
+
+#Defining census regions
+
+census_regions <- list( Northeast = c("Connecticut","Maine","Massachusetts","New Hampshire","Rhode Island","Vermont", "New Jersey","New York","Pennsylvania"),
+                        Midwest = c("Indiana","Illinois","Michigan","Ohio","Wisconsin", "Iowa","Kansas","Minnesota","Missouri","Nebraska","North Dakota","South Dakota"), 
+                        South = c("Delaware","Florida","Georgia","Maryland","North Carolina","South Carolina","Virginia","District of Columbia", "West Virginia","Alabama","Kentucky","Mississippi","Tennessee", "Arkansas","Louisiana","Oklahoma","Texas"), 
+                        West = c("Arizona","Colorado","Idaho","Montana","Nevada","New Mexico","Utah","Wyoming", "Alaska","California","Hawaii","Oregon","Washington") )
+
+region_lookup <- enframe(census_regions, name="region", value="state") %>% 
+  unnest(cols=state)
+
+#Adding to the dataset
+deaths_state_region <- deaths_state %>% 
+  left_join(region_lookup,by=c("geography"="state"))
+
+#weighted monthly regional rates
+regional_trends <- deaths_state_region %>% 
+  group_by(region, time) %>% summarise( region_rate_deaths_overdose = sum(n_deaths_overdose) / sum(n_deaths_overdose / rate_deaths_overdose), total_n_deaths_overdose = sum(n_deaths_overdose), .groups="drop" )
+
+# visual trends
+
+library(ggplot2)
+ggplot(regional_trends, aes(x=time, y=region_rate_deaths_overdose, color=region)) +
+  geom_line(size=1.2) + 
+  labs(title="Regional Trends in Overdose Death Rates", x="Time (Month)", y="Rate of Overdose Deaths") + 
+  theme_minimal()
+
+#for datawrapper
+write_xlsx(regional_trends, "./data/rate_deaths_region.xlsx")
 ```
