@@ -1,3 +1,5 @@
+##NOTE it seems that with Epic, estimates are reasonable for <2 year old,s but then the denominator collapses, and coverage rates shoot up
+
 library(tidyverse)
 library(arrow)
 
@@ -24,21 +26,22 @@ schoolvax_epic_compare <- a1 %>%
   filter(age=="? 4 and < 5 Years") %>%
   left_join(schoolvax, by=c('year','geography'))
 
-
 nis_epic_compare <- a1 %>%
   filter(age=="? 1 and < 2 Years") %>%
   left_join(nis, by=c('year','geography'))
 
-
 p1 <- ggplot(schoolvax_epic_compare)+
   geom_point(aes(x=pct_vax_epic, y=value, color=year, group=geography))+
   ylim(70,100)+
-  xlim(70,100)
+  xlim(70,100)+
+  facet_wrap(~year) 
 p1
 plotly::ggplotly(p1)
 
 
-p2<- ggplot(nis_epic_compare)+
+p2<- nis_epic_compare %>%
+  filter(!is.na(value)) %>%
+  ggplot()+
   geom_point(aes(x=pct_vax_epic, y=value, color=year, group=geography))+
   ylim(80,100)+
   xlim(80,100) + 
@@ -48,3 +51,53 @@ p2<- ggplot(nis_epic_compare)+
 p2
 
 plotly::ggplotly(p2)
+
+p3<- nis_epic_compare %>%
+  filter(!is.na(value)) %>%
+  mutate(year=as.numeric(year)) %>%
+  ggplot()+
+  geom_line(aes(x=year, y=value))+
+  geom_line(aes(x=year, y=pct_vax_epic), color='red')+
+  ylim(80,100)+
+  geom_abline(intercept=0, slope=1)+
+  facet_wrap(~geography, nrow=5)+
+  ylab('Uptake') +
+  theme_classic()
+p3
+
+
+
+tx <- read_csv('./data/tx_mmr_month.csv', skip=11) %>%
+  rename(age = "Age at Encounter in Years" ,
+         geography = "State of Residence",
+         year = "Year",
+         month='Month',
+         pct_vax_epic = "...5",
+         n_patients= "...6"                     ) %>%
+  tidyr::fill(.,age, geography, year, month, .direction='down') %>%
+  mutate(year = str_extract(year, "\\d{4}"),
+         pct_vax_epic = gsub('%','', pct_vax_epic),
+         pct_vax_epic = as.numeric(pct_vax_epic),
+         month = iconv(month, from = "CP1252", to = "UTF-8"),
+         month=substr(month,1,3),
+         date= paste(year, month, '01', sep=' '),
+         date = as.Date(date, format = "%Y %b %d"),
+         
+         age =  dplyr::case_when(
+           grepl("Less than 1", age) ~ "<1",
+           grepl("or more", age)     ~ "5+",
+           TRUE ~ gsub("^\\?\\s*(\\d+) and < (\\d+) Years$", "\\1-\\2", age)
+         ),
+         age = paste(age, 'Years'),
+        age =  factor(
+           age,
+           levels = c("<1 Years", "1-2 Years", "2-3 Years", "3-4 Years", "4-5 Years", "5+ Years"),
+           ordered = TRUE
+         )
+  ) %>%
+  filter(geography=='Texas' & age %in% c("<1 Years", "1-2 Years", "2-3 Years", "3-4 Years", "4-5 Years", "5+ Years") )
+
+ggplot(tx) +
+  geom_line(aes(x=date, y=pct_vax_epic)) +
+  facet_wrap(~age, scales='free_y')+
+  theme_classic()
