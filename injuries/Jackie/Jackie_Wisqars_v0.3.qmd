@@ -604,18 +604,44 @@ gtrends_9mm_st <- gtrends_9mm %>%
 
 ```
 
+Aggregate
+
+```{r}
+# Keep only states (no National) and valid years
+ds2_states <- ds2 %>%
+  filter(State != "National", !is.na(State), !is.na(year))
+
+# Collapse to one value per State-year for shotgun
+gtrends_shotgun_year <- ds2_states %>%
+  filter(source == "gtrends_shotgun") %>%
+  group_by(State, year) %>%
+  summarise(
+    value = mean(value, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+# Collapse to one value per State-year for 9mm
+gtrends_9mm_year <- ds2_states %>%
+  filter(source == "gtrends_9mm") %>%
+  group_by(State, year) %>%
+  summarise(
+    value = mean(value, na.rm = TRUE),
+    .groups = "drop"
+  )
+```
+
 Plots: Google Trends per Time
 
 ```{r}
-ggplot(gtrends_shotgun_st,
+ggplot(gtrends_shotgun_year,
        aes(x = year, y = value, group = State, color = State)) +
   geom_line(alpha = 0.6, linewidth = 1) +
-  geom_point(alpha = 0.6, size = 1) +
+  geom_point(alpha = 0.6, size = 1.2) +
   labs(
     title = "Google Searches for 'Shotgun' Over Time",
-    subtitle = "Google Trends Index, All 50 States",
+    subtitle = "Average yearly Google Trends index, all 50 states",
     x = "Year",
-    y = "Search Interest"
+    y = "Search Interest (annual average)"
   ) +
   theme_minimal(base_size = 12) +
   theme(
@@ -623,19 +649,125 @@ ggplot(gtrends_shotgun_st,
     axis.text.x = element_text(angle = 45, hjust = 1)
   )
 
-ggplot(gtrends_9mm_st,
+ggplot(gtrends_9mm_year,
        aes(x = year, y = value, group = State, color = State)) +
   geom_line(alpha = 0.6, linewidth = 1) +
-  geom_point(alpha = 0.6, size = 1) +
+  geom_point(alpha = 0.6, size = 1.2) +
   labs(
     title = "Google Searches for '9mm' Over Time",
-    subtitle = "Google Trends Index, All 50 States",
+    subtitle = "Average yearly Google Trends index, all 50 states",
     x = "Year",
-    y = "Search Interest"
+    y = "Search Interest (annual average)"
   ) +
   theme_minimal(base_size = 12) +
   theme(
     legend.position = "none",
     axis.text.x = element_text(angle = 45, hjust = 1)
   )
+```
+
+Top 5 States
+
+```{r}
+# pick top 5 states by overall average across years
+top5_shotgun <- gtrends_shotgun_year %>%
+  group_by(State) %>%
+  summarise(overall_avg = mean(value, na.rm = TRUE), .groups = "drop") %>%
+  arrange(desc(overall_avg)) %>%
+  slice(1:5) %>%
+  pull(State)
+
+# keep only top 5
+gtrends_shotgun_top5 <- gtrends_shotgun_year %>%
+  filter(State %in% top5_shotgun)
+
+# plot
+ggplot(gtrends_shotgun_top5,
+       aes(x = year, y = value, color = State, group = State)) +
+  geom_line(linewidth = 1.2) +
+  geom_point(size = 2) +
+  labs(
+    title = "Google Searches for 'Shotgun' Over Time (Top 5 States)",
+    subtitle = "Annual average Google Trends index",
+    x = "Year",
+    y = "Search Interest (annual average)",
+    color = "State"
+  ) +
+  theme_minimal(base_size = 13)
+
+gtrends_9mm_year <- ds2_states %>%
+  filter(source == "gtrends_9mm") %>%
+  group_by(State, year) %>%
+  summarise(value = mean(value, na.rm = TRUE), .groups = "drop")
+
+top5_9mm <- gtrends_9mm_year %>%
+  group_by(State) %>%
+  summarise(overall_avg = mean(value, na.rm = TRUE), .groups = "drop") %>%
+  arrange(desc(overall_avg)) %>%
+  slice(1:5) %>%
+  pull(State)
+
+gtrends_9mm_top5 <- gtrends_9mm_year %>%
+  filter(State %in% top5_9mm)
+
+ggplot(gtrends_9mm_top5,
+       aes(x = year, y = value, color = State, group = State)) +
+  geom_line(linewidth = 1.2) +
+  geom_point(size = 2) +
+  labs(
+    title = "Google Searches for '9mm' Over Time (Top 5 States)",
+    subtitle = "Annual average Google Trends index",
+    x = "Year",
+    y = "Search Interest (annual average)",
+    color = "State"
+  ) +
+  theme_minimal(base_size = 13)
+```
+
+Data Wrapper: Heatmap
+
+```{r}
+readr::write_csv(firearm, "firearm.csv")
+readr::write_csv(firearm_bystate_avg, "firearm_bystate_avg.csv")
+
+## Accidental Firearm Death Rates
+## idk how to embed
+
+```
+
+Motor Vehicle Deaths: Subsetting & FIPS
+
+```{r}
+# subset data
+mvc = subset(ds1, select=c(geography, time, age, wisqars_deaths_motor_vehicle_traffic))
+
+# create new column state name in firearm data set and match to fips df
+mvc$state_name = fips$STATE_NAME[match(mvc$geography,fips$STATEFP)]
+
+# add 00 = National
+mvc$state_name[mvc$geography == "00"] <- "National"
+
+# convert time to year as numeric
+mvc$year <- year(ymd(mvc$time))
+
+```
+
+Total & Aggregate & Heatmap
+
+```{r}
+# subset mvc to only include Total ages
+mvc_bystate_total = mvc[which(mvc$age == "Total"),]
+
+# Aggregate mvc deaths total by year
+mvc_bystate_avg <- aggregate(
+  cbind(wisqars_deaths_motor_vehicle_traffic) ~ state_name,
+  data = mvc_bystate_total,
+  FUN = mean,
+  na.rm = TRUE
+)
+
+readr::write_csv(mvc_bystate_avg, "mvc_bystate_avg.csv")
+
+
+## idk how to embed
 ```
