@@ -20,11 +20,8 @@ These projects contain analyses that highlight uses of the data found in PopHIVE
 
 Parquet files can be read using the arrow package:
 
-`r ds2 <- read_parquet('https://github.com/PopHIVE/Ingest/raw/refs/heads/main/data/bundle_injury_overdose/dist/deaths_cause_age.parquet')`
-You can also use the parquet file explorer tool: https://yale-pophive-git-feat-data-explorer-the-dataface.vercel.app/parquet-viewer
+`r ds2 <- read_parquet('https://github.com/PopHIVE/Ingest/raw/refs/heads/main/data/bundle_injury_overdose/dist/deaths_cause_age.parquet')` You can also use the parquet file explorer tool: <https://yale-pophive-git-feat-data-explorer-the-dataface.vercel.app/parquet-viewer>
 
 -   Now you are ready to start exploring the data. You could a Quarto document to organize your code. As an example, check out the basic outline shown [here](https://github.com/PopHIVE/Insights/blob/main/opioid_trends/analysis.qmd)
 
 -   Remember to commit your code changes frequently and push changes back to Github. This is very important so that other on the team can see your work too!
-
-

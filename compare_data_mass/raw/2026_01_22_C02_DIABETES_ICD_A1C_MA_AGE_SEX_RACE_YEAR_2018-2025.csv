@@ -1,0 +1,1740 @@
+﻿Session Title,Massachusetts only ICD10s for Diabetes and % w/HA1C 6.5+ by Age Sex Race and Year,,,,,
+Session ID,2792141,,,,,
+Data Model,Patients,,,,,
+Population Base,All Patients,,,,,
+Population Criteria Filters: These criteria are a summary and do not fully reflect the content of the exported session.,State of Residence: Massachusetts,Base Patient,,,,
+Session Date Range,1/1/2018 - 12/17/2025,,,,,
+Export User,Stephanie Perniciaro,,,,,
+Date of Export,1/21/2026,,,,,
+,,,,,,
+,,,,,,
+,,,Measures,Percentage with Diagnosis (All): diabetes ICD10 E08-E13 (%),Percentage with Hemoglobin A1C 6.5% or more (%),Number of Patients
+Year,Age at Encounter in Years,Patient Legal Sex,Patient Race,,,
+Jan 1 – Dec 31 2018,Less than 18 Years,Male,Black or African American,1.07%,0.84%,27276
+,,,Native Hawaiian or Other Pacific Islander,-,-,716
+,,,Asian,0.64%,0.48%,7682
+,,,Other Race,1.29%,1.06%,25891
+,,,White,0.97%,0.81%,84886
+,,,American Indian or Alaska Native,0.81%,0.81%,1720
+,,,None of the above,0.42%,0.33%,25680
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",0.87%,0.70%,153388
+,,Female,Black or African American,1.42%,1.14%,26946
+,,,Native Hawaiian or Other Pacific Islander,-,-,792
+,,,Asian,0.86%,0.67%,7449
+,,,Other Race,1.48%,1.18%,25759
+,,,White,1.11%,0.86%,82214
+,,,American Indian or Alaska Native,0.69%,-,1727
+,,,None of the above,0.43%,0.31%,24467
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",1.00%,0.78%,147831
+,,"Total: Total includes all data under the Less than 18 Years bucket, including data from rows not currently displayed.",Black or African American,1.25%,0.99%,54235
+,,,Native Hawaiian or Other Pacific Islander,0.80%,-,1509
+,,,Asian,0.75%,0.57%,15138
+,,,Other Race,1.39%,1.12%,51671
+,,,White,1.04%,0.83%,167184
+,,,American Indian or Alaska Native,0.75%,0.67%,3449
+,,,None of the above,0.42%,0.32%,50156
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",0.93%,0.74%,301333
+,≥ 18 and < 35 Years,Male,Black or African American,5.28%,4.51%,22501
+,,,Native Hawaiian or Other Pacific Islander,5.45%,4.20%,880
+,,,Asian,4.04%,3.35%,7394
+,,,Other Race,5.62%,4.50%,23931
+,,,White,3.46%,2.72%,97344
+,,,American Indian or Alaska Native,7.01%,5.61%,1926
+,,,None of the above,3.31%,2.48%,17113
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",3.77%,2.99%,148270
+,,Female,Black or African American,4.93%,3.99%,36429
+,,,Native Hawaiian or Other Pacific Islander,5.00%,3.94%,1420
+,,,Asian,3.41%,2.59%,13053
+,,,Other Race,4.86%,3.53%,40303
+,,,White,2.94%,1.94%,143815
+,,,American Indian or Alaska Native,4.75%,3.44%,3285
+,,,None of the above,2.47%,1.61%,22872
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",3.27%,2.30%,219975
+,,"Total: Total includes all data under the ≥ 18 and &lt; 35 Years bucket, including data from rows not currently displayed.",Black or African American,5.07%,4.19%,58973
+,,,Native Hawaiian or Other Pacific Islander,5.17%,4.04%,2301
+,,,Asian,3.64%,2.86%,20462
+,,,Other Race,5.14%,3.89%,64283
+,,,White,3.15%,2.26%,241345
+,,,American Indian or Alaska Native,5.58%,4.24%,5218
+,,,None of the above,2.83%,1.98%,39999
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",3.47%,2.58%,368505
+,≥ 35 and < 45 Years,Male,Black or African American,16.45%,14.50%,13244
+,,,Native Hawaiian or Other Pacific Islander,18.66%,16.12%,552
+,,,Asian,14.93%,12.92%,5357
+,,,Other Race,15.82%,13.58%,16609
+,,,White,10.31%,8.15%,61913
+,,,American Indian or Alaska Native,16.74%,13.73%,1326
+,,,None of the above,10.23%,7.72%,11133
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",11.55%,9.37%,95112
+,,Female,Black or African American,13.77%,11.37%,19601
+,,,Native Hawaiian or Other Pacific Islander,11.31%,9.12%,822
+,,,Asian,8.40%,6.60%,8543
+,,,Other Race,12.21%,9.14%,24211
+,,,White,7.45%,5.12%,85392
+,,,American Indian or Alaska Native,12.07%,8.75%,1988
+,,,None of the above,6.42%,4.63%,14373
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",8.50%,6.16%,131939
+,,"Total: Total includes all data under the ≥ 35 and &lt; 45 Years bucket, including data from rows not currently displayed.",Black or African American,14.85%,12.63%,32855
+,,,Native Hawaiian or Other Pacific Islander,14.26%,11.94%,1374
+,,,Asian,10.92%,9.03%,13904
+,,,Other Race,13.68%,10.95%,40827
+,,,White,8.65%,6.40%,147350
+,,,American Indian or Alaska Native,13.93%,10.74%,3316
+,,,None of the above,8.08%,5.98%,25514
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",9.78%,7.50%,227115
+,≥ 45 and < 55 Years,Male,Black or African American,30.93%,27.39%,14620
+,,,Native Hawaiian or Other Pacific Islander,28.88%,24.68%,547
+,,,Asian,26.61%,23.10%,5467
+,,,Other Race,28.41%,24.19%,16092
+,,,White,18.99%,14.95%,82443
+,,,American Indian or Alaska Native,26.53%,22.17%,1353
+,,,None of the above,17.48%,13.23%,11771
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",20.88%,16.85%,116995
+,,Female,Black or African American,27.52%,23.51%,18942
+,,,Native Hawaiian or Other Pacific Islander,26.54%,21.35%,712
+,,,Asian,16.66%,14.26%,7755
+,,,Other Race,22.48%,17.46%,21492
+,,,White,12.52%,8.88%,109476
+,,,American Indian or Alaska Native,22.65%,17.28%,1823
+,,,None of the above,11.70%,8.38%,14622
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",14.73%,11.04%,153666
+,,"Total: Total includes all data under the ≥ 45 and &lt; 55 Years bucket, including data from rows not currently displayed.",Black or African American,29.00%,25.19%,33568
+,,,Native Hawaiian or Other Pacific Islander,27.56%,22.80%,1259
+,,,Asian,20.78%,17.92%,13226
+,,,Other Race,25.02%,20.34%,37592
+,,,White,15.30%,11.49%,191955
+,,,American Indian or Alaska Native,24.31%,19.36%,3176
+,,,None of the above,14.28%,10.54%,26396
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",17.39%,13.55%,270709
+,≥ 55 and < 65 Years,Male,Black or African American,41.83%,36.43%,13418
+,,,Native Hawaiian or Other Pacific Islander,42.23%,35.89%,457
+,,,Asian,39.76%,35.39%,4329
+,,,Other Race,37.68%,31.57%,13448
+,,,White,25.35%,19.54%,100379
+,,,American Indian or Alaska Native,34.10%,29.11%,1082
+,,,None of the above,23.46%,17.62%,10708
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",27.40%,21.63%,130570
+,,Female,Black or African American,39.88%,34.22%,16941
+,,,Native Hawaiian or Other Pacific Islander,38.80%,31.33%,616
+,,,Asian,29.36%,25.08%,5705
+,,,Other Race,32.63%,25.72%,17149
+,,,White,17.27%,12.36%,122350
+,,,American Indian or Alaska Native,32.74%,25.21%,1301
+,,,None of the above,16.93%,11.85%,13163
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",20.27%,15.20%,159987
+,,"Total: Total includes all data under the ≥ 55 and &lt; 65 Years bucket, including data from rows not currently displayed.",Black or African American,40.74%,35.20%,30359
+,,,Native Hawaiian or Other Pacific Islander,40.26%,33.27%,1073
+,,,Asian,33.84%,29.53%,10034
+,,,Other Race,34.84%,28.29%,30599
+,,,White,20.91%,15.59%,222771
+,,,American Indian or Alaska Native,33.36%,26.98%,2383
+,,,None of the above,19.86%,14.44%,23874
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",23.47%,18.09%,290603
+,≥ 65 and < 75 Years,Male,Black or African American,49.06%,41.88%,7270
+,,,Native Hawaiian or Other Pacific Islander,46.99%,40.96%,249
+,,,Asian,45.98%,38.85%,2932
+,,,Other Race,43.39%,35.61%,7728
+,,,White,30.64%,22.86%,77654
+,,,American Indian or Alaska Native,43.27%,34.73%,550
+,,,None of the above,30.32%,21.48%,6340
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",32.57%,24.72%,94989
+,,Female,Black or African American,48.19%,41.52%,10093
+,,,Native Hawaiian or Other Pacific Islander,46.86%,39.79%,382
+,,,Asian,39.39%,33.00%,3945
+,,,Other Race,40.13%,31.44%,10268
+,,,White,22.61%,16.19%,95443
+,,,American Indian or Alaska Native,38.95%,30.09%,688
+,,,None of the above,23.70%,16.66%,7955
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",25.67%,19.06%,118377
+,,"Total: Total includes all data under the ≥ 65 and &lt; 75 Years bucket, including data from rows not currently displayed.",Black or African American,48.56%,41.67%,17363
+,,,Native Hawaiian or Other Pacific Islander,46.91%,40.25%,631
+,,,Asian,42.21%,35.50%,6878
+,,,Other Race,41.53%,33.23%,17998
+,,,White,26.21%,19.18%,173114
+,,,American Indian or Alaska Native,40.87%,32.15%,1238
+,,,None of the above,26.62%,18.79%,14299
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",28.74%,21.58%,213389
+,75 Years or more,Male,Black or African American,46.32%,38.99%,3834
+,,,Native Hawaiian or Other Pacific Islander,42.65%,35.29%,136
+,,,Asian,42.11%,34.84%,1900
+,,,Other Race,39.31%,30.64%,4337
+,,,White,29.58%,21.30%,57509
+,,,American Indian or Alaska Native,40.86%,29.39%,279
+,,,None of the above,29.46%,19.34%,3143
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",30.94%,22.55%,66833
+,,Female,Black or African American,47.43%,39.55%,6723
+,,,Native Hawaiian or Other Pacific Islander,48.21%,37.44%,195
+,,,Asian,38.42%,31.77%,2285
+,,,Other Race,36.34%,28.41%,6483
+,,,White,21.95%,15.48%,83672
+,,,American Indian or Alaska Native,33.25%,27.54%,403
+,,,None of the above,23.05%,16.08%,5297
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",24.25%,17.59%,98687
+,,"Total: Total includes all data under the 75 Years or more bucket, including data from rows not currently displayed.",Black or African American,47.03%,39.34%,10558
+,,,Native Hawaiian or Other Pacific Islander,45.92%,36.56%,331
+,,,Asian,40.10%,33.17%,4185
+,,,Other Race,37.53%,29.30%,10821
+,,,White,25.05%,17.85%,141194
+,,,American Indian or Alaska Native,36.36%,28.30%,682
+,,,None of the above,25.43%,17.29%,8444
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",26.95%,19.59%,165538
+,No value,Male,Black or African American,9.58%,6.63%,18934
+,,,Native Hawaiian or Other Pacific Islander,8.29%,5.74%,627
+,,,Asian,6.98%,5.11%,6087
+,,,Other Race,8.93%,6.49%,16478
+,,,White,8.42%,5.37%,94241
+,,,American Indian or Alaska Native,9.32%,6.56%,1341
+,,,None of the above,4.85%,2.99%,18232
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",7.98%,5.19%,140784
+,,Female,Black or African American,10.48%,6.57%,18428
+,,,Native Hawaiian or Other Pacific Islander,8.39%,4.87%,596
+,,,Asian,5.36%,3.69%,6983
+,,,Other Race,8.09%,5.00%,15247
+,,,White,7.00%,4.02%,88120
+,,,American Indian or Alaska Native,8.11%,5.83%,1098
+,,,None of the above,4.74%,2.52%,15467
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",7.12%,4.17%,130693
+,,"Total: Total includes all data under the No value bucket, including data from rows not currently displayed.",Black or African American,10.02%,6.60%,37377
+,,,Native Hawaiian or Other Pacific Islander,8.34%,5.31%,1223
+,,,Asian,6.11%,4.35%,13081
+,,,Other Race,8.53%,5.77%,31737
+,,,White,7.73%,4.72%,182429
+,,,American Indian or Alaska Native,8.81%,6.27%,2441
+,,,None of the above,4.80%,2.77%,33713
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",7.56%,4.70%,271581
+,"Total: Total includes all data under the Jan 1 – Dec 31 2018 bucket, including data from rows not currently displayed.",Male,Black or African American,16.87%,14.34%,117730
+,,,Native Hawaiian or Other Pacific Islander,17.14%,14.36%,4054
+,,,Asian,16.35%,13.87%,39914
+,,,Other Race,16.07%,13.23%,120881
+,,,White,14.97%,11.21%,633809
+,,,American Indian or Alaska Native,16.05%,13.04%,9271
+,,,None of the above,9.49%,6.85%,101422
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",14.55%,11.14%,916543
+,,Female,Black or African American,17.05%,14.13%,148830
+,,,Native Hawaiian or Other Pacific Islander,16.28%,13.00%,5307
+,,,Asian,12.30%,10.14%,53988
+,,,Other Race,14.29%,10.92%,155097
+,,,White,11.22%,7.83%,779269
+,,,American Indian or Alaska Native,13.80%,10.43%,11856
+,,,None of the above,7.76%,5.34%,114398
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",11.72%,8.52%,1118369
+,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",Black or African American,16.97%,14.22%,266647
+,,,Native Hawaiian or Other Pacific Islander,16.65%,13.59%,9363
+,,,Asian,14.02%,11.72%,93944
+,,,Other Race,15.07%,11.93%,276078
+,,,White,12.90%,9.34%,1413553
+,,,American Indian or Alaska Native,14.78%,11.57%,21140
+,,,None of the above,8.57%,6.05%,215879
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",12.99%,9.70%,2035572
+Jan 1 – Dec 31 2019,Less than 18 Years,Male,Black or African American,1.04%,0.79%,27850
+,,,Native Hawaiian or Other Pacific Islander,-,-,724
+,,,Asian,0.62%,0.48%,7961
+,,,Other Race,1.23%,1.02%,28370
+,,,White,0.92%,0.78%,87311
+,,,American Indian or Alaska Native,0.96%,0.91%,1877
+,,,None of the above,0.38%,0.30%,26695
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",0.82%,0.67%,158784
+,,Female,Black or African American,1.28%,1.05%,27422
+,,,Native Hawaiian or Other Pacific Islander,-,-,765
+,,,Asian,0.83%,0.66%,7600
+,,,Other Race,1.31%,1.07%,27904
+,,,White,1.04%,0.83%,83830
+,,,American Indian or Alaska Native,0.65%,-,1843
+,,,None of the above,0.39%,0.29%,25733
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",0.92%,0.74%,152657
+,,"Total: Total includes all data under the Less than 18 Years bucket, including data from rows not currently displayed.",Black or African American,1.16%,0.92%,55290
+,,,Native Hawaiian or Other Pacific Islander,0.87%,-,1489
+,,,Asian,0.72%,0.57%,15569
+,,,Other Race,1.27%,1.04%,56297
+,,,White,0.98%,0.80%,171235
+,,,American Indian or Alaska Native,0.81%,0.70%,3721
+,,,None of the above,0.39%,0.29%,52439
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",0.87%,0.70%,311573
+,≥ 18 and < 35 Years,Male,Black or African American,4.98%,4.33%,23881
+,,,Native Hawaiian or Other Pacific Islander,5.26%,4.49%,913
+,,,Asian,3.79%,3.28%,8329
+,,,Other Race,5.33%,4.28%,26430
+,,,White,3.17%,2.50%,102777
+,,,American Indian or Alaska Native,6.26%,5.02%,2013
+,,,None of the above,3.12%,2.43%,17909
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",3.51%,2.82%,157467
+,,Female,Black or African American,4.77%,3.81%,38088
+,,,Native Hawaiian or Other Pacific Islander,4.19%,3.19%,1503
+,,,Asian,3.17%,2.46%,14328
+,,,Other Race,4.56%,3.32%,43857
+,,,White,2.73%,1.83%,151769
+,,,American Indian or Alaska Native,4.42%,3.33%,3576
+,,,None of the above,2.31%,1.53%,23630
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",3.07%,2.17%,232132
+,,"Total: Total includes all data under the ≥ 18 and &lt; 35 Years bucket, including data from rows not currently displayed.",Black or African American,4.85%,4.01%,62016
+,,,Native Hawaiian or Other Pacific Islander,4.59%,3.68%,2417
+,,,Asian,3.39%,2.76%,22681
+,,,Other Race,4.85%,3.68%,70349
+,,,White,2.91%,2.10%,254758
+,,,American Indian or Alaska Native,5.09%,3.93%,5598
+,,,None of the above,2.66%,1.92%,41554
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",3.25%,2.43%,389895
+,≥ 35 and < 45 Years,Male,Black or African American,15.40%,13.51%,14230
+,,,Native Hawaiian or Other Pacific Islander,19.04%,16.64%,583
+,,,Asian,14.49%,12.38%,5623
+,,,Other Race,14.69%,12.50%,18245
+,,,White,9.43%,7.52%,65483
+,,,American Indian or Alaska Native,14.97%,12.06%,1476
+,,,None of the above,9.34%,7.14%,11729
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",10.72%,8.72%,100915
+,,Female,Black or African American,13.00%,10.75%,20743
+,,,Native Hawaiian or Other Pacific Islander,10.21%,8.26%,872
+,,,Asian,7.86%,6.07%,9193
+,,,Other Race,11.25%,8.42%,26336
+,,,White,6.94%,4.73%,88773
+,,,American Indian or Alaska Native,10.73%,7.91%,2237
+,,,None of the above,6.35%,4.51%,14901
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",8.00%,5.77%,138064
+,,"Total: Total includes all data under the ≥ 35 and &lt; 45 Years bucket, including data from rows not currently displayed.",Black or African American,13.97%,11.87%,34987
+,,,Native Hawaiian or Other Pacific Islander,13.75%,11.62%,1455
+,,,Asian,10.37%,8.46%,14825
+,,,Other Race,12.66%,10.09%,44594
+,,,White,8.00%,5.92%,154307
+,,,American Indian or Alaska Native,12.40%,9.55%,3717
+,,,None of the above,7.67%,5.67%,26637
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",9.15%,7.02%,239057
+,≥ 45 and < 55 Years,Male,Black or African American,29.56%,26.14%,15210
+,,,Native Hawaiian or Other Pacific Islander,26.81%,23.46%,567
+,,,Asian,25.10%,21.48%,5848
+,,,Other Race,27.23%,23.18%,17250
+,,,White,18.19%,14.37%,83699
+,,,American Indian or Alaska Native,25.45%,21.56%,1438
+,,,None of the above,17.06%,13.17%,12114
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",20.07%,16.25%,119743
+,,Female,Black or African American,26.16%,22.09%,19541
+,,,Native Hawaiian or Other Pacific Islander,25.30%,19.97%,751
+,,,Asian,15.76%,13.34%,8440
+,,,Other Race,21.19%,16.44%,22893
+,,,White,12.08%,8.56%,109564
+,,,American Indian or Alaska Native,21.02%,15.92%,1903
+,,,None of the above,11.43%,8.23%,14913
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",14.19%,10.60%,155642
+,,"Total: Total includes all data under the ≥ 45 and &lt; 55 Years bucket, including data from rows not currently displayed.",Black or African American,27.64%,23.86%,34757
+,,,Native Hawaiian or Other Pacific Islander,25.95%,21.47%,1318
+,,,Asian,19.59%,16.67%,14291
+,,,Other Race,23.78%,19.33%,40150
+,,,White,14.72%,11.08%,193301
+,,,American Indian or Alaska Native,22.93%,18.35%,3341
+,,,None of the above,13.96%,10.44%,27029
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",16.75%,13.06%,275434
+,≥ 55 and < 65 Years,Male,Black or African American,40.89%,35.57%,14388
+,,,Native Hawaiian or Other Pacific Islander,39.80%,34.20%,500
+,,,Asian,38.37%,33.61%,4761
+,,,Other Race,36.56%,30.73%,14786
+,,,White,24.68%,19.21%,105085
+,,,American Indian or Alaska Native,32.49%,27.59%,1185
+,,,None of the above,22.98%,17.19%,11418
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",26.76%,21.25%,137532
+,,Female,Black or African American,38.78%,33.29%,17962
+,,,Native Hawaiian or Other Pacific Islander,37.67%,30.58%,677
+,,,Asian,28.31%,24.23%,6125
+,,,Other Race,31.54%,24.95%,18859
+,,,White,16.79%,11.98%,127704
+,,,American Indian or Alaska Native,30.53%,23.47%,1474
+,,,None of the above,16.30%,11.25%,13862
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",19.73%,14.77%,167698
+,,"Total: Total includes all data under the ≥ 55 and &lt; 65 Years bucket, including data from rows not currently displayed.",Black or African American,39.72%,34.30%,32352
+,,,Native Hawaiian or Other Pacific Islander,38.57%,32.12%,1177
+,,,Asian,32.71%,28.33%,10887
+,,,Other Race,33.75%,27.49%,33648
+,,,White,20.35%,15.24%,232829
+,,,American Indian or Alaska Native,31.40%,25.31%,2659
+,,,None of the above,19.32%,13.93%,25282
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",22.90%,17.69%,305276
+,≥ 65 and < 75 Years,Male,Black or African American,48.64%,41.76%,7963
+,,,Native Hawaiian or Other Pacific Islander,46.99%,40.60%,266
+,,,Asian,45.23%,38.70%,3217
+,,,Other Race,42.32%,34.87%,8706
+,,,White,30.00%,22.53%,82441
+,,,American Indian or Alaska Native,44.41%,36.30%,617
+,,,None of the above,29.01%,20.63%,6942
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",31.94%,24.43%,101445
+,,Female,Black or African American,48.05%,41.12%,10974
+,,,Native Hawaiian or Other Pacific Islander,46.17%,39.68%,431
+,,,Asian,38.56%,32.53%,4261
+,,,Other Race,39.81%,31.30%,11353
+,,,White,22.16%,15.87%,101030
+,,,American Indian or Alaska Native,39.87%,30.07%,755
+,,,None of the above,22.79%,16.26%,8610
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",25.21%,18.78%,125843
+,,"Total: Total includes all data under the ≥ 65 and &lt; 75 Years bucket, including data from rows not currently displayed.",Black or African American,48.30%,41.39%,18937
+,,,Native Hawaiian or Other Pacific Islander,46.48%,40.03%,697
+,,,Asian,41.44%,35.19%,7479
+,,,Other Race,40.90%,32.85%,20060
+,,,White,25.68%,18.87%,183483
+,,,American Indian or Alaska Native,41.91%,32.87%,1372
+,,,None of the above,25.56%,18.21%,15556
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",28.22%,21.30%,227306
+,75 Years or more,Male,Black or African American,46.44%,38.90%,4180
+,,,Native Hawaiian or Other Pacific Islander,44.22%,38.78%,147
+,,,Asian,42.15%,35.42%,2109
+,,,Other Race,40.32%,31.67%,4881
+,,,White,30.08%,22.04%,60579
+,,,American Indian or Alaska Native,42.16%,29.74%,306
+,,,None of the above,30.27%,19.93%,3271
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",31.47%,23.28%,70642
+,,Female,Black or African American,47.44%,40.27%,7184
+,,,Native Hawaiian or Other Pacific Islander,45.95%,36.04%,222
+,,,Asian,38.17%,31.37%,2518
+,,,Other Race,37.07%,28.70%,7283
+,,,White,22.37%,15.86%,87226
+,,,American Indian or Alaska Native,35.42%,29.63%,432
+,,,None of the above,23.08%,16.54%,5363
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",24.70%,18.04%,103034
+,,"Total: Total includes all data under the 75 Years or more bucket, including data from rows not currently displayed.",Black or African American,47.07%,39.76%,11365
+,,,Native Hawaiian or Other Pacific Islander,45.26%,37.13%,369
+,,,Asian,39.98%,33.22%,4627
+,,,Other Race,38.37%,29.89%,12165
+,,,White,25.53%,18.39%,147816
+,,,American Indian or Alaska Native,38.21%,29.67%,738
+,,,None of the above,25.80%,17.82%,8635
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",27.45%,20.17%,173689
+,No value,Male,Black or African American,9.09%,6.89%,22290
+,,,Native Hawaiian or Other Pacific Islander,7.02%,5.07%,769
+,,,Asian,7.73%,5.61%,7402
+,,,Other Race,8.61%,6.10%,21241
+,,,White,8.31%,5.23%,115710
+,,,American Indian or Alaska Native,9.22%,7.04%,1519
+,,,None of the above,5.26%,3.38%,20084
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",7.93%,5.16%,170764
+,,Female,Black or African American,9.29%,6.49%,20936
+,,,Native Hawaiian or Other Pacific Islander,6.86%,5.95%,656
+,,,Asian,5.14%,3.70%,8617
+,,,Other Race,7.61%,4.68%,19250
+,,,White,6.75%,4.05%,107659
+,,,American Indian or Alaska Native,8.51%,5.25%,1257
+,,,None of the above,4.80%,2.84%,17474
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",6.78%,4.20%,158083
+,,"Total: Total includes all data under the No value bucket, including data from rows not currently displayed.",Black or African American,9.19%,6.70%,43242
+,,,Native Hawaiian or Other Pacific Islander,6.94%,5.47%,1426
+,,,Asian,6.33%,4.58%,16028
+,,,Other Race,8.13%,5.42%,40510
+,,,White,7.56%,4.66%,223467
+,,,American Indian or Alaska Native,8.89%,6.23%,2779
+,,,None of the above,5.05%,3.13%,37576
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",7.37%,4.70%,328990
+,"Total: Total includes all data under the Jan 1 – Dec 31 2019 bucket, including data from rows not currently displayed.",Male,Black or African American,16.40%,14.04%,126362
+,,,Native Hawaiian or Other Pacific Islander,16.77%,14.28%,4328
+,,,Asian,15.97%,13.52%,44038
+,,,Other Race,15.37%,12.63%,135957
+,,,White,14.50%,10.90%,680007
+,,,American Indian or Alaska Native,15.45%,12.60%,10096
+,,,None of the above,9.27%,6.74%,107226
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",14.11%,10.84%,985883
+,,Female,Black or African American,16.56%,13.81%,157128
+,,,Native Hawaiian or Other Pacific Islander,15.70%,12.77%,5645
+,,,Asian,11.83%,9.73%,59127
+,,,Other Race,13.64%,10.41%,171393
+,,,White,10.90%,7.63%,825181
+,,,American Indian or Alaska Native,13.24%,10.01%,12901
+,,,None of the above,7.54%,5.24%,120493
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",11.36%,8.29%,1188358
+,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",Black or African American,16.48%,13.91%,283589
+,,,Native Hawaiian or Other Pacific Islander,16.16%,13.42%,9975
+,,,Asian,13.59%,11.34%,103217
+,,,Other Race,14.40%,11.38%,307475
+,,,White,12.53%,9.10%,1505733
+,,,American Indian or Alaska Native,14.20%,11.14%,23014
+,,,None of the above,8.36%,5.95%,227779
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",12.60%,9.45%,2174998
+Jan 1 – Dec 31 2020,Less than 18 Years,Male,Black or African American,1.01%,0.77%,26027
+,,,Native Hawaiian or Other Pacific Islander,1.61%,-,685
+,,,Asian,0.62%,0.52%,7366
+,,,Other Race,1.16%,0.96%,27947
+,,,White,0.91%,0.76%,80155
+,,,American Indian or Alaska Native,1.03%,0.86%,1851
+,,,None of the above,0.39%,0.29%,25450
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",0.81%,0.66%,148196
+,,Female,Black or African American,1.27%,1.08%,25518
+,,,Native Hawaiian or Other Pacific Islander,-,-,733
+,,,Asian,0.77%,0.57%,7032
+,,,Other Race,1.21%,1.01%,27221
+,,,White,1.00%,0.81%,77041
+,,,American Indian or Alaska Native,0.80%,0.63%,1758
+,,,None of the above,0.36%,0.26%,25171
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",0.87%,0.71%,143151
+,,"Total: Total includes all data under the Less than 18 Years bucket, including data from rows not currently displayed.",Black or African American,1.14%,0.92%,51561
+,,,Native Hawaiian or Other Pacific Islander,1.06%,0.85%,1419
+,,,Asian,0.69%,0.54%,14404
+,,,Other Race,1.18%,0.98%,55194
+,,,White,0.96%,0.78%,157274
+,,,American Indian or Alaska Native,0.91%,0.78%,3611
+,,,None of the above,0.37%,0.28%,50633
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",0.84%,0.69%,291465
+,≥ 18 and < 35 Years,Male,Black or African American,4.63%,4.00%,25568
+,,,Native Hawaiian or Other Pacific Islander,4.40%,3.33%,1022
+,,,Asian,3.46%,2.99%,9156
+,,,Other Race,4.91%,3.93%,29122
+,,,White,2.99%,2.35%,106525
+,,,American Indian or Alaska Native,5.81%,4.47%,2150
+,,,None of the above,3.05%,2.37%,18193
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",3.31%,2.65%,164337
+,,Female,Black or African American,4.34%,3.41%,39775
+,,,Native Hawaiian or Other Pacific Islander,3.70%,2.89%,1593
+,,,Asian,2.80%,2.21%,15327
+,,,Other Race,4.21%,3.08%,46397
+,,,White,2.54%,1.68%,156916
+,,,American Indian or Alaska Native,4.23%,3.00%,3664
+,,,None of the above,2.19%,1.41%,23850
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",2.84%,1.99%,240207
+,,"Total: Total includes all data under the ≥ 18 and &lt; 35 Years bucket, including data from rows not currently displayed.",Black or African American,4.46%,3.64%,65392
+,,,Native Hawaiian or Other Pacific Islander,3.98%,3.06%,2616
+,,,Asian,3.04%,2.50%,24512
+,,,Other Race,4.48%,3.41%,75597
+,,,White,2.72%,1.95%,263691
+,,,American Indian or Alaska Native,4.82%,3.54%,5825
+,,,None of the above,2.57%,1.83%,42060
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",3.03%,2.26%,404884
+,≥ 35 and < 45 Years,Male,Black or African American,13.90%,12.23%,15299
+,,,Native Hawaiian or Other Pacific Islander,17.19%,15.40%,669
+,,,Asian,13.61%,11.73%,5935
+,,,Other Race,13.66%,11.55%,19783
+,,,White,8.79%,7.03%,67269
+,,,American Indian or Alaska Native,13.97%,11.50%,1582
+,,,None of the above,9.03%,6.92%,11871
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",10.03%,8.17%,104504
+,,Female,Black or African American,11.99%,9.83%,21776
+,,,Native Hawaiian or Other Pacific Islander,9.93%,7.95%,906
+,,,Asian,7.59%,5.69%,9473
+,,,Other Race,10.42%,7.77%,27725
+,,,White,6.49%,4.43%,90554
+,,,American Indian or Alaska Native,9.54%,7.04%,2328
+,,,None of the above,5.90%,4.18%,15079
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",7.49%,5.39%,141391
+,,"Total: Total includes all data under the ≥ 35 and &lt; 45 Years bucket, including data from rows not currently displayed.",Black or African American,12.78%,10.81%,37092
+,,,Native Hawaiian or Other Pacific Islander,13.01%,11.10%,1576
+,,,Asian,9.90%,8.01%,15419
+,,,Other Race,11.77%,9.34%,47523
+,,,White,7.47%,5.54%,157886
+,,,American Indian or Alaska Native,11.32%,8.84%,3913
+,,,None of the above,7.27%,5.38%,26958
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",8.57%,6.57%,245989
+,≥ 45 and < 55 Years,Male,Black or African American,27.82%,24.71%,15644
+,,,Native Hawaiian or Other Pacific Islander,28.17%,24.35%,575
+,,,Asian,24.30%,20.77%,6091
+,,,Other Race,25.92%,21.97%,18262
+,,,White,17.56%,13.96%,81032
+,,,American Indian or Alaska Native,24.42%,20.16%,1458
+,,,None of the above,16.55%,12.65%,12075
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",19.38%,15.74%,118007
+,,Female,Black or African American,24.44%,20.64%,20150
+,,,Native Hawaiian or Other Pacific Islander,23.44%,18.58%,802
+,,,Asian,14.97%,12.75%,8613
+,,,Other Race,20.07%,15.45%,23891
+,,,White,11.74%,8.31%,105937
+,,,American Indian or Alaska Native,20.42%,15.82%,1934
+,,,None of the above,11.02%,7.98%,14754
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",13.75%,10.28%,152760
+,,"Total: Total includes all data under the ≥ 45 and &lt; 55 Years bucket, including data from rows not currently displayed.",Black or African American,25.92%,22.41%,35797
+,,,Native Hawaiian or Other Pacific Islander,25.42%,20.99%,1377
+,,,Asian,18.84%,16.07%,14708
+,,,Other Race,22.61%,18.27%,42158
+,,,White,14.27%,10.76%,187008
+,,,American Indian or Alaska Native,22.14%,17.69%,3392
+,,,None of the above,13.51%,10.08%,26833
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",16.20%,12.66%,270817
+,≥ 55 and < 65 Years,Male,Black or African American,39.07%,33.98%,15249
+,,,Native Hawaiian or Other Pacific Islander,36.85%,31.85%,540
+,,,Asian,37.51%,33.05%,4932
+,,,Other Race,35.28%,29.87%,15919
+,,,White,24.23%,18.95%,105568
+,,,American Indian or Alaska Native,32.63%,27.48%,1241
+,,,None of the above,22.64%,16.89%,11604
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",26.25%,20.94%,139315
+,,Female,Black or African American,36.95%,31.67%,18808
+,,,Native Hawaiian or Other Pacific Islander,34.82%,27.86%,718
+,,,Asian,27.76%,23.67%,6167
+,,,Other Race,30.30%,24.03%,19904
+,,,White,16.41%,11.77%,126980
+,,,American Indian or Alaska Native,29.19%,23.10%,1528
+,,,None of the above,16.09%,11.07%,13931
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",19.32%,14.53%,167996
+,,"Total: Total includes all data under the ≥ 55 and &lt; 65 Years bucket, including data from rows not currently displayed.",Black or African American,37.90%,32.70%,34062
+,,,Native Hawaiian or Other Pacific Islander,35.69%,29.57%,1258
+,,,Asian,32.10%,27.84%,11101
+,,,Other Race,32.51%,26.62%,35826
+,,,White,19.96%,15.03%,232587
+,,,American Indian or Alaska Native,30.73%,25.06%,2769
+,,,None of the above,19.07%,13.72%,25538
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",22.46%,17.44%,307359
+,≥ 65 and < 75 Years,Male,Black or African American,48.35%,41.64%,8685
+,,,Native Hawaiian or Other Pacific Islander,46.76%,39.57%,278
+,,,Asian,45.58%,39.34%,3315
+,,,Other Race,41.90%,34.69%,9547
+,,,White,29.67%,22.39%,85165
+,,,American Indian or Alaska Native,44.96%,37.36%,645
+,,,None of the above,28.18%,20.03%,7395
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",31.66%,24.35%,105510
+,,Female,Black or African American,47.20%,40.39%,11777
+,,,Native Hawaiian or Other Pacific Islander,45.71%,38.24%,455
+,,,Asian,38.42%,32.47%,4367
+,,,Other Race,38.87%,30.74%,12103
+,,,White,21.79%,15.61%,103849
+,,,American Indian or Alaska Native,39.29%,30.23%,794
+,,,None of the above,22.12%,15.79%,9002
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",24.85%,18.54%,129957
+,,"Total: Total includes all data under the ≥ 65 and &lt; 75 Years bucket, including data from rows not currently displayed.",Black or African American,47.69%,40.92%,20462
+,,,Native Hawaiian or Other Pacific Islander,46.11%,38.74%,733
+,,,Asian,41.52%,35.44%,7683
+,,,Other Race,40.20%,32.48%,21652
+,,,White,25.34%,18.67%,189028
+,,,American Indian or Alaska Native,41.83%,33.43%,1439
+,,,None of the above,24.84%,17.69%,16402
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",27.90%,21.14%,235489
+,75 Years or more,Male,Black or African American,47.58%,40.14%,4462
+,,,Native Hawaiian or Other Pacific Islander,45.45%,38.96%,154
+,,,Asian,43.56%,37.02%,2204
+,,,Other Race,41.32%,32.88%,5271
+,,,White,30.85%,22.82%,61274
+,,,American Indian or Alaska Native,42.17%,31.02%,332
+,,,None of the above,31.34%,21.11%,3392
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",32.36%,24.20%,71793
+,,Female,Black or African American,47.74%,40.54%,7494
+,,,Native Hawaiian or Other Pacific Islander,43.22%,33.90%,236
+,,,Asian,39.73%,33.79%,2625
+,,,Other Race,37.51%,29.46%,7805
+,,,White,22.78%,16.25%,87452
+,,,American Indian or Alaska Native,35.92%,29.27%,451
+,,,None of the above,23.61%,17.36%,5524
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",25.22%,18.56%,103854
+,,"Total: Total includes all data under the 75 Years or more bucket, including data from rows not currently displayed.",Black or African American,47.68%,40.39%,11957
+,,,Native Hawaiian or Other Pacific Islander,44.10%,35.90%,390
+,,,Asian,41.49%,35.28%,4830
+,,,Other Race,39.05%,30.83%,13077
+,,,White,26.10%,18.95%,148737
+,,,American Indian or Alaska Native,38.57%,30.01%,783
+,,,None of the above,26.54%,18.78%,8917
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",28.14%,20.87%,175661
+,No value,Male,Black or African American,8.62%,6.70%,26102
+,,,Native Hawaiian or Other Pacific Islander,6.96%,5.41%,776
+,,,Asian,7.26%,5.14%,9356
+,,,Other Race,7.78%,5.47%,26362
+,,,White,8.16%,5.11%,140637
+,,,American Indian or Alaska Native,8.25%,6.76%,1672
+,,,None of the above,4.90%,3.20%,23059
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",7.71%,5.03%,206596
+,,Female,Black or African American,9.29%,6.61%,24238
+,,,Native Hawaiian or Other Pacific Islander,6.77%,5.62%,694
+,,,Asian,5.45%,3.84%,10888
+,,,Other Race,7.57%,4.76%,24838
+,,,White,6.81%,4.11%,132637
+,,,American Indian or Alaska Native,7.60%,4.83%,1593
+,,,None of the above,4.62%,2.88%,20319
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",6.77%,4.24%,193409
+,,"Total: Total includes all data under the No value bucket, including data from rows not currently displayed.",Black or African American,8.94%,6.66%,50361
+,,,Native Hawaiian or Other Pacific Islander,6.87%,5.51%,1470
+,,,Asian,6.28%,4.44%,20253
+,,,Other Race,7.68%,5.13%,51219
+,,,White,7.50%,4.62%,273397
+,,,American Indian or Alaska Native,7.92%,5.81%,3270
+,,,None of the above,4.77%,3.05%,43394
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",7.25%,4.64%,400176
+,"Total: Total includes all data under the Jan 1 – Dec 31 2020 bucket, including data from rows not currently displayed.",Male,Black or African American,15.98%,13.69%,133109
+,,,Native Hawaiian or Other Pacific Islander,16.45%,13.96%,4577
+,,,Asian,15.42%,13.09%,46996
+,,,Other Race,14.75%,12.09%,147872
+,,,White,14.18%,10.67%,704142
+,,,American Indian or Alaska Native,15.14%,12.31%,10582
+,,,None of the above,9.12%,6.63%,110097
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",13.78%,10.60%,1025973
+,,Female,Black or African American,16.14%,13.43%,163490
+,,,Native Hawaiian or Other Pacific Islander,15.17%,12.22%,5892
+,,,Asian,11.41%,9.37%,62436
+,,,Other Race,13.13%,10.01%,183051
+,,,White,10.67%,7.45%,849263
+,,,American Indian or Alaska Native,12.71%,9.66%,13523
+,,,None of the above,7.35%,5.12%,123478
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",11.09%,8.09%,1227525
+,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",Black or African American,16.07%,13.54%,296708
+,,,Native Hawaiian or Other Pacific Islander,15.73%,12.98%,10472
+,,,Asian,13.13%,10.97%,109490
+,,,Other Race,13.85%,10.94%,331067
+,,,White,12.26%,8.91%,1554004
+,,,American Indian or Alaska Native,13.77%,10.82%,24126
+,,,None of the above,8.18%,5.83%,233640
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",12.31%,9.23%,2254330
+Jan 1 – Dec 31 2021,Less than 18 Years,Male,Black or African American,0.91%,0.70%,29534
+,,,Native Hawaiian or Other Pacific Islander,-,-,748
+,,,Asian,0.50%,0.39%,8611
+,,,Other Race,1.01%,0.81%,32422
+,,,White,0.81%,0.67%,89564
+,,,American Indian or Alaska Native,0.69%,0.60%,2167
+,,,None of the above,0.32%,0.25%,28434
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",0.71%,0.57%,167133
+,,Female,Black or African American,1.10%,0.89%,28810
+,,,Native Hawaiian or Other Pacific Islander,-,-,796
+,,,Asian,0.65%,0.51%,8168
+,,,Other Race,1.04%,0.83%,31271
+,,,White,0.90%,0.72%,85346
+,,,American Indian or Alaska Native,0.64%,-,2023
+,,,None of the above,0.31%,0.23%,28583
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",0.77%,0.62%,160923
+,,"Total: Total includes all data under the Less than 18 Years bucket, including data from rows not currently displayed.",Black or African American,1.00%,0.79%,58359
+,,,Native Hawaiian or Other Pacific Islander,0.84%,-,1544
+,,,Asian,0.57%,0.45%,16786
+,,,Other Race,1.02%,0.82%,63718
+,,,White,0.85%,0.69%,175003
+,,,American Indian or Alaska Native,0.67%,0.57%,4192
+,,,None of the above,0.31%,0.24%,57036
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",0.74%,0.60%,328195
+,≥ 18 and < 35 Years,Male,Black or African American,3.98%,3.36%,31496
+,,,Native Hawaiian or Other Pacific Islander,3.67%,2.96%,1282
+,,,Asian,2.67%,2.30%,13019
+,,,Other Race,4.26%,3.43%,34726
+,,,White,2.57%,2.01%,127575
+,,,American Indian or Alaska Native,5.04%,3.87%,2559
+,,,None of the above,2.53%,1.98%,22041
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",2.81%,2.23%,200070
+,,Female,Black or African American,3.90%,3.02%,45582
+,,,Native Hawaiian or Other Pacific Islander,3.53%,2.66%,1843
+,,,Asian,2.44%,1.90%,20038
+,,,Other Race,3.77%,2.74%,53481
+,,,White,2.27%,1.50%,180467
+,,,American Indian or Alaska Native,3.72%,2.75%,4225
+,,,None of the above,1.93%,1.21%,27626
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",2.53%,1.77%,278997
+,,"Total: Total includes all data under the ≥ 18 and &lt; 35 Years bucket, including data from rows not currently displayed.",Black or African American,3.94%,3.16%,77147
+,,,Native Hawaiian or Other Pacific Islander,3.58%,2.78%,3130
+,,,Asian,2.53%,2.06%,33090
+,,,Other Race,3.96%,3.01%,88301
+,,,White,2.39%,1.71%,308391
+,,,American Indian or Alaska Native,4.22%,3.16%,6799
+,,,None of the above,2.20%,1.55%,49687
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",2.65%,1.96%,479532
+,≥ 35 and < 45 Years,Male,Black or African American,12.05%,10.72%,18864
+,,,Native Hawaiian or Other Pacific Islander,14.11%,12.27%,815
+,,,Asian,11.50%,9.74%,7591
+,,,Other Race,11.92%,9.92%,23869
+,,,White,7.58%,5.99%,79715
+,,,American Indian or Alaska Native,12.09%,9.64%,1836
+,,,None of the above,7.94%,6.00%,14016
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",8.70%,7.03%,125025
+,,Female,Black or African American,10.64%,8.53%,25543
+,,,Native Hawaiian or Other Pacific Islander,9.96%,7.54%,1034
+,,,Asian,6.71%,5.07%,11356
+,,,Other Race,9.19%,6.72%,32006
+,,,White,5.78%,3.87%,102439
+,,,American Indian or Alaska Native,8.59%,6.13%,2644
+,,,None of the above,5.26%,3.72%,17188
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",6.67%,4.72%,161757
+,,"Total: Total includes all data under the ≥ 35 and &lt; 45 Years bucket, including data from rows not currently displayed.",Black or African American,11.24%,9.46%,44434
+,,,Native Hawaiian or Other Pacific Islander,11.78%,9.62%,1850
+,,,Asian,8.63%,6.94%,18956
+,,,Other Race,10.36%,8.09%,55898
+,,,White,6.57%,4.80%,182246
+,,,American Indian or Alaska Native,10.01%,7.56%,4485
+,,,None of the above,6.46%,4.74%,31212
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",7.55%,5.73%,286916
+,≥ 45 and < 55 Years,Male,Black or African American,24.70%,21.66%,18367
+,,,Native Hawaiian or Other Pacific Islander,24.78%,22.16%,686
+,,,Asian,21.68%,18.68%,7639
+,,,Other Race,23.73%,20.04%,21212
+,,,White,15.96%,12.58%,89111
+,,,American Indian or Alaska Native,22.26%,18.43%,1644
+,,,None of the above,14.85%,11.26%,13849
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",17.60%,14.20%,132645
+,,Female,Black or African American,21.88%,18.27%,23130
+,,,Native Hawaiian or Other Pacific Islander,20.78%,16.56%,900
+,,,Asian,13.49%,11.35%,10251
+,,,Other Race,18.36%,13.99%,27167
+,,,White,10.89%,7.59%,113269
+,,,American Indian or Alaska Native,18.75%,14.20%,2155
+,,,None of the above,10.03%,7.24%,16195
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",12.67%,9.36%,166779
+,,"Total: Total includes all data under the ≥ 45 and &lt; 55 Years bucket, including data from rows not currently displayed.",Black or African American,23.12%,19.76%,41508
+,,,Native Hawaiian or Other Pacific Islander,22.51%,18.98%,1586
+,,,Asian,16.98%,14.48%,17895
+,,,Other Race,20.71%,16.64%,48387
+,,,White,13.12%,9.79%,202433
+,,,American Indian or Alaska Native,20.26%,16.03%,3800
+,,,None of the above,12.25%,9.09%,30050
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",14.85%,11.50%,299499
+,≥ 55 and < 65 Years,Male,Black or African American,36.05%,31.08%,18275
+,,,Native Hawaiian or Other Pacific Islander,36.14%,31.44%,617
+,,,Asian,33.62%,29.21%,6067
+,,,Other Race,33.32%,27.78%,18649
+,,,White,22.72%,17.59%,117236
+,,,American Indian or Alaska Native,31.06%,25.44%,1423
+,,,None of the above,20.76%,15.54%,13304
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",24.61%,19.47%,157045
+,,Female,Black or African American,34.35%,28.86%,21787
+,,,Native Hawaiian or Other Pacific Islander,33.04%,25.88%,796
+,,,Asian,24.99%,21.54%,7479
+,,,Other Race,28.26%,22.24%,22888
+,,,White,15.40%,10.92%,138976
+,,,American Indian or Alaska Native,26.60%,21.58%,1733
+,,,None of the above,15.22%,10.35%,15576
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",18.19%,13.52%,186227
+,,"Total: Total includes all data under the ≥ 55 and &lt; 65 Years bucket, including data from rows not currently displayed.",Black or African American,35.12%,29.87%,40068
+,,,Native Hawaiian or Other Pacific Islander,34.39%,28.31%,1413
+,,,Asian,28.86%,24.97%,13550
+,,,Other Race,30.53%,24.72%,41544
+,,,White,18.75%,13.97%,256273
+,,,American Indian or Alaska Native,28.61%,23.32%,3156
+,,,None of the above,17.77%,12.74%,28883
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",21.13%,16.24%,343346
+,≥ 65 and < 75 Years,Male,Black or African American,44.88%,37.81%,10801
+,,,Native Hawaiian or Other Pacific Islander,41.80%,34.97%,366
+,,,Asian,43.13%,37.11%,4120
+,,,Other Race,40.07%,32.50%,11580
+,,,White,28.20%,20.93%,97822
+,,,American Indian or Alaska Native,40.54%,34.46%,772
+,,,None of the above,26.05%,18.70%,8721
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",30.05%,22.79%,122542
+,,Female,Black or African American,44.45%,37.13%,14501
+,,,Native Hawaiian or Other Pacific Islander,44.74%,37.41%,532
+,,,Asian,35.63%,29.68%,5304
+,,,Other Race,36.52%,28.10%,14668
+,,,White,20.70%,14.47%,118665
+,,,American Indian or Alaska Native,36.79%,27.95%,984
+,,,None of the above,20.42%,14.24%,10615
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",23.64%,17.27%,150181
+,,"Total: Total includes all data under the ≥ 65 and &lt; 75 Years bucket, including data from rows not currently displayed.",Black or African American,44.63%,37.42%,25305
+,,,Native Hawaiian or Other Pacific Islander,43.54%,36.41%,898
+,,,Asian,38.91%,32.93%,9424
+,,,Other Race,38.08%,30.04%,26251
+,,,White,24.09%,17.39%,216509
+,,,American Indian or Alaska Native,38.44%,30.81%,1756
+,,,None of the above,22.96%,16.26%,19341
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",26.52%,19.75%,272755
+,75 Years or more,Male,Black or African American,45.89%,39.40%,5193
+,,,Native Hawaiian or Other Pacific Islander,40.56%,35.56%,180
+,,,Asian,43.26%,36.43%,2605
+,,,Other Race,40.66%,32.11%,6272
+,,,White,30.61%,22.17%,68015
+,,,American Indian or Alaska Native,43.27%,33.51%,379
+,,,None of the above,29.66%,20.06%,4083
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",31.99%,23.57%,80486
+,,Female,Black or African American,47.31%,39.54%,8834
+,,,Native Hawaiian or Other Pacific Islander,41.69%,33.22%,295
+,,,Asian,39.01%,33.04%,3130
+,,,Other Race,37.91%,28.96%,9151
+,,,White,22.76%,15.85%,96760
+,,,American Indian or Alaska Native,35.55%,29.88%,512
+,,,None of the above,23.37%,16.78%,6312
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",25.27%,18.23%,115901
+,,"Total: Total includes all data under the 75 Years or more bucket, including data from rows not currently displayed.",Black or African American,46.77%,39.48%,14029
+,,,Native Hawaiian or Other Pacific Islander,41.18%,34.03%,476
+,,,Asian,40.95%,34.59%,5736
+,,,Other Race,39.02%,30.23%,15427
+,,,White,26.00%,18.45%,164794
+,,,American Indian or Alaska Native,38.83%,31.43%,891
+,,,None of the above,25.83%,18.06%,10397
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",28.02%,20.42%,196412
+,No value,Male,Black or African American,8.39%,6.10%,20079
+,,,Native Hawaiian or Other Pacific Islander,8.19%,5.62%,623
+,,,Asian,6.91%,4.99%,7370
+,,,Other Race,7.52%,5.24%,23606
+,,,White,8.42%,5.73%,119463
+,,,American Indian or Alaska Native,8.44%,6.47%,1375
+,,,None of the above,4.30%,2.65%,18740
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",7.75%,5.27%,172962
+,,Female,Black or African American,8.87%,6.45%,17608
+,,,Native Hawaiian or Other Pacific Islander,6.48%,4.81%,540
+,,,Asian,5.65%,3.89%,8586
+,,,Other Race,6.71%,4.47%,20899
+,,,White,6.88%,4.46%,109312
+,,,American Indian or Alaska Native,6.85%,4.01%,1197
+,,,None of the above,3.49%,2.36%,15828
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",6.63%,4.39%,156249
+,,"Total: Total includes all data under the No value bucket, including data from rows not currently displayed.",Black or African American,8.61%,6.26%,37697
+,,,Native Hawaiian or Other Pacific Islander,7.39%,5.25%,1163
+,,,Asian,6.23%,4.40%,15967
+,,,Other Race,7.14%,4.87%,44520
+,,,White,7.68%,5.12%,228850
+,,,American Indian or Alaska Native,7.70%,5.32%,2573
+,,,None of the above,3.93%,2.52%,34589
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",7.22%,4.85%,329332
+,"Total: Total includes all data under the Jan 1 – Dec 31 2021 bucket, including data from rows not currently displayed.",Male,Black or African American,15.24%,12.95%,147913
+,,,Native Hawaiian or Other Pacific Islander,15.68%,13.28%,5135
+,,,Asian,14.30%,12.17%,55256
+,,,Other Race,14.05%,11.44%,167140
+,,,White,13.60%,10.19%,762066
+,,,American Indian or Alaska Native,14.25%,11.55%,11740
+,,,None of the above,8.56%,6.24%,119688
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",13.15%,10.08%,1120862
+,,Female,Black or African American,15.55%,12.80%,178759
+,,,Native Hawaiian or Other Pacific Islander,14.71%,11.77%,6432
+,,,Asian,10.72%,8.80%,71808
+,,,Other Race,12.48%,9.45%,203689
+,,,White,10.27%,7.11%,908775
+,,,American Indian or Alaska Native,12.00%,9.14%,14862
+,,,None of the above,6.88%,4.79%,133250
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",10.64%,7.70%,1325410
+,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",Black or African American,15.40%,12.86%,326814
+,,,Native Hawaiian or Other Pacific Islander,15.13%,12.43%,11574
+,,,Asian,12.28%,10.26%,127130
+,,,Other Race,13.18%,10.34%,371004
+,,,White,11.78%,8.51%,1671586
+,,,American Indian or Alaska Native,12.99%,10.20%,26625
+,,,None of the above,7.67%,5.48%,253020
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",11.79%,8.79%,2447313
+Jan 1 – Dec 31 2022,Less than 18 Years,Male,Black or African American,0.81%,0.62%,32992
+,,,Native Hawaiian or Other Pacific Islander,-,-,837
+,,,Asian,0.40%,0.29%,11835
+,,,Other Race,0.89%,0.69%,38860
+,,,White,0.79%,0.65%,100735
+,,,American Indian or Alaska Native,0.58%,0.42%,2606
+,,,None of the above,0.31%,0.24%,33745
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",0.66%,0.53%,192789
+,,Female,Black or African American,0.95%,0.81%,32148
+,,,Native Hawaiian or Other Pacific Islander,-,-,870
+,,,Asian,0.54%,0.39%,10891
+,,,Other Race,0.93%,0.75%,36975
+,,,White,0.81%,0.65%,95519
+,,,American Indian or Alaska Native,0.70%,0.49%,2440
+,,,None of the above,0.33%,0.24%,33779
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",0.69%,0.56%,184779
+,,"Total: Total includes all data under the Less than 18 Years bucket, including data from rows not currently displayed.",Black or African American,0.88%,0.72%,65161
+,,,Native Hawaiian or Other Pacific Islander,0.64%,-,1707
+,,,Asian,0.47%,0.34%,22732
+,,,Other Race,0.91%,0.72%,75863
+,,,White,0.80%,0.65%,196333
+,,,American Indian or Alaska Native,0.63%,0.46%,5047
+,,,None of the above,0.32%,0.24%,67547
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",0.67%,0.54%,377707
+,≥ 18 and < 35 Years,Male,Black or African American,4.11%,3.43%,30197
+,,,Native Hawaiian or Other Pacific Islander,4.59%,3.78%,1242
+,,,Asian,2.80%,2.51%,13599
+,,,Other Race,4.17%,3.41%,36372
+,,,White,2.79%,2.21%,124604
+,,,American Indian or Alaska Native,4.42%,3.58%,2738
+,,,None of the above,2.63%,2.07%,23130
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",2.97%,2.38%,198717
+,,Female,Black or African American,3.83%,3.01%,47145
+,,,Native Hawaiian or Other Pacific Islander,3.67%,2.50%,1881
+,,,Asian,2.66%,2.12%,22059
+,,,Other Race,3.67%,2.69%,58857
+,,,White,2.32%,1.54%,186610
+,,,American Indian or Alaska Native,3.54%,2.59%,4742
+,,,None of the above,2.01%,1.30%,32300
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",2.57%,1.80%,295938
+,,"Total: Total includes all data under the ≥ 18 and &lt; 35 Years bucket, including data from rows not currently displayed.",Black or African American,3.94%,3.17%,77406
+,,,Native Hawaiian or Other Pacific Islander,4.03%,3.01%,3126
+,,,Asian,2.71%,2.26%,35698
+,,,Other Race,3.86%,2.96%,95326
+,,,White,2.51%,1.81%,311586
+,,,American Indian or Alaska Native,3.87%,2.95%,7489
+,,,None of the above,2.27%,1.62%,55458
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",2.73%,2.04%,495149
+,≥ 35 and < 45 Years,Male,Black or African American,12.46%,11.08%,19009
+,,,Native Hawaiian or Other Pacific Islander,14.65%,12.45%,819
+,,,Asian,11.79%,10.38%,8526
+,,,Other Race,11.78%,9.83%,25126
+,,,White,7.63%,6.00%,82113
+,,,American Indian or Alaska Native,11.47%,9.66%,2040
+,,,None of the above,8.32%,6.45%,15294
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",8.85%,7.21%,130230
+,,Female,Black or African American,10.33%,8.28%,27469
+,,,Native Hawaiian or Other Pacific Islander,8.70%,6.70%,1104
+,,,Asian,6.94%,5.44%,13352
+,,,Other Race,8.60%,6.25%,35700
+,,,White,5.73%,3.86%,109905
+,,,American Indian or Alaska Native,7.86%,5.85%,2989
+,,,None of the above,5.08%,3.64%,20494
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",6.57%,4.70%,177412
+,,"Total: Total includes all data under the ≥ 35 and &lt; 45 Years bucket, including data from rows not currently displayed.",Black or African American,11.20%,9.43%,46499
+,,,Native Hawaiian or Other Pacific Islander,11.23%,9.15%,1924
+,,,Asian,8.83%,7.36%,21888
+,,,Other Race,9.91%,7.73%,60854
+,,,White,6.54%,4.78%,192132
+,,,American Indian or Alaska Native,9.33%,7.39%,5036
+,,,None of the above,6.46%,4.84%,35800
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",7.54%,5.76%,307796
+,≥ 45 and < 55 Years,Male,Black or African American,25.03%,21.91%,18560
+,,,Native Hawaiian or Other Pacific Islander,24.62%,21.87%,727
+,,,Asian,22.17%,19.51%,8990
+,,,Other Race,23.54%,19.99%,23042
+,,,White,16.18%,12.79%,91634
+,,,American Indian or Alaska Native,22.06%,17.75%,1786
+,,,None of the above,15.69%,12.12%,15560
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",17.94%,14.55%,139098
+,,Female,Black or African American,21.64%,18.00%,24271
+,,,Native Hawaiian or Other Pacific Islander,19.20%,14.98%,948
+,,,Asian,13.64%,11.90%,12909
+,,,Other Race,17.94%,13.57%,30000
+,,,White,10.92%,7.62%,118643
+,,,American Indian or Alaska Native,18.07%,13.78%,2358
+,,,None of the above,9.96%,7.29%,19222
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",12.66%,9.42%,179664
+,,"Total: Total includes all data under the ≥ 45 and &lt; 55 Years bucket, including data from rows not currently displayed.",Black or African American,23.11%,19.69%,42844
+,,,Native Hawaiian or Other Pacific Islander,21.55%,17.97%,1675
+,,,Asian,17.14%,15.02%,21907
+,,,Other Race,20.37%,16.35%,53051
+,,,White,13.21%,9.87%,210315
+,,,American Indian or Alaska Native,19.78%,15.48%,4146
+,,,None of the above,12.52%,9.45%,34791
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",14.96%,11.66%,318830
+,≥ 55 and < 65 Years,Male,Black or African American,37.15%,32.04%,18965
+,,,Native Hawaiian or Other Pacific Islander,35.82%,31.49%,670
+,,,Asian,34.47%,30.77%,8122
+,,,Other Race,33.64%,28.25%,20788
+,,,White,23.17%,18.07%,125623
+,,,American Indian or Alaska Native,30.53%,24.62%,1572
+,,,None of the above,21.38%,16.27%,16272
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",25.18%,20.10%,171598
+,,Female,Black or African American,34.63%,29.32%,22924
+,,,Native Hawaiian or Other Pacific Islander,31.31%,25.24%,840
+,,,Asian,25.78%,23.22%,10636
+,,,Other Race,28.37%,22.27%,25525
+,,,White,15.53%,11.13%,149826
+,,,American Indian or Alaska Native,26.33%,20.64%,1967
+,,,None of the above,15.46%,11.12%,19506
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",18.45%,13.95%,205875
+,,"Total: Total includes all data under the ≥ 55 and &lt; 65 Years bucket, including data from rows not currently displayed.",Black or African American,35.77%,30.55%,41893
+,,,Native Hawaiian or Other Pacific Islander,33.31%,28.01%,1510
+,,,Asian,29.55%,26.49%,18761
+,,,Other Race,30.73%,24.95%,46320
+,,,White,19.02%,14.29%,275507
+,,,American Indian or Alaska Native,28.20%,22.41%,3539
+,,,None of the above,18.15%,13.46%,35779
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",21.51%,16.75%,377538
+,≥ 65 and < 75 Years,Male,Black or African American,46.55%,38.63%,11547
+,,,Native Hawaiian or Other Pacific Islander,44.92%,37.82%,394
+,,,Asian,42.65%,38.52%,6439
+,,,Other Race,40.95%,33.15%,13169
+,,,White,28.61%,21.32%,109005
+,,,American Indian or Alaska Native,41.32%,32.82%,847
+,,,None of the above,26.66%,19.30%,11486
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",30.64%,23.40%,139704
+,,Female,Black or African American,45.70%,37.75%,15760
+,,,Native Hawaiian or Other Pacific Islander,45.13%,36.46%,565
+,,,Asian,36.64%,31.95%,8389
+,,,Other Race,36.85%,28.35%,16949
+,,,White,20.58%,14.44%,132063
+,,,American Indian or Alaska Native,38.21%,28.46%,1107
+,,,None of the above,19.96%,14.26%,14037
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",23.82%,17.55%,171649
+,,"Total: Total includes all data under the ≥ 65 and &lt; 75 Years bucket, including data from rows not currently displayed.",Black or African American,46.06%,38.12%,27309
+,,,Native Hawaiian or Other Pacific Islander,45.05%,37.02%,959
+,,,Asian,39.25%,34.80%,14828
+,,,Other Race,38.64%,30.45%,30121
+,,,White,24.21%,17.55%,241093
+,,,American Indian or Alaska Native,39.56%,30.35%,1954
+,,,None of the above,22.97%,16.52%,25527
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",26.88%,20.18%,311386
+,75 Years or more,Male,Black or African American,48.22%,40.54%,5612
+,,,Native Hawaiian or Other Pacific Islander,42.38%,35.71%,210
+,,,Asian,43.17%,38.10%,4383
+,,,Other Race,41.90%,32.77%,7568
+,,,White,31.30%,22.48%,80349
+,,,American Indian or Alaska Native,43.09%,32.95%,434
+,,,None of the above,30.57%,20.78%,5986
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",32.79%,24.09%,96972
+,,Female,Black or African American,49.05%,40.56%,9642
+,,,Native Hawaiian or Other Pacific Islander,43.19%,34.20%,345
+,,,Asian,39.44%,34.97%,5487
+,,,Other Race,37.94%,28.99%,11117
+,,,White,23.14%,16.09%,113718
+,,,American Indian or Alaska Native,35.62%,27.76%,598
+,,,None of the above,23.62%,16.52%,8879
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",25.80%,18.66%,138782
+,,"Total: Total includes all data under the 75 Years or more bucket, including data from rows not currently displayed.",Black or African American,48.73%,40.55%,15256
+,,,Native Hawaiian or Other Pacific Islander,42.81%,34.71%,556
+,,,Asian,41.10%,36.36%,9871
+,,,Other Race,39.54%,30.52%,18688
+,,,White,26.52%,18.73%,194083
+,,,American Indian or Alaska Native,38.76%,29.94%,1032
+,,,None of the above,26.41%,18.24%,14867
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",28.67%,20.89%,235775
+,No value,Male,Black or African American,7.38%,5.61%,29854
+,,,Native Hawaiian or Other Pacific Islander,6.29%,4.70%,1001
+,,,Asian,5.05%,3.93%,11922
+,,,Other Race,6.72%,4.67%,32685
+,,,White,7.19%,4.80%,153436
+,,,American Indian or Alaska Native,7.73%,5.08%,1812
+,,,None of the above,3.45%,2.48%,23797
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",6.61%,4.52%,228559
+,,Female,Black or African American,7.64%,5.49%,25738
+,,,Native Hawaiian or Other Pacific Islander,7.07%,5.24%,820
+,,,Asian,3.99%,2.65%,12680
+,,,Other Race,6.11%,4.04%,28246
+,,,White,5.92%,3.69%,139809
+,,,American Indian or Alaska Native,5.75%,3.64%,1566
+,,,None of the above,3.08%,2.13%,19894
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",5.70%,3.66%,204220
+,,"Total: Total includes all data under the No value bucket, including data from rows not currently displayed.",Black or African American,7.50%,5.55%,55632
+,,,Native Hawaiian or Other Pacific Islander,6.63%,4.93%,1825
+,,,Asian,4.51%,3.27%,24623
+,,,Other Race,6.43%,4.37%,60978
+,,,White,6.58%,4.27%,293437
+,,,American Indian or Alaska Native,6.79%,4.43%,3385
+,,,None of the above,3.28%,2.32%,43728
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",6.18%,4.11%,433082
+,"Total: Total includes all data under the Jan 1 – Dec 31 2022 bucket, including data from rows not currently displayed.",Male,Black or African American,15.08%,12.75%,161731
+,,,Native Hawaiian or Other Pacific Islander,15.38%,13.03%,5702
+,,,Asian,15.16%,13.39%,71673
+,,,Other Race,13.81%,11.23%,191740
+,,,White,13.74%,10.29%,837755
+,,,American Indian or Alaska Native,13.53%,10.79%,13375
+,,,None of the above,9.10%,6.77%,141121
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",13.29%,10.24%,1255776
+,,Female,Black or African American,15.26%,12.50%,197715
+,,,Native Hawaiian or Other Pacific Islander,14.35%,11.25%,7100
+,,,Asian,12.03%,10.34%,93214
+,,,Other Race,12.20%,9.23%,234640
+,,,White,10.29%,7.12%,1005341
+,,,American Indian or Alaska Native,11.47%,8.70%,17038
+,,,None of the above,7.11%,5.05%,162274
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",10.68%,7.78%,1499969
+,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",Black or African American,15.17%,12.61%,359611
+,,,Native Hawaiian or Other Pacific Islander,14.80%,12.04%,12811
+,,,Asian,13.39%,11.66%,164974
+,,,Other Race,12.92%,10.12%,426595
+,,,White,11.86%,8.56%,1843971
+,,,American Indian or Alaska Native,12.37%,9.61%,30437
+,,,None of the above,8.04%,5.85%,303508
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",11.86%,8.89%,2756996
+Jan 1 – Dec 31 2023,Less than 18 Years,Male,Black or African American,0.70%,0.53%,37246
+,,,Native Hawaiian or Other Pacific Islander,-,-,981
+,,,Asian,0.38%,0.27%,12918
+,,,Other Race,0.76%,0.59%,45003
+,,,White,0.71%,0.57%,107688
+,,,American Indian or Alaska Native,0.54%,0.39%,3305
+,,,None of the above,0.28%,0.23%,37804
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",0.58%,0.46%,212775
+,,Female,Black or African American,0.82%,0.68%,36379
+,,,Native Hawaiian or Other Pacific Islander,-,-,977
+,,,Asian,0.51%,0.43%,11950
+,,,Other Race,0.82%,0.66%,42510
+,,,White,0.75%,0.61%,102081
+,,,American Indian or Alaska Native,0.54%,0.38%,3121
+,,,None of the above,0.28%,0.19%,37893
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",0.61%,0.49%,204629
+,,"Total: Total includes all data under the Less than 18 Years bucket, including data from rows not currently displayed.",Black or African American,0.76%,0.60%,73641
+,,,Native Hawaiian or Other Pacific Islander,-,-,1958
+,,,Asian,0.44%,0.35%,24878
+,,,Other Race,0.79%,0.63%,87543
+,,,White,0.73%,0.59%,209861
+,,,American Indian or Alaska Native,0.54%,0.39%,6427
+,,,None of the above,0.28%,0.21%,75718
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",0.60%,0.48%,417553
+,≥ 18 and < 35 Years,Male,Black or African American,3.88%,3.15%,33408
+,,,Native Hawaiian or Other Pacific Islander,4.34%,3.27%,1406
+,,,Asian,2.52%,2.21%,15249
+,,,Other Race,3.95%,3.27%,41553
+,,,White,2.72%,2.14%,133366
+,,,American Indian or Alaska Native,3.83%,3.03%,3364
+,,,None of the above,2.44%,1.94%,28776
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",2.84%,2.27%,220994
+,,Female,Black or African American,3.55%,2.72%,54073
+,,,Native Hawaiian or Other Pacific Islander,3.32%,2.17%,2170
+,,,Asian,2.45%,1.89%,25204
+,,,Other Race,3.44%,2.44%,67516
+,,,White,2.21%,1.46%,203398
+,,,American Indian or Alaska Native,2.87%,1.96%,5724
+,,,None of the above,1.82%,1.14%,40197
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",2.41%,1.66%,334472
+,,"Total: Total includes all data under the ≥ 18 and &lt; 35 Years bucket, including data from rows not currently displayed.",Black or African American,3.67%,2.88%,87548
+,,,Native Hawaiian or Other Pacific Islander,3.71%,2.60%,3581
+,,,Asian,2.47%,2.01%,40504
+,,,Other Race,3.64%,2.76%,109178
+,,,White,2.41%,1.73%,337231
+,,,American Indian or Alaska Native,3.23%,2.36%,9100
+,,,None of the above,2.08%,1.47%,69020
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",2.58%,1.90%,556093
+,≥ 35 and < 45 Years,Male,Black or African American,11.42%,9.92%,21996
+,,,Native Hawaiian or Other Pacific Islander,12.32%,10.56%,966
+,,,Asian,11.14%,9.85%,9712
+,,,Other Race,10.65%,8.71%,29129
+,,,White,7.05%,5.49%,90840
+,,,American Indian or Alaska Native,10.83%,8.87%,2391
+,,,None of the above,7.56%,5.95%,19037
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",8.20%,6.61%,148563
+,,Female,Black or African American,9.52%,7.47%,31889
+,,,Native Hawaiian or Other Pacific Islander,8.09%,6.25%,1248
+,,,Asian,6.57%,5.14%,15122
+,,,Other Race,7.90%,5.71%,41121
+,,,White,5.35%,3.56%,120903
+,,,American Indian or Alaska Native,7.29%,5.35%,3511
+,,,None of the above,4.72%,3.34%,24691
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",6.12%,4.33%,200600
+,,"Total: Total includes all data under the ≥ 35 and &lt; 45 Years bucket, including data from rows not currently displayed.",Black or African American,10.30%,8.47%,53912
+,,,Native Hawaiian or Other Pacific Islander,9.93%,8.12%,2216
+,,,Asian,8.35%,6.98%,24850
+,,,Other Race,9.04%,6.96%,70285
+,,,White,6.08%,4.39%,211878
+,,,American Indian or Alaska Native,8.75%,6.77%,5911
+,,,None of the above,5.96%,4.48%,43744
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",7.00%,5.30%,349354
+,≥ 45 and < 55 Years,Male,Black or African American,24.06%,20.82%,20206
+,,,Native Hawaiian or Other Pacific Islander,22.89%,20.40%,843
+,,,Asian,21.19%,18.69%,10053
+,,,Other Race,22.44%,18.84%,26149
+,,,White,15.42%,12.14%,96850
+,,,American Indian or Alaska Native,21.10%,17.61%,2033
+,,,None of the above,15.15%,11.84%,18220
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",17.19%,13.90%,150977
+,,Female,Black or African American,20.24%,16.64%,26491
+,,,Native Hawaiian or Other Pacific Islander,19.13%,15.15%,1056
+,,,Asian,12.97%,11.18%,14429
+,,,Other Race,16.82%,12.69%,33683
+,,,White,10.37%,7.18%,123956
+,,,American Indian or Alaska Native,16.22%,12.45%,2675
+,,,None of the above,9.43%,6.79%,21967
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",12.03%,8.88%,192903
+,,"Total: Total includes all data under the ≥ 45 and &lt; 55 Years bucket, including data from rows not currently displayed.",Black or African American,21.89%,18.45%,46706
+,,,Native Hawaiian or Other Pacific Islander,20.80%,17.48%,1899
+,,,Asian,16.34%,14.26%,24492
+,,,Other Race,19.28%,15.38%,59838
+,,,White,12.59%,9.35%,220871
+,,,American Indian or Alaska Native,18.32%,14.67%,4710
+,,,None of the above,12.02%,9.08%,40198
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",14.29%,11.08%,343974
+,≥ 55 and < 65 Years,Male,Black or African American,36.58%,31.20%,20355
+,,,Native Hawaiian or Other Pacific Islander,34.39%,29.50%,756
+,,,Asian,33.72%,30.06%,9439
+,,,Other Race,32.68%,27.29%,23361
+,,,White,22.65%,17.58%,131880
+,,,American Indian or Alaska Native,30.11%,24.46%,1807
+,,,None of the above,20.76%,15.90%,18899
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",24.68%,19.63%,184002
+,,Female,Black or African American,33.82%,28.38%,24785
+,,,Native Hawaiian or Other Pacific Islander,31.44%,25.11%,916
+,,,Asian,24.52%,21.95%,12226
+,,,Other Race,27.22%,21.38%,28340
+,,,White,15.20%,10.76%,156806
+,,,American Indian or Alaska Native,25.36%,19.67%,2145
+,,,None of the above,15.03%,10.78%,22224
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",18.07%,13.58%,219722
+,,"Total: Total includes all data under the ≥ 55 and &lt; 65 Years bucket, including data from rows not currently displayed.",Black or African American,35.06%,29.65%,45144
+,,,Native Hawaiian or Other Pacific Islander,32.78%,27.09%,1672
+,,,Asian,28.53%,25.48%,21668
+,,,Other Race,29.68%,24.05%,51707
+,,,White,18.60%,13.88%,288737
+,,,American Indian or Alaska Native,27.53%,21.86%,3952
+,,,None of the above,17.66%,13.13%,41129
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",21.08%,16.34%,403787
+,≥ 65 and < 75 Years,Male,Black or African American,46.30%,38.08%,12917
+,,,Native Hawaiian or Other Pacific Islander,43.98%,37.20%,457
+,,,Asian,42.20%,38.17%,7720
+,,,Other Race,40.34%,32.40%,15041
+,,,White,28.04%,20.75%,118309
+,,,American Indian or Alaska Native,41.42%,32.53%,956
+,,,None of the above,26.31%,18.96%,13613
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",30.20%,22.94%,154224
+,,Female,Black or African American,45.16%,37.38%,17653
+,,,Native Hawaiian or Other Pacific Islander,43.51%,35.05%,639
+,,,Asian,35.47%,31.22%,9951
+,,,Other Race,36.64%,27.85%,19486
+,,,White,20.02%,13.92%,141580
+,,,American Indian or Alaska Native,37.64%,27.48%,1270
+,,,None of the above,19.78%,14.09%,16411
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",23.42%,17.21%,187472
+,,"Total: Total includes all data under the ≥ 65 and &lt; 75 Years bucket, including data from rows not currently displayed.",Black or African American,45.64%,37.67%,30572
+,,,Native Hawaiian or Other Pacific Islander,43.70%,35.95%,1096
+,,,Asian,38.41%,34.26%,17671
+,,,Other Race,38.25%,29.83%,34529
+,,,White,23.67%,17.03%,259924
+,,,American Indian or Alaska Native,39.26%,29.65%,2226
+,,,None of the above,22.74%,16.30%,30032
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",26.48%,19.80%,341743
+,75 Years or more,Male,Black or African American,49.41%,40.48%,6327
+,,,Native Hawaiian or Other Pacific Islander,43.75%,38.84%,224
+,,,Asian,44.05%,38.58%,5199
+,,,Other Race,41.94%,32.45%,8773
+,,,White,31.33%,22.08%,87685
+,,,American Indian or Alaska Native,42.77%,31.77%,491
+,,,None of the above,29.84%,20.02%,7423
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",32.96%,23.80%,107531
+,,Female,Black or African American,49.51%,40.59%,10821
+,,,Native Hawaiian or Other Pacific Islander,43.67%,35.98%,403
+,,,Asian,39.80%,35.24%,6611
+,,,Other Race,38.50%,29.09%,12728
+,,,White,23.15%,15.84%,123311
+,,,American Indian or Alaska Native,37.30%,29.36%,705
+,,,None of the above,23.21%,15.74%,10710
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",25.94%,18.54%,152715
+,,"Total: Total includes all data under the 75 Years or more bucket, including data from rows not currently displayed.",Black or African American,49.46%,40.54%,17150
+,,,Native Hawaiian or Other Pacific Islander,43.56%,36.88%,629
+,,,Asian,41.67%,36.71%,11811
+,,,Other Race,39.89%,30.45%,21509
+,,,White,26.55%,18.43%,211022
+,,,American Indian or Alaska Native,39.55%,30.35%,1196
+,,,None of the above,25.92%,17.49%,18134
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",28.84%,20.71%,260276
+,No value,Male,Black or African American,6.37%,4.96%,34186
+,,,Native Hawaiian or Other Pacific Islander,5.86%,3.84%,1041
+,,,Asian,4.98%,3.83%,14809
+,,,Other Race,6.08%,4.31%,37206
+,,,White,6.73%,4.48%,168491
+,,,American Indian or Alaska Native,7.52%,5.56%,1995
+,,,None of the above,3.29%,2.18%,27667
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",6.07%,4.14%,255861
+,,Female,Black or African American,6.62%,4.70%,29726
+,,,Native Hawaiian or Other Pacific Islander,5.94%,3.13%,926
+,,,Asian,3.62%,2.65%,15533
+,,,Other Race,5.44%,3.54%,32764
+,,,White,5.65%,3.52%,154484
+,,,American Indian or Alaska Native,5.91%,4.72%,1778
+,,,None of the above,2.75%,1.88%,23505
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",5.28%,3.39%,230525
+,,"Total: Total includes all data under the No value bucket, including data from rows not currently displayed.",Black or African American,6.48%,4.84%,63965
+,,,Native Hawaiian or Other Pacific Islander,5.89%,3.51%,1968
+,,,Asian,4.28%,3.22%,30361
+,,,Other Race,5.78%,3.94%,70024
+,,,White,6.21%,4.02%,323199
+,,,American Indian or Alaska Native,6.75%,5.16%,3777
+,,,None of the above,3.04%,2.04%,51215
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",5.69%,3.78%,486735
+,"Total: Total includes all data under the Jan 1 – Dec 31 2023 bucket, including data from rows not currently displayed.",Male,Black or African American,14.40%,12.05%,181220
+,,,Native Hawaiian or Other Pacific Islander,14.41%,12.13%,6440
+,,,Asian,14.93%,13.16%,82621
+,,,Other Race,13.16%,10.65%,219410
+,,,White,13.36%,9.91%,903018
+,,,American Indian or Alaska Native,12.76%,10.17%,15770
+,,,None of the above,8.86%,6.58%,166490
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",12.83%,9.81%,1388795
+,,Female,Black or African American,14.44%,11.73%,223481
+,,,Native Hawaiian or Other Pacific Islander,13.60%,10.59%,7976
+,,,Asian,11.64%,10.02%,107220
+,,,Other Race,11.61%,8.71%,267591
+,,,White,9.95%,6.82%,1082988
+,,,American Indian or Alaska Native,10.62%,8.03%,20072
+,,,None of the above,6.82%,4.79%,190769
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",10.25%,7.42%,1658761
+,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",Black or African American,14.42%,11.87%,404876
+,,,Native Hawaiian or Other Pacific Islander,13.95%,11.27%,14425
+,,,Asian,13.07%,11.38%,189949
+,,,Other Race,12.30%,9.58%,487242
+,,,White,11.50%,8.22%,1987069
+,,,American Indian or Alaska Native,11.56%,8.97%,35869
+,,,None of the above,7.77%,5.62%,357407
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",11.43%,8.50%,3049062
+Jan 1 – Dec 31 2024,Less than 18 Years,Male,Black or African American,0.68%,0.51%,47616
+,,,Native Hawaiian or Other Pacific Islander,-,-,1220
+,,,Asian,0.41%,0.31%,16956
+,,,Other Race,0.86%,0.68%,58359
+,,,White,0.93%,0.76%,139478
+,,,American Indian or Alaska Native,0.52%,0.34%,3867
+,,,None of the above,0.39%,0.30%,50375
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",0.71%,0.57%,277622
+,,Female,Black or African American,0.87%,0.68%,45487
+,,,Native Hawaiian or Other Pacific Islander,-,-,1170
+,,,Asian,0.54%,0.41%,15242
+,,,Other Race,0.90%,0.72%,53968
+,,,White,0.95%,0.77%,129265
+,,,American Indian or Alaska Native,0.38%,0.30%,3669
+,,,None of the above,0.43%,0.31%,49994
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",0.75%,0.60%,261872
+,,"Total: Total includes all data under the Less than 18 Years bucket, including data from rows not currently displayed.",Black or African American,0.77%,0.59%,93133
+,,,Native Hawaiian or Other Pacific Islander,-,-,2390
+,,,Asian,0.47%,0.36%,32216
+,,,Other Race,0.88%,0.70%,112364
+,,,White,0.94%,0.77%,268874
+,,,American Indian or Alaska Native,0.45%,0.32%,7537
+,,,None of the above,0.41%,0.31%,100397
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",0.73%,0.58%,539713
+,≥ 18 and < 35 Years,Male,Black or African American,3.92%,3.11%,35611
+,,,Native Hawaiian or Other Pacific Islander,3.96%,2.87%,1465
+,,,Asian,2.66%,2.18%,16783
+,,,Other Race,4.30%,3.48%,45885
+,,,White,3.04%,2.36%,143075
+,,,American Indian or Alaska Native,3.73%,2.96%,3647
+,,,None of the above,2.47%,1.88%,33052
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",3.04%,2.37%,240982
+,,Female,Black or African American,3.51%,2.61%,59692
+,,,Native Hawaiian or Other Pacific Islander,3.20%,2.02%,2281
+,,,Asian,2.49%,1.87%,27200
+,,,Other Race,3.43%,2.42%,74741
+,,,White,2.31%,1.54%,218570
+,,,American Indian or Alaska Native,2.54%,1.74%,6257
+,,,None of the above,1.76%,1.14%,46200
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",2.44%,1.68%,366560
+,,"Total: Total includes all data under the ≥ 18 and &lt; 35 Years bucket, including data from rows not currently displayed.",Black or African American,3.66%,2.80%,95373
+,,,Native Hawaiian or Other Pacific Islander,3.50%,2.35%,3748
+,,,Asian,2.55%,1.98%,44040
+,,,Other Race,3.76%,2.82%,120750
+,,,White,2.60%,1.87%,362198
+,,,American Indian or Alaska Native,2.97%,2.20%,9916
+,,,None of the above,2.06%,1.45%,79315
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",2.68%,1.95%,608282
+,≥ 35 and < 45 Years,Male,Black or African American,11.11%,9.40%,24229
+,,,Native Hawaiian or Other Pacific Islander,11.76%,9.26%,1037
+,,,Asian,10.65%,8.94%,11046
+,,,Other Race,10.52%,8.49%,32512
+,,,White,6.97%,5.28%,98260
+,,,American Indian or Alaska Native,10.43%,8.32%,2607
+,,,None of the above,7.30%,5.65%,21398
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",8.06%,6.32%,163229
+,,Female,Black or African American,8.95%,6.97%,35934
+,,,Native Hawaiian or Other Pacific Islander,7.68%,5.24%,1355
+,,,Asian,6.40%,4.80%,17086
+,,,Other Race,7.56%,5.33%,46441
+,,,White,5.23%,3.40%,132700
+,,,American Indian or Alaska Native,7.37%,5.48%,3851
+,,,None of the above,4.57%,3.14%,28110
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",5.92%,4.10%,223318
+,,"Total: Total includes all data under the ≥ 35 and &lt; 45 Years bucket, including data from rows not currently displayed.",Black or African American,9.82%,7.95%,60191
+,,,Native Hawaiian or Other Pacific Islander,9.44%,6.98%,2394
+,,,Asian,8.06%,6.42%,28149
+,,,Other Race,8.78%,6.63%,78992
+,,,White,5.97%,4.20%,231140
+,,,American Indian or Alaska Native,8.63%,6.62%,6468
+,,,None of the above,5.75%,4.23%,49535
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",6.82%,5.04%,386800
+,≥ 45 and < 55 Years,Male,Black or African American,23.24%,19.71%,21839
+,,,Native Hawaiian or Other Pacific Islander,22.93%,20.43%,881
+,,,Asian,20.93%,18.17%,11459
+,,,Other Race,21.41%,17.53%,30121
+,,,White,14.98%,11.54%,104148
+,,,American Indian or Alaska Native,20.75%,17.63%,2207
+,,,None of the above,15.03%,11.55%,20130
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",16.76%,13.29%,164401
+,,Female,Black or African American,19.03%,15.22%,29527
+,,,Native Hawaiian or Other Pacific Islander,16.80%,13.28%,1137
+,,,Asian,12.55%,10.40%,16877
+,,,Other Race,15.59%,11.51%,39333
+,,,White,9.93%,6.75%,136679
+,,,American Indian or Alaska Native,15.73%,11.88%,2987
+,,,None of the above,9.26%,6.71%,24118
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",11.53%,8.34%,214650
+,,"Total: Total includes all data under the ≥ 45 and &lt; 55 Years bucket, including data from rows not currently displayed.",Black or African American,20.81%,17.13%,51380
+,,,Native Hawaiian or Other Pacific Islander,19.47%,16.40%,2018
+,,,Asian,15.94%,13.54%,28346
+,,,Other Race,18.11%,14.12%,69466
+,,,White,12.11%,8.82%,240912
+,,,American Indian or Alaska Native,17.86%,14.32%,5196
+,,,None of the above,11.89%,8.91%,44262
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",13.80%,10.49%,379173
+,≥ 55 and < 65 Years,Male,Black or African American,36.22%,30.62%,22116
+,,,Native Hawaiian or Other Pacific Islander,33.62%,27.81%,809
+,,,Asian,32.71%,28.90%,11064
+,,,Other Race,31.73%,26.19%,27873
+,,,White,22.43%,17.15%,145083
+,,,American Indian or Alaska Native,29.30%,23.81%,1949
+,,,None of the above,20.42%,15.33%,20989
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",24.42%,19.17%,203605
+,,Female,Black or African American,33.22%,27.29%,27597
+,,,Native Hawaiian or Other Pacific Islander,30.83%,24.25%,973
+,,,Asian,23.20%,20.44%,14665
+,,,Other Race,25.57%,19.56%,34075
+,,,White,14.88%,10.38%,175494
+,,,American Indian or Alaska Native,24.28%,18.39%,2393
+,,,None of the above,14.85%,10.42%,24309
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",17.70%,13.07%,246751
+,,"Total: Total includes all data under the ≥ 55 and &lt; 65 Years bucket, including data from rows not currently displayed.",Black or African American,34.55%,28.77%,49717
+,,,Native Hawaiian or Other Pacific Islander,32.10%,25.87%,1782
+,,,Asian,27.29%,24.08%,25736
+,,,Other Race,28.34%,22.54%,61955
+,,,White,18.30%,13.44%,320625
+,,,American Indian or Alaska Native,26.53%,20.82%,4342
+,,,None of the above,17.42%,12.69%,45311
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",20.74%,15.83%,450430
+,≥ 65 and < 75 Years,Male,Black or African American,46.15%,37.36%,14960
+,,,Native Hawaiian or Other Pacific Islander,43.26%,37.00%,527
+,,,Asian,41.99%,37.23%,9250
+,,,Other Race,39.13%,31.09%,19313
+,,,White,27.74%,20.27%,138379
+,,,American Indian or Alaska Native,40.28%,31.11%,1080
+,,,None of the above,25.91%,18.38%,15694
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",29.95%,22.46%,180580
+,,Female,Black or African American,44.71%,36.12%,20911
+,,,Native Hawaiian or Other Pacific Islander,42.49%,33.62%,699
+,,,Asian,34.94%,30.67%,11868
+,,,Other Race,34.67%,26.08%,24600
+,,,White,19.51%,13.38%,167494
+,,,American Indian or Alaska Native,36.18%,26.15%,1476
+,,,None of the above,19.88%,13.71%,18725
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",22.99%,16.63%,221639
+,,"Total: Total includes all data under the ≥ 65 and &lt; 75 Years bucket, including data from rows not currently displayed.",Black or African American,45.31%,36.63%,35874
+,,,Native Hawaiian or Other Pacific Islander,42.82%,35.07%,1226
+,,,Asian,38.03%,33.54%,21118
+,,,Other Race,36.63%,28.28%,43918
+,,,White,23.24%,16.49%,305922
+,,,American Indian or Alaska Native,37.91%,28.25%,2556
+,,,None of the above,22.63%,15.84%,34426
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",26.12%,19.25%,402281
+,75 Years or more,Male,Black or African American,51.01%,40.89%,7758
+,,,Native Hawaiian or Other Pacific Islander,43.64%,36.36%,275
+,,,Asian,44.61%,38.64%,6398
+,,,Other Race,41.27%,31.66%,11741
+,,,White,31.18%,21.57%,105577
+,,,American Indian or Alaska Native,43.94%,33.39%,569
+,,,None of the above,29.56%,19.42%,9047
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",33.00%,23.43%,129985
+,,Female,Black or African American,49.94%,39.74%,13287
+,,,Native Hawaiian or Other Pacific Islander,45.64%,37.55%,482
+,,,Asian,40.44%,35.61%,8173
+,,,Other Race,37.64%,27.88%,16900
+,,,White,23.17%,15.48%,148232
+,,,American Indian or Alaska Native,38.75%,28.65%,862
+,,,None of the above,23.57%,15.59%,12768
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",26.13%,18.28%,184254
+,,"Total: Total includes all data under the 75 Years or more bucket, including data from rows not currently displayed.",Black or African American,50.33%,40.16%,21046
+,,,Native Hawaiian or Other Pacific Islander,44.91%,37.12%,757
+,,,Asian,42.28%,36.94%,14573
+,,,Other Race,39.12%,29.42%,28647
+,,,White,26.50%,18.01%,253837
+,,,American Indian or Alaska Native,40.81%,30.54%,1431
+,,,None of the above,26.05%,17.17%,21819
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",28.97%,20.41%,314276
+,No value,Male,Black or African American,6.44%,5.16%,32263
+,,,Native Hawaiian or Other Pacific Islander,6.27%,4.92%,1037
+,,,Asian,6.06%,4.92%,13290
+,,,Other Race,5.51%,4.14%,36878
+,,,White,7.30%,4.97%,147645
+,,,American Indian or Alaska Native,6.94%,5.10%,2235
+,,,None of the above,3.65%,2.48%,27457
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",6.43%,4.52%,233307
+,,Female,Black or African American,6.25%,4.81%,28428
+,,,Native Hawaiian or Other Pacific Islander,5.93%,3.96%,910
+,,,Asian,4.09%,3.36%,14812
+,,,Other Race,5.23%,3.47%,31999
+,,,White,6.07%,3.98%,138338
+,,,American Indian or Alaska Native,5.50%,3.86%,1890
+,,,None of the above,3.10%,2.09%,24261
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",5.51%,3.72%,214533
+,,"Total: Total includes all data under the No value bucket, including data from rows not currently displayed.",Black or African American,6.35%,4.99%,60724
+,,,Native Hawaiian or Other Pacific Islander,6.10%,4.46%,1950
+,,,Asian,5.02%,4.09%,28126
+,,,Other Race,5.38%,3.82%,68912
+,,,White,6.70%,4.49%,286148
+,,,American Indian or Alaska Native,6.28%,4.53%,4127
+,,,None of the above,3.39%,2.29%,51759
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",5.98%,4.14%,448101
+,"Total: Total includes all data under the Jan 1 – Dec 31 2024 bucket, including data from rows not currently displayed.",Male,Black or African American,14.33%,11.80%,200203
+,,,Native Hawaiian or Other Pacific Islander,14.38%,11.95%,7004
+,,,Asian,15.45%,13.42%,93178
+,,,Other Race,13.22%,10.58%,254393
+,,,White,13.71%,10.03%,985015
+,,,American Indian or Alaska Native,12.36%,9.80%,17538
+,,,None of the above,8.67%,6.30%,192508
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",12.99%,9.79%,1540528
+,,Female,Black or African American,14.34%,11.46%,251055
+,,,Native Hawaiian or Other Pacific Islander,13.43%,10.34%,8653
+,,,Asian,11.97%,10.21%,121443
+,,,Other Race,11.51%,8.50%,309839
+,,,White,10.13%,6.86%,1196629
+,,,American Indian or Alaska Native,10.34%,7.65%,22409
+,,,None of the above,6.67%,4.59%,220705
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",10.32%,7.36%,1859340
+,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",Black or African American,14.33%,11.61%,451437
+,,,Native Hawaiian or Other Pacific Islander,13.85%,11.06%,15664
+,,,Asian,13.47%,11.60%,214751
+,,,Other Race,12.28%,9.43%,564494
+,,,White,11.74%,8.28%,2182848
+,,,American Indian or Alaska Native,11.22%,8.59%,39974
+,,,None of the above,7.60%,5.38%,413408
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",11.53%,8.46%,3401592
+Jan 1 – Dec 17 2025,Less than 18 Years,Male,Black or African American,0.63%,0.46%,48296
+,,,Native Hawaiian or Other Pacific Islander,-,-,1208
+,,,Asian,0.39%,0.30%,16709
+,,,Other Race,0.79%,0.62%,58991
+,,,White,0.90%,0.73%,138250
+,,,American Indian or Alaska Native,0.51%,0.36%,3904
+,,,None of the above,0.36%,0.27%,54856
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",0.67%,0.53%,282304
+,,Female,Black or African American,0.80%,0.62%,45810
+,,,Native Hawaiian or Other Pacific Islander,-,-,1151
+,,,Asian,0.51%,0.36%,14964
+,,,Other Race,0.83%,0.65%,54281
+,,,White,0.91%,0.73%,128029
+,,,American Indian or Alaska Native,0.36%,0.30%,3649
+,,,None of the above,0.41%,0.29%,54188
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",0.71%,0.56%,265649
+,,"Total: Total includes all data under the Less than 18 Years bucket, including data from rows not currently displayed.",Black or African American,0.71%,0.54%,94141
+,,,Native Hawaiian or Other Pacific Islander,-,-,2359
+,,,Asian,0.45%,0.33%,31693
+,,,Other Race,0.81%,0.64%,113314
+,,,White,0.90%,0.73%,266415
+,,,American Indian or Alaska Native,0.44%,0.33%,7555
+,,,None of the above,0.39%,0.28%,109078
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",0.69%,0.54%,548189
+,≥ 18 and < 35 Years,Male,Black or African American,3.87%,3.03%,34356
+,,,Native Hawaiian or Other Pacific Islander,4.30%,3.02%,1257
+,,,Asian,2.69%,2.18%,15838
+,,,Other Race,4.40%,3.55%,44285
+,,,White,3.14%,2.45%,136073
+,,,American Indian or Alaska Native,3.55%,2.75%,3497
+,,,None of the above,2.52%,1.94%,32771
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",3.11%,2.41%,231437
+,,Female,Black or African American,3.39%,2.48%,59251
+,,,Native Hawaiian or Other Pacific Islander,2.97%,1.93%,2121
+,,,Asian,2.45%,1.84%,26083
+,,,Other Race,3.33%,2.39%,74036
+,,,White,2.30%,1.55%,214421
+,,,American Indian or Alaska Native,2.32%,1.61%,6159
+,,,None of the above,1.69%,1.10%,46958
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",2.40%,1.65%,362587
+,,"Total: Total includes all data under the ≥ 18 and &lt; 35 Years bucket, including data from rows not currently displayed.",Black or African American,3.57%,2.68%,93675
+,,,Native Hawaiian or Other Pacific Islander,3.46%,2.34%,3379
+,,,Asian,2.54%,1.97%,41972
+,,,Other Race,3.73%,2.82%,118443
+,,,White,2.63%,1.90%,351067
+,,,American Indian or Alaska Native,2.76%,2.03%,9669
+,,,None of the above,2.03%,1.44%,79804
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",2.67%,1.95%,594793
+,≥ 35 and < 45 Years,Male,Black or African American,11.09%,9.36%,23739
+,,,Native Hawaiian or Other Pacific Islander,11.77%,9.62%,977
+,,,Asian,10.48%,8.83%,10902
+,,,Other Race,10.34%,8.35%,32319
+,,,White,6.84%,5.18%,97756
+,,,American Indian or Alaska Native,10.57%,8.35%,2610
+,,,None of the above,7.10%,5.38%,21295
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",7.95%,6.22%,161964
+,,Female,Black or African American,8.62%,6.66%,37044
+,,,Native Hawaiian or Other Pacific Islander,7.93%,5.29%,1362
+,,,Asian,6.19%,4.64%,17387
+,,,Other Race,7.19%,4.97%,47830
+,,,White,4.96%,3.16%,136255
+,,,American Indian or Alaska Native,6.94%,5.10%,3918
+,,,None of the above,4.40%,3.00%,28674
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",5.65%,3.86%,229268
+,,"Total: Total includes all data under the ≥ 35 and &lt; 45 Years bucket, including data from rows not currently displayed.",Black or African American,9.59%,7.71%,60812
+,,,Native Hawaiian or Other Pacific Islander,9.53%,7.09%,2341
+,,,Asian,7.83%,6.25%,28310
+,,,Other Race,8.47%,6.33%,80199
+,,,White,5.75%,4.00%,234217
+,,,American Indian or Alaska Native,8.41%,6.39%,6537
+,,,None of the above,5.55%,4.01%,49995
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",6.60%,4.84%,391518
+,≥ 45 and < 55 Years,Male,Black or African American,22.61%,19.03%,22242
+,,,Native Hawaiian or Other Pacific Islander,22.69%,19.75%,886
+,,,Asian,20.80%,17.83%,11503
+,,,Other Race,20.51%,16.65%,31217
+,,,White,14.50%,11.02%,104881
+,,,American Indian or Alaska Native,20.15%,16.97%,2263
+,,,None of the above,14.74%,11.42%,20332
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",16.33%,12.81%,166293
+,,Female,Black or African American,17.99%,14.27%,30691
+,,,Native Hawaiian or Other Pacific Islander,14.47%,11.61%,1189
+,,,Asian,11.90%,9.68%,17408
+,,,Other Race,14.49%,10.67%,41639
+,,,White,9.39%,6.29%,140669
+,,,American Indian or Alaska Native,15.11%,11.24%,3097
+,,,None of the above,8.96%,6.49%,24711
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",10.96%,7.84%,221770
+,,"Total: Total includes all data under the ≥ 45 and &lt; 55 Years bucket, including data from rows not currently displayed.",Black or African American,19.93%,16.27%,52950
+,,,Native Hawaiian or Other Pacific Islander,17.97%,15.08%,2076
+,,,Asian,15.44%,12.92%,28922
+,,,Other Race,17.07%,13.23%,72878
+,,,White,11.57%,8.31%,245650
+,,,American Indian or Alaska Native,17.22%,13.64%,5365
+,,,None of the above,11.57%,8.71%,45066
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",13.26%,9.96%,388215
+,≥ 55 and < 65 Years,Male,Black or African American,35.82%,29.76%,22714
+,,,Native Hawaiian or Other Pacific Islander,32.53%,26.36%,793
+,,,Asian,31.88%,28.09%,11526
+,,,Other Race,30.74%,25.20%,29509
+,,,White,21.92%,16.58%,148646
+,,,American Indian or Alaska Native,29.12%,23.45%,2047
+,,,None of the above,20.35%,15.16%,21503
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",23.98%,18.62%,209225
+,,Female,Black or African American,31.86%,25.99%,28629
+,,,Native Hawaiian or Other Pacific Islander,29.12%,22.69%,996
+,,,Asian,22.19%,19.52%,15554
+,,,Other Race,24.28%,18.26%,36533
+,,,White,14.37%,9.80%,183288
+,,,American Indian or Alaska Native,23.81%,17.93%,2516
+,,,None of the above,14.55%,10.15%,24873
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",17.08%,12.41%,257673
+,,"Total: Total includes all data under the ≥ 55 and &lt; 65 Years bucket, including data from rows not currently displayed.",Black or African American,33.61%,27.66%,51348
+,,,Native Hawaiian or Other Pacific Islander,30.63%,24.32%,1789
+,,,Asian,26.31%,23.16%,27088
+,,,Other Race,27.16%,21.36%,66053
+,,,White,17.75%,12.84%,331994
+,,,American Indian or Alaska Native,26.18%,20.40%,4564
+,,,None of the above,17.23%,12.47%,46393
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",20.17%,15.19%,466992
+,≥ 65 and < 75 Years,Male,Black or African American,45.37%,36.36%,16259
+,,,Native Hawaiian or Other Pacific Islander,42.73%,35.90%,571
+,,,Asian,42.51%,37.31%,9605
+,,,Other Race,38.05%,29.89%,21203
+,,,White,27.14%,19.60%,149685
+,,,American Indian or Alaska Native,39.43%,29.91%,1187
+,,,None of the above,25.57%,18.03%,16865
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",29.40%,21.81%,195011
+,,Female,Black or African American,43.82%,35.15%,22504
+,,,Native Hawaiian or Other Pacific Islander,41.90%,32.93%,735
+,,,Asian,33.87%,29.17%,12597
+,,,Other Race,33.20%,24.62%,26965
+,,,White,18.84%,12.67%,181455
+,,,American Indian or Alaska Native,34.37%,24.55%,1609
+,,,None of the above,19.32%,13.30%,19856
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",22.27%,15.87%,239466
+,,"Total: Total includes all data under the ≥ 65 and &lt; 75 Years bucket, including data from rows not currently displayed.",Black or African American,44.47%,35.65%,38766
+,,,Native Hawaiian or Other Pacific Islander,42.27%,34.23%,1306
+,,,Asian,37.60%,32.69%,22204
+,,,Other Race,35.33%,26.94%,48173
+,,,White,22.59%,15.80%,331202
+,,,American Indian or Alaska Native,36.52%,26.82%,2796
+,,,None of the above,22.19%,15.47%,36730
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",25.47%,18.54%,434556
+,75 Years or more,Male,Black or African American,50.48%,39.67%,8621
+,,,Native Hawaiian or Other Pacific Islander,44.52%,37.54%,301
+,,,Asian,44.70%,38.63%,6964
+,,,Other Race,41.18%,31.13%,13085
+,,,White,30.81%,21.00%,115889
+,,,American Indian or Alaska Native,43.36%,32.25%,648
+,,,None of the above,29.19%,19.00%,10129
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",32.68%,22.90%,142996
+,,Female,Black or African American,49.32%,38.76%,14751
+,,,Native Hawaiian or Other Pacific Islander,45.95%,36.68%,518
+,,,Asian,40.41%,35.09%,9091
+,,,Other Race,37.31%,27.21%,18808
+,,,White,22.82%,15.03%,162606
+,,,American Indian or Alaska Native,38.99%,28.25%,931
+,,,None of the above,23.41%,15.59%,14146
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",25.82%,17.85%,202632
+,,"Total: Total includes all data under the 75 Years or more bucket, including data from rows not currently displayed.",Black or African American,49.75%,39.09%,23374
+,,,Native Hawaiian or Other Pacific Islander,45.42%,37.00%,819
+,,,Asian,42.28%,36.63%,16058
+,,,Other Race,38.89%,28.81%,31900
+,,,White,26.14%,17.52%,278533
+,,,American Indian or Alaska Native,40.79%,29.89%,1579
+,,,None of the above,25.81%,17.01%,24283
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",28.66%,19.93%,345679
+,No value,Male,Black or African American,6.56%,4.90%,35868
+,,,Native Hawaiian or Other Pacific Islander,5.04%,4.19%,1290
+,,,Asian,6.21%,4.93%,15804
+,,,Other Race,5.91%,4.26%,44486
+,,,White,7.63%,4.91%,163332
+,,,American Indian or Alaska Native,5.65%,3.95%,2635
+,,,None of the above,4.00%,2.41%,34636
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",6.65%,4.39%,266347
+,,Female,Black or African American,6.68%,4.70%,31792
+,,,Native Hawaiian or Other Pacific Islander,6.53%,4.96%,1088
+,,,Asian,4.41%,3.44%,17675
+,,,Other Race,5.28%,3.28%,38453
+,,,White,6.23%,3.77%,153312
+,,,American Indian or Alaska Native,5.24%,3.52%,2329
+,,,None of the above,3.33%,1.71%,31375
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",5.65%,3.49%,246405
+,,"Total: Total includes all data under the No value bucket, including data from rows not currently displayed.",Black or African American,6.61%,4.81%,67695
+,,,Native Hawaiian or Other Pacific Islander,5.71%,4.53%,2382
+,,,Asian,5.26%,4.14%,33505
+,,,Other Race,5.62%,3.80%,82983
+,,,White,6.95%,4.36%,316839
+,,,American Indian or Alaska Native,5.45%,3.74%,4968
+,,,None of the above,3.68%,2.07%,66059
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",6.17%,3.95%,513065
+,"Total: Total includes all data under the Jan 1 – Dec 17 2025 bucket, including data from rows not currently displayed.",Male,Black or African American,14.48%,11.72%,205779
+,,,Native Hawaiian or Other Pacific Islander,14.44%,11.88%,7045
+,,,Asian,15.67%,13.49%,95841
+,,,Other Race,13.22%,10.45%,266470
+,,,White,13.87%,9.96%,1016539
+,,,American Indian or Alaska Native,12.20%,9.58%,18132
+,,,None of the above,8.52%,6.08%,206675
+,,,"Total: Total includes all data under the Male bucket, including data from rows not currently displayed.",13.08%,9.69%,1600868
+,,Female,Black or African American,14.31%,11.28%,260450
+,,,Native Hawaiian or Other Pacific Islander,13.58%,10.45%,8754
+,,,Asian,12.02%,10.16%,126142
+,,,Other Race,11.39%,8.29%,325750
+,,,White,10.12%,6.71%,1248418
+,,,American Indian or Alaska Native,10.24%,7.48%,23247
+,,,None of the above,6.53%,4.40%,237291
+,,,"Total: Total includes all data under the Female bucket, including data from rows not currently displayed.",10.27%,7.20%,1949363
+,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",Black or African American,14.38%,11.47%,466418
+,,,Native Hawaiian or Other Pacific Islander,13.96%,11.08%,15806
+,,,Asian,13.59%,11.59%,222119
+,,,Other Race,12.21%,9.26%,592511
+,,,White,11.80%,8.17%,2266279
+,,,American Indian or Alaska Native,11.10%,8.39%,41412
+,,,None of the above,7.45%,5.18%,444198
+,,,"Total: Total includes all data under the Total* bucket, including data from rows not currently displayed.",11.54%,8.32%,3552145
