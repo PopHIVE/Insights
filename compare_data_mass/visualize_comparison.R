@@ -8,7 +8,7 @@ library(scales)
 # LOAD DATA
 # ==============================================================================
 
-merged_data <- read_csv("merged_data.csv", show_col_types = FALSE)
+merged_data <- read_csv("standard/merged_data.csv", show_col_types = FALSE)
 
 # Order age groups properly
 age_order <- c("18-34", "35-44", "45-54", "55-64", "65-74", "75+")
@@ -31,7 +31,9 @@ scatter_by_race <- ggplot(merged_data, aes(x = pct_diabetes_icd, y = pct_Mass_DP
     x = "ICD-Based Prevalence (%)",
     y = "Mass DPH Prevalence (%)",
     color = "Age Group"
-  ) +
+  ) + 
+  xlim(0,55) +
+  ylim(0,55) +
   theme_minimal(base_size = 10) +
   theme(
     legend.position = "bottom",
@@ -57,6 +59,8 @@ scatter_by_race <- ggplot(merged_data, aes(x = pct_a1c_65_plus, y = pct_Mass_DPH
     y = "Mass DPH Prevalence (%)",
     color = "Age Group"
   ) +
+  xlim(0,55) +
+  ylim(0,55)+
   theme_minimal(base_size = 10) +
   theme(
     legend.position = "bottom",
@@ -83,6 +87,8 @@ scatter_by_race <- ggplot(merged_data, aes(x = pct_diabetes_icd, y = pct_Mass_DP
     y = "Mass DPH Prevalence (%)",
     color = "Race"
   ) +
+  xlim(0,55) +
+  ylim(0,55) +
   theme_minimal(base_size = 10) +
   theme(
     legend.position = "bottom",
@@ -108,6 +114,8 @@ scatter_by_race <- ggplot(merged_data, aes(x = pct_a1c_65_plus, y = pct_Mass_DPH
     y = "Mass DPH Prevalence (%)",
     color = "Race"
   ) +
+  xlim(0,55) +
+  ylim(0,55)+
   theme_minimal(base_size = 10) +
   theme(
     legend.position = "bottom",
