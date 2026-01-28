@@ -11,7 +11,7 @@ library(tidyverse)
 # Read diabetes file, skipping the metadata header (first 10 rows)
 # Row 11-12 contain the column headers
 diabetes_raw <- read_csv(
-  "2026_01_26_C02_DIABETES_ICD_A1C_MA_AGE_SEX_RACE_ETH_YEAR_2018-2025.csv",
+  "raw/2026_01_26_C02_DIABETES_ICD_A1C_MA_AGE_SEX_RACE_ETH_YEAR_2018-2025.csv",
   skip = 12,  # Skip to first data row (rows 1-10 are metadata, 11-12 are headers)
   col_names = c("year", "age_group", "sex", "ethnicity", "race",
                 "pct_diabetes_icd", "pct_a1c_65_plus", "n_patients"),
@@ -175,7 +175,7 @@ cat(sprintf("Unique race/ethnicity categories: %s\n",
 # 5. READ AND PREPARE ALL.CSV
 # ==============================================================================
 
-all_data <- read_csv("all.csv", show_col_types = FALSE)
+all_data <- read_csv("raw/all.csv", show_col_types = FALSE)
 
 # Standardize all.csv labels to uppercase for consistent matching
 all_data <- all_data %>%
@@ -263,12 +263,10 @@ if (length(unmatched_all_races) > 0) {
 # ==============================================================================
 
 # Save merged data
-write_csv(merged_data, "merged_data.csv")
+write_csv(merged_data, "standard/merged_data.csv")
 cat("\nSaved: merged_data.csv\n")
 
-# Save aggregated diabetes data (before merge)
-write_csv(diabetes_aggregated, "diabetes_aggregated.csv")
-cat("Saved: diabetes_aggregated.csv\n")
+
 
 cat("\n========================================\n")
 cat("PROCESSING COMPLETE\n")
