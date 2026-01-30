@@ -783,3 +783,232 @@ ds3 <-vroom::vroom(
 # check if load in correctly
 head(ds3)
 ```
+
+## Code for visualizations I will use for Substack Post regarding Firearm Divide geographically
+
+Below is the setup for intentional rates.
+
+```{r - intentional rates set up}
+myvar <- "wisqars_rate_firearm_intentional"
+
+# regional colors you’ve been using
+region_colors <- c(
+  "Northeast" = "#1f78b4",
+  "Midwest"   = "#33a02c",
+  "South"     = "#e31a1c",
+  "West"      = "#ff7f00",
+  "Other"     = "grey50"
+)
+
+# clean state + US datasets (all ages total)
+st <- firearm_all %>%
+  filter(age == "Total", state_name != "National", year != 2025) %>%
+  mutate(value = as.numeric(.data[[myvar]]))
+
+us <- firearm_all %>%
+  filter(age == "Total", state_name == "National", year != 2025) %>%
+  mutate(value = as.numeric(.data[[myvar]])) %>%
+  group_by(year) %>%
+  summarise(us_value = mean(value, na.rm = TRUE), .groups = "drop")
+```
+
+Below is the setup for accidental rates.
+
+```{r - accidental rates set up}
+myvar <- "wisqars_rate_firearm_accident"
+
+region_colors <- c(
+  "Northeast" = "#1f78b4",
+  "Midwest"   = "#33a02c",
+  "South"     = "#e31a1c",
+  "West"      = "#ff7f00",
+  "Other"     = "grey50"
+)
+
+# State-level data (exclude National), all ages total, drop 2025
+st_acc <- firearm_all %>%
+  filter(age == "Total", state_name != "National", year != 2025) %>%
+  mutate(value = as.numeric(.data[[myvar]]))
+
+# U.S. national series (National), all ages total, drop 2025
+us_acc <- firearm_all %>%
+  filter(age == "Total", state_name == "National", year != 2025) %>%
+  mutate(value = as.numeric(.data[[myvar]])) %>%
+  group_by(year) %>%
+  summarise(us_value = mean(value, na.rm = TRUE), .groups = "drop")
+```
+
+### 1) Regional Trend Lines (Done Before, but for org purposes, doing code again)
+
+```{r}
+region_trend <- st %>%
+  group_by(year, region) %>%
+  summarise(region_value = mean(value, na.rm = TRUE), .groups = "drop")
+
+ggplot(region_trend, aes(year, region_value, color = region, group = region)) +
+  geom_line(linewidth = 1.2) +
+  geom_point(size = 2) +
+  scale_color_manual(values = region_colors) +
+  labs(
+    title = "Firearm Death Rate by U.S. Region Over Time (All Ages)",
+    subtitle = paste("Outcome:", myvar),
+    x = "Year", y = "Rate per 100,000", color = "U.S. Region"
+  ) +
+  theme_minimal(base_size = 13)
+```
+
+Decided to only focus on intentional rates, as visuals tell a story more clearly. Also more missing data within accidental rate dataset.
+
+### 2) Region vs. US baseline (maybe?)
+
+```{r}
+region_vs_us <- region_trend %>%
+  left_join(us, by = "year") %>%
+  mutate(diff = region_value - us_value)
+
+ggplot(region_vs_us, aes(year, diff, color = region, group = region)) +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  geom_line(linewidth = 1.2) +
+  geom_point(size = 2) +
+  scale_color_manual(values = region_colors) +
+  labs(
+    title = "Regional Gap vs U.S. Average Over Time (All Ages)",
+    subtitle = "Above zero = higher than U.S. average; below zero = lower",
+    x = "Year", y = "Difference from U.S. rate", color = "U.S. Region"
+  ) +
+  theme_minimal(base_size = 13)
+```
+
+### 3) Within-region Distribution
+
+```{r}
+ggplot(st %>% filter(region %in% c("Northeast","Midwest","South","West")),
+       aes(x = factor(year), y = value, fill = region)) +
+  geom_boxplot(outlier.alpha = 0.2) +
+  facet_wrap(~ region, ncol = 2) +
+  scale_fill_manual(values = region_colors) +
+  labs(
+    title = "State Variation Within Each Region Over Time (All Ages)",
+    subtitle = paste("Outcome:", myvar),
+    x = "Year", y = "State rate per 100,000"
+  ) +
+  theme_minimal(base_size = 11) +
+  theme(
+    legend.position = "none",
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 7),
+    strip.text = element_text(face = "bold")
+  )
+```
+
+### 4) **Heatmap of state rates** (geography + persistence in one view)
+
+```{r}
+# order states by overall average rate so the heatmap has structure
+state_order <- st %>%
+  group_by(state_name) %>%
+  summarise(avg = mean(value, na.rm = TRUE), .groups = "drop") %>%
+  arrange(desc(avg)) %>%
+  pull(state_name)
+
+st_heat <- st %>%
+  mutate(state_name = factor(state_name, levels = state_order))
+
+mid_val <- median(st_heat$value, na.rm = TRUE)
+
+ggplot(st_heat, aes(x = year, y = state_name, fill = value)) +
+  geom_tile() +
+  scale_fill_gradient2(
+    low = "#2166ac",
+    mid = "white",
+    high = "#b2182b",
+    midpoint = mid_val,
+    name = "Rate"
+  ) +
+  labs(
+    title = "Firearm Death Rates by State Over Time (All Ages)",
+    subtitle = "Blue = lower rates, Red = higher rates",
+    x = "Year", y = "State"
+  ) +
+  theme_minimal(base_size = 11) +
+  theme(
+    axis.text.y = element_text(size = 6)
+  )
+
+ggplot(st_heat, aes(x = year, y = state_name, fill = value)) +
+  geom_tile() +
+  scale_fill_gradient(
+    low  = "#deebf7",   # very light blue
+    high = "#08306b",   # dark blue
+    name = "Rate"
+  ) +
+  labs(
+    title = "Firearm Death Rates by State Over Time (All Ages)",
+    subtitle = "States ordered by overall average rate",
+    x = "Year",
+    y = "State"
+  ) +
+  theme_minimal(base_size = 11) +
+  theme(
+    axis.text.y = element_text(size = 6)
+  )
+
+
+```
+
+### 5) **Change over time** (which states are rising fastest?)
+
+```{r}
+state_slopes <- st %>%
+  filter(!is.na(value)) %>%
+  group_by(state_name) %>%
+  do({
+    m <- lm(value ~ year, data = .)
+    tibble(slope = coef(m)[["year"]])
+  }) %>%
+  ungroup() %>%
+  arrange(desc(slope))
+
+top_change <- state_slopes %>% slice(1:10)
+
+ggplot(top_change, aes(x = reorder(state_name, slope), y = slope)) +
+  geom_col() +
+  coord_flip() +
+  labs(
+    title = "States With Fastest Increases in Firearm Death Rates (All Ages)",
+    subtitle = paste("Slope from linear trend on:", myvar),
+    x = "State", y = "Annual change in rate (per 100,000 per year)"
+  ) +
+  theme_minimal(base_size = 13)
+
+ggplot(
+  top_change,
+  aes(x = reorder(state_name, slope), y = slope)
+) +
+  geom_col(
+    fill = "#08306b",   # deep blue to match your heatmap
+    width = 0.7
+  ) +
+  geom_text(
+    aes(label = round(slope, 2)),
+    hjust = -0.1,
+    size = 3.5,
+    color = "black"
+  ) +
+  coord_flip() +
+  labs(
+    title = "States With the Fastest Increases in Intentional Firearm Death Rates",
+    subtitle = "Estimated annual change based on linear trends, all ages",
+    x = NULL,
+    y = "Annual change in deaths per 100,000"
+  ) +
+  theme_minimal(base_size = 13) +
+  theme(
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.text.y = element_text(size = 11),
+    axis.text.x = element_text(size = 10),
+    plot.title = element_text(face = "bold"),
+    plot.subtitle = element_text(size = 11)
+  ) +
+  expand_limits(y = max(top_change$slope) * 1.1)
+```
