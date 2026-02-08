@@ -1,0 +1,192 @@
+---
+title: "PopHIVE_Style_Guide"
+output: html_document
+date: "2026-02-08"
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This style guide was created to ensure a consistent visual identity
+across PopHIVE products. Please see the instructions below to apply our
+pre-written functions to your data visualizations.
+
+## Setup
+
+### Load required packages
+
+```{r echo=FALSE message=FALSE}
+#load required packages
+library(tidyverse)
+library(ggplot2)
+library(sf)
+library(showtext)
+library(scales)
+library(maps)
+library(ggstar)
+```
+
+### Load all functions
+
+All necessary functions are located in PopHIVE Insights repository:
+PopHIVE -\> Insights -\> PopHIVE_style_guide. Load these functions at
+the start of your session with the following code:
+
+```{r echo=FALSE message=FALSE}
+source("pophive_style_functions.R")
+```
+
+There are functions for 5 different types of graphs included:\
+\* choropleth map
+\* bubble map\
+\* line graph\
+\* dot plot\
+\* bar/ column chart
+
+## Examples
+
+### Choropleth Map
+
+For the function to work correctly, your data must include a shapefile,
+which you can load with the "sf" package. Follow this format (the
+italicized text is what you will need to change):
+
+ggplot(*data*) +
+  geom_sf(aes(fill = *value_variable*), color = "gray", size = 0.3) +
+  scale_fill_pophive_map(legend_title = "*Legend Title*") +
+  theme_pophive_map() +
+    labs(
+      title = "*Title*",
+      subtitle = "*Subtitle*",
+      caption = "*Caption*")  
+
+```{r}
+# Example 
+
+states <- st_as_sf(maps::map("state", plot = FALSE, fill = TRUE))
+states$value <- runif(nrow(states), 0, 100)
+
+ggplot(states) +
+  geom_sf(aes(fill = value), color = "gray", size = 0.3) +
+  scale_fill_pophive_map(legend_title = "Population Density") +
+  theme_pophive_map() +
+  labs(
+    title = "US Population Density by State",
+    subtitle = "Example choropleth map with custom PopHive theme",
+    caption = "Data Source: sf package"
+  )
+```
+
+### Bubble Map
+
+
+### Line Graph 
+
+Note that for line graphs, you will need special helper functions for the color and linetype aesthetics. 
+
+ggplot(*date*, aes(x = *time_variable*, y = *value*, color = *category*, linetype = *category*)) +
+  geom_line(linewidth = 1) +
+  scale_x_date(date_breaks = "*frequency*", date_labels = *"%b %d, %Y"*) + 
+  scale_y_continuous(labels = scales::*scale_type*) +
+  scale_color_pophive_line() +
+  scale_linetype_pophive_line() +
+  theme_pophive_line() +
+  labs(
+    title = "*Title*",
+    subtitle = "*Subtitle*",
+    x = "*X Axis Title*",
+    y = "*Y Axis Title*"
+  )
+
+```{r}
+df_line <- data.frame(
+  year = rep(2015:2024, 3),
+  value = c(runif(10, 20, 50), runif(10, 30, 60), runif(10, 25, 55), runif(10, 20, 50), runif(10, 30, 60), runif(10, 25, 55)),
+  category = rep(c("Category A", "Category B", "Category C", "Category D", "Category E", "Category F"), each = 10)
+)
+
+ggplot(df_line, aes(x = year, y = value, color = category, linetype = category)) +
+  geom_line(linewidth = 0.7) +
+  scale_color_pophive_line() +
+  scale_linetype_pophive_line() +
+  theme_pophive_line() +
+  labs(
+    title = "Trends Over Time",
+    subtitle = "Example line graph with custom PopHive theme",
+    caption = "Data source: sample data",
+    x = "Year",
+    y = "Value"
+  )
+```
+
+
+### Dot Plot
+
+ggplot(*data*, aes(x = *value*, y = *category*)) +
+  ggstar::geom_star(starshape = "hexagon", color = "#4e98e4", size = 4, fill = "#4e98e4") +
+  theme_pophive_dot() +
+  labs(
+    title = "*Title*",
+    subtitle = "*Subtitle*",
+    caption="*Caption*",
+    x = "*X Axis Title*",
+    y = "*Y Axis Title*"
+  )
+
+```{r}
+df_dot <- data.frame(
+  category = c("Category A", "Category B", "Category C", "Category D", "Category E"),
+  value = c(45, 67, 23, 89, 56)
+)
+
+ggplot(df_dot, aes(x = value, y = reorder(category, value))) +
+  ggstar::geom_star(starshape = "hexagon", color = "#4e98e4", size = 4, fill = "#4e98e4") +
+  theme_pophive_dot() +
+  labs(
+    title = "Category Comparison",
+    subtitle = "Example horizontal dot plot with custom PopHive theme",
+    caption="Data source: sample data",
+    x = "Value",
+    y = "Category"
+  )
+```
+
+
+### Bar/ Column Chart
+
+ggplot(*df_col*, aes(x = *category*, y = *value*, fill = *group*)) +
+  geom_col(position = "*dodge/stack/fill*", width = 0.7) +
+  scale_fill_pophive_col() +
+  theme_pophive_col() +
+  labs(
+    title = "*Title*",
+    subtitle = "*Subtitle*",
+    caption = "*Caption*",
+    x = "*X Axis Title*",
+    y = "*Y Axis Title*"
+  )
+
+```{r}
+df_col <- data.frame(
+  category = rep(c("Q1", "Q2", "Q3", "Q4"), 3),
+  value = c(runif(4, 20, 50), runif(4, 30, 60), runif(4, 25, 55)),
+  group = rep(c("Product A", "Product B", "Product C"), each = 4)
+)
+
+ggplot(df_col, aes(x = category, y = value, fill = group)) +
+  geom_col(position = "dodge", width = 0.7) +
+  scale_fill_pophive_col() +
+  theme_pophive_col() +
+  labs(
+    title = "Quarterly Sales by Product",
+    subtitle = "Sales performance across different products and quarters",
+    caption = "Data source: sample data",
+    x = "Quarter",
+    y = "Sales (thousands)"
+  )
+```
+
