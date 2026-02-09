@@ -1,9 +1,11 @@
 ---
-title: "PopHIVE_Style_Guide"
-output: html_document
+title: "PopHIVE Style Guide"
+output:
+  pdf_document: default
+  html_document: default
 date: "2026-02-08"
-editor_options: 
-  markdown: 
+editor_options:
+  markdown:
     wrap: 72
 ---
 
@@ -19,7 +21,7 @@ pre-written functions to your data visualizations.
 
 ### Load required packages
 
-```{r echo=FALSE message=FALSE}
+```{r message=FALSE}
 #load required packages
 library(tidyverse)
 library(ggplot2)
@@ -36,16 +38,16 @@ All necessary functions are located in PopHIVE Insights repository:
 PopHIVE -\> Insights -\> PopHIVE_style_guide. Load these functions at
 the start of your session with the following code:
 
-```{r echo=FALSE message=FALSE}
+```{r message=FALSE}
 source("pophive_style_functions.R")
 ```
 
 There are functions for 5 different types of graphs included:\
-\* choropleth map
-\* bubble map\
-\* line graph\
-\* dot plot\
-\* bar/ column chart
+\* choropleth map\  
+\* bubble map\  
+\* line graph\  
+\* dot plot\  
+\* bar/ column chart  
 
 ## Examples
 
@@ -55,14 +57,14 @@ For the function to work correctly, your data must include a shapefile,
 which you can load with the "sf" package. Follow this format (the
 italicized text is what you will need to change):
 
-ggplot(*data*) +
-  geom_sf(aes(fill = *value_variable*), color = "gray", size = 0.3) +
-  scale_fill_pophive_map(legend_title = "*Legend Title*") +
-  theme_pophive_map() +
-    labs(
-      title = "*Title*",
-      subtitle = "*Subtitle*",
-      caption = "*Caption*")  
+| ggplot(*data*) +   
+|  geom_sf(aes(fill = *value_variable*), color = "gray", size = 0.3) +   
+|    scale_fill_pophive_map(legend_title = "*Legend Title*") +  
+|    theme_pophive_map() +   
+|    labs(   
+|      title = "*Title*",   
+|      subtitle = "*Subtitle*",  
+|      caption = "*Caption*")  
 
 ```{r}
 # Example 
@@ -83,24 +85,104 @@ ggplot(states) +
 
 ### Bubble Map
 
+For the bubble map, you can use state level or county level data. You only need the state name and/or FIPS code.   
 
-### Line Graph 
+| There are several different options for the bubble map:   
+|   1. Coloring: There are separate helper functions for discrete and continuous color scales, depending on which is more appropriate for the data. If you want the bubbles to be a uniform color, you can use fill="#4e98e4" and omit the scale_color_x() functions.   
+|   2. Data resolution: There are helper functions to establish centroids for both state and county-level data.   
+|   3. Other aesthetics: Bubble size and transparency can be adjusted as described below.   
 
-Note that for line graphs, you will need special helper functions for the color and linetype aesthetics. 
+| Follow this format:   
+| ggplot() +    
+|  geom_sf(data = us_states, fill = "white", color = "gray", linewidth = 0.3) +    
+|  geom_sf(data = *data*, aes(color = *value*, size = *size_var*), alpha = *0.6*, show.legend = TRUE) +   
 
-ggplot(*date*, aes(x = *time_variable*, y = *value*, color = *category*, linetype = *category*)) +
-  geom_line(linewidth = 1) +
-  scale_x_date(date_breaks = "*frequency*", date_labels = *"%b %d, %Y"*) + 
-  scale_y_continuous(labels = scales::*scale_type*) +
-  scale_color_pophive_line() +
-  scale_linetype_pophive_line() +
-  theme_pophive_line() +
-  labs(
-    title = "*Title*",
-    subtitle = "*Subtitle*",
-    x = "*X Axis Title*",
-    y = "*Y Axis Title*"
-  )
+| if you want to change the **color** aesthetic using a **continuous** scale:       
+|  scale_color_pophive_bubble_continuous(legend_title = "*Legend Title*") +   
+
+| if you want to change the **color** aesthetic using a **discrete** scale:   
+|  scale_color_pophive_bubble_discrete(legend_title = "Category") +   
+
+| if you want to change the **size** aesthetic:   
+|  scale_size_pophive_bubble(legend_title = "*Legend Title*", range = c(2,15)) +   
+
+| include for **all**:    
+|  theme_pophive_bubble_map() +    
+|  labs(    
+|    title ="*Title*",    
+|    subtitle = "*Subtitle*",    
+|    caption = "*Caption*"    
+|    )   
+
+*Note: currently debugging county-level bubble map functions. Will update accordingly.*
+
+```{r}
+# Bubble map with continuous scale and state-level data
+# Get US state boundaries
+us_states <- get_us_map_data(level = "state")
+
+# Create sample data
+bubble_data <- data.frame(
+   location = c("California", "Texas", "Florida", "New York", "Illinois",
+               "Pennsylvania", "Ohio", "Georgia", "Michigan", "North Carolina"),
+   value = runif(10, 100, 1000),
+   size_var = runif(10, 5, 50),
+   category = sample(c("A", "B", "C"), 10, replace = TRUE)
+ )
+ 
+# Prepare bubble data with coordinates
+bubble_sf <- prepare_bubble_data(bubble_data, location_col = "location", value_col = "value")
+
+# Create bubble map with continuous color scale
+ggplot() +
+   geom_sf(data = us_states, fill = "white", color = "gray", linewidth = 0.3) +
+   geom_sf(data = bubble_sf, aes(color = value, size = size_var), 
+           alpha = 0.6, show.legend = TRUE) +
+   scale_color_pophive_bubble_continuous(legend_title = "Value") +
+   scale_size_pophive_bubble(legend_title = "Population", range = c(2, 15)) +
+   theme_pophive_bubble_map() +
+   labs(
+     title = "US Metropolitan Areas by Value",
+     subtitle = "Bubble size represents population, color represents value metric",
+     caption = "Source: Example data for demonstration purposes"
+   )
+
+```
+
+```{r}
+# Bubble map with discrete scale and state-level data
+
+ggplot() +
+   geom_sf(data = us_states, fill = "white", color = "gray", linewidth = 0.3) +
+   geom_sf(data = bubble_sf, aes(color = category, size = size_var), 
+           alpha = 0.6, show.legend = TRUE) +
+   scale_color_pophive_bubble_discrete(legend_title = "Category") +
+   scale_size_pophive_bubble(legend_title = "Size Metric", range = c(3, 12)) +
+   theme_pophive_bubble_map() +
+   labs(
+     title = "US Cities by Category",
+     subtitle = "Different categories shown in discrete colors",
+     caption = "Source: Example categorical data"
+   )
+```
+
+### Line Graph
+
+Note that for line graphs, you will need special helper functions for the color and linetype aesthetics. Follow this format:
+
+| ggplot(*date*, aes(x = *time_variable*, y = *value*, color = *category*, linetype = *category*)) +   
+|  geom_line(linewidth = 1) +   
+|  scale_x_date(date_breaks = "*frequency*", date_labels = *"%b %d, %Y"*) +   
+|  scale_y_continuous(labels = scales::*scale_type*) +   
+|  scale_color_pophive_line() +    
+|  scale_linetype_pophive_line() +   
+|  theme_pophive_line() +    
+|  labs(    
+|    title = "*Title*",    
+|    subtitle = "*Subtitle*",   
+|    x = "*X Axis Title*",    
+|    y = "*Y Axis Title*"    
+|      )   
 
 ```{r}
 df_line <- data.frame(
@@ -123,19 +205,20 @@ ggplot(df_line, aes(x = year, y = value, color = category, linetype = category))
   )
 ```
 
-
 ### Dot Plot
 
-ggplot(*data*, aes(x = *value*, y = *category*)) +
-  ggstar::geom_star(starshape = "hexagon", color = "#4e98e4", size = 4, fill = "#4e98e4") +
-  theme_pophive_dot() +
-  labs(
-    title = "*Title*",
-    subtitle = "*Subtitle*",
-    caption="*Caption*",
-    x = "*X Axis Title*",
-    y = "*Y Axis Title*"
-  )
+For dot plots, follow this format:   
+
+| ggplot(*data*, aes(x = *value*, y = *category*)) +   
+|  ggstar::geom_star(starshape = "hexagon", color = "#4e98e4", size = 4, fill = "#4e98e4") +    
+|  theme_pophive_dot() +    
+|  labs(    
+|    title = "*Title*",   
+|    subtitle = "*Subtitle*",    
+|    caption="*Caption*",    
+|    x = "*X Axis Title*",    
+|    y = "*Y Axis Title*" 
+|      )      
 
 ```{r}
 df_dot <- data.frame(
@@ -155,20 +238,21 @@ ggplot(df_dot, aes(x = value, y = reorder(category, value))) +
   )
 ```
 
-
 ### Bar/ Column Chart
 
-ggplot(*df_col*, aes(x = *category*, y = *value*, fill = *group*)) +
-  geom_col(position = "*dodge/stack/fill*", width = 0.7) +
-  scale_fill_pophive_col() +
-  theme_pophive_col() +
-  labs(
-    title = "*Title*",
-    subtitle = "*Subtitle*",
-    caption = "*Caption*",
-    x = "*X Axis Title*",
-    y = "*Y Axis Title*"
-  )
+For bar/ column charts, follow this format:   
+
+| ggplot(*df_col*, aes(x = *category*, y = *value*, fill = *group*)) +   
+|  geom_col(position = "*dodge/stack/fill*", width = 0.7) +   
+|  scale_fill_pophive_col() +    
+|  theme_pophive_col() +    
+|  labs(    
+|    title = "*Title*",    
+|    subtitle = "*Subtitle*",    
+|    caption = "*Caption*",    
+|    x = "*X Axis Title*",    
+|    y = "*Y Axis Title*"    
+|      )      
 
 ```{r}
 df_col <- data.frame(
@@ -190,3 +274,9 @@ ggplot(df_col, aes(x = category, y = value, fill = group)) +
   )
 ```
 
+### Save your graphs
+
+Use this format:
+
+|   ggsave("*file name*.png", *plot name*, width = 12, height = 8, dpi =
+300, bg = "white")
