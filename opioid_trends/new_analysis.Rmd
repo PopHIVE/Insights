@@ -1,0 +1,248 @@
+---
+title: "opioid trends- new analysis"
+format: html
+editor: visual
+---
+
+```{r}
+library(dplyr)
+library(ggplot2)
+library(arrow)
+
+```
+
+```{r}
+library(arrow)
+
+# Base GitHub raw URL
+base_url <- "https://github.com/PopHIVE/Ingest/raw/refs/heads/main/data/bundle_injury_overdose/dist/"
+
+# Read and assign datasets with short names
+d1 <- read_parquet(paste0(base_url, "overdose_by_demographics.parquet"))
+d2 <- read_parquet(paste0(base_url, "overdose_by_geography_and_source.parquet"))
+d3 <- read_parquet(paste0(base_url, "overdose_by_geography_and_source_county.parquet"))
+d4 <- read_parquet(paste0(base_url, "overdose_by_geography_and_source_state_year.parquet"))
+d5 <- read_parquet(paste0(base_url, "overdose_deaths_county.parquet"))
+d6 <- read_parquet(paste0(base_url, "overdose_deaths_state.parquet"))
+d7 <- read_parquet(paste0(base_url, "state_opioid_by_source.parquet"))
+```
+
+```{r}
+library(arrow)
+library(openxlsx)
+
+# Output directory
+out_dir <- "C:/Users/ampof/Desktop/New PopHIVE/Insights/opioid_trends/files for tableau"
+# if (!dir.exists(out_dir)) dir.create(out_dir, recursive = TRUE)
+
+# Base GitHub raw URL
+base_url <- "https://github.com/PopHIVE/Ingest/raw/refs/heads/main/data/bundle_injury_overdose/dist/"
+
+# 1. overdose_by_demographics
+df11 <- read_parquet(paste0(base_url, "overdose_by_demographics.parquet"))
+write.xlsx(df11, file.path(out_dir, "overdose_by_demographics.xlsx"))
+
+# 2. overdose_by_geography_and_source
+df12 <- read_parquet(paste0(base_url, "overdose_by_geography_and_source.parquet"))
+write.xlsx(df12, file.path(out_dir, "overdose_by_geography_and_source.xlsx"))
+
+# 3. overdose_by_geography_and_source_county
+df13 <- read_parquet(paste0(base_url, "overdose_by_geography_and_source_county.parquet"))
+write.xlsx(df13, file.path(out_dir, "overdose_by_geography_and_source_county.xlsx"))
+
+# 4. overdose_by_geography_and_source_state_year
+df14 <- read_parquet(paste0(base_url, "overdose_by_geography_and_source_state_year.parquet"))
+write.xlsx(df14, file.path(out_dir, "overdose_by_geography_and_source_state_year.xlsx"))
+
+# 5. overdose_deaths_county
+df15 <- read_parquet(paste0(base_url, "overdose_deaths_county.parquet"))
+write.xlsx(df15, file.path(out_dir, "overdose_deaths_county.xlsx"))
+
+# 6. overdose_deaths_state
+df16 <- read_parquet(paste0(base_url, "overdose_deaths_state.parquet"))
+write.xlsx(df16, file.path(out_dir, "overdose_deaths_state.xlsx"))
+
+# 7. state_opioid_by_source
+df17 <- read_parquet(paste0(base_url, "state_opioid_by_source.parquet"))
+write.xlsx(df17, file.path(out_dir, "state_opioid_by_source.xlsx"))
+```
+
+```{r}
+
+```
+
+```{r}
+library(arrow)
+library(dplyr)
+library(ggplot2)
+library(plotly) 
+
+# Age groups to keep
+age_keep <- c("15-24 Years", "25-44 Years", "45-64 Years", "65+ Years", "<15 Years")
+
+# Filter dataset
+d_filtered <- d4 %>%
+  filter(age %in% age_keep)
+
+# Split into 2 datasets by source
+d4_epic_cosmos <- d_filtered %>% filter(source == "Epic Cosmos")
+d4_cdc_wisqars <- d_filtered %>% filter(source == "CDC/WISQARS")
+
+
+#Group by Region
+library(dplyr)
+
+add_region <- function(df) {
+  df %>%
+    mutate(
+      region = case_when(
+        geography %in% c("Illinois", "Indiana", "Iowa", "Kansas", "Michigan", "Minnesota",
+                         "Missouri", "Nebraska", "North Dakota", "Ohio", "South Dakota", "Wisconsin") ~ "Midwest",
+        geography %in% c("Connecticut", "Maine", "Massachusetts", "New Hampshire", "New Jersey",
+                         "New York", "Pennsylvania", "Rhode Island", "Vermont") ~ "Northeast",
+        geography %in% c("Alaska", "Arizona", "California", "Colorado", "Hawaii", "Idaho",
+                         "Montana", "Nevada", "New Mexico", "Oregon", "Utah", "Washington", "Wyoming") ~ "West",
+        geography %in% c("Alabama", "Arkansas", "Delaware", "District of Columbia", "Florida", "Georgia",
+                         "Kentucky", "Louisiana", "Maryland", "Mississippi", "North Carolina", "Oklahoma",
+                         "South Carolina", "Tennessee", "Texas", "Virginia", "West Virginia") ~ "South",
+        TRUE ~ "Other"
+      )
+    )
+}
+
+d4_epic_cosmos  <- add_region(d4_epic_cosmos)
+d4_cdc_wisqars  <- add_region(d4_cdc_wisqars)
+
+# Remove rows where region == "Other"
+d4_epic_cosmos <- d4_epic_cosmos %>% filter(region != "Other")
+d4_cdc_wisqars <- d4_cdc_wisqars %>% filter(region != "Other")
+
+#Plot graphs
+plot_region_ts <- function(df, title) {
+  df %>%
+    group_by(year, region) %>%
+    summarise(value = sum(value, na.rm = TRUE), .groups = "drop") %>%
+    ggplot(aes(x = as.numeric(year), y = value, color = region)) +
+    geom_line(size = 1) +
+    labs(
+      title = title,
+      x = "Year",
+      y = "Value",
+      color = "Region"
+    ) +
+    theme_minimal(base_size = 14)
+}
+
+
+p4_cosmos    <- plot_region_ts(d4_epic_cosmos, "Epic Cosmos: Opioid-related ED visits by Region")
+p4_wisqars   <- plot_region_ts(d4_cdc_wisqars, "CDC/WISQARS: Overdose-related deaths by Region")
+
+ggplotly(p4_cosmos)
+ggplotly(p4_wisqars)
+```
+
+```{r}
+
+```
+
+```{r}
+# plots of Overdose Death Rate Trends by State (2015–2025)
+
+d6 %>%
+  filter(!is.na(geography), geography != "United States") %>%   # remove NA and "United States"
+  ggplot(aes(x = time, y = rate_deaths_overdose)) +
+  geom_line(color = "darkgreen", size = 0.8) +
+  facet_wrap(~ geography, scales = "fixed") +
+  labs(
+    title = "Overdose Death Rate Trends by State (2015–2025)",
+    x = "Year",
+    y = "Deaths per 100,000"
+  ) +
+  theme_minimal(base_size = 10) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+```{r}
+## # Rank all states for each year
+state_rank_all_years <- d6 %>%
+  group_by(time) %>%
+  arrange(desc(rate_deaths_overdose)) %>%
+  mutate(rank = row_number()) %>%   # assign rank to every state
+  ungroup() %>%
+  select(time, geography, rate_deaths_overdose, rank)
+
+# Save full ranking for Tableau
+write.xlsx(state_rank_all_years, "C:/Users/ampof/Desktop/New PopHIVE/Insights/opioid_trends/files for tableau/state_rank_all_years.xlsx")
+
+# Rank all states per year
+ranked_states <- d6 %>%
+  group_by(time) %>%
+  arrange(desc(rate_deaths_overdose)) %>%
+  mutate(rank = row_number()) %>%
+  ungroup()
+
+# Filter top 10 per year
+top10_trends <- ranked_states %>%
+  filter(rank <= 10)
+
+write.xlsx(top10_trends, "C:/Users/ampof/Desktop/New PopHIVE/Insights/opioid_trends/files for tableau/top10_horserace_graph.xlsx") #for tableau
+
+# Filter top 15 per year
+top15_trends <- ranked_states %>%
+  filter(rank <= 15)
+
+write.xlsx(top15_trends, "C:/Users/ampof/Desktop/New PopHIVE/Insights/opioid_trends/files for tableau/top15_horserace_graph.xlsx") #for tableau
+```
+
+::: {#viz1769966232438 .tableauPlaceholder}
+<noscript><a href='#'>![Top 10 States according to overdose death rates from 2015 -2024 - Year 2024 ](https://public.tableau.com/static/images/Ov/Overdosedata_17699650755580/Sheet3/1_rss.png){alt="Top 10 States  according to overdose death rates from 2015 -2024 - Year 2024 " style="border: none"}</a></noscript>
+
+<object class="tableauViz" style="display:none;">
+
+<param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Overdosedata_17699650755580&#47;Sheet3' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ov&#47;Overdosedata_17699650755580&#47;Sheet3&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-GB' /><param name='filter' value='publish=yes' />
+
+</object>
+:::
+
+```{js, embed code }
+var divElement = document.getElementById('viz1769966232438');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+
+```
+
+```{r}
+library(dplyr)
+library(ggplot2)
+library(plotly)
+
+# Function to create faceted ggplot for age groups
+plot_age_ts <- function(df, title) {
+  df %>%
+    group_by(year, age) %>%
+    summarise(value = sum(value, na.rm = TRUE), .groups = "drop") %>%
+    ggplot(aes(x = as.numeric(year), y = value, color = age)) +
+    geom_line(size = 1) +
+      labs(
+      title = title,
+      x = "Year",
+      y = "Value",
+      color = "Age Group"
+    ) +
+    theme_minimal(base_size = 14) +
+    theme(legend.position = "right",
+      legend.title = element_text(size = 12),
+      legend.text  = element_text(size = 10)
+)
+}
+
+# Build the two ggplots
+g_wisqars <- plot_age_ts(d4_cdc_wisqars, "CDC/WISQARS: Overdose-related deaths by Age Group")
+g_cosmos  <- plot_age_ts(d4_epic_cosmos, "Epic Cosmos: Opioid-related ED visits Trends by Age Group")
+
+# Convert to interactive plotly objects
+p_wisqars_interactive <- ggplotly(g_wisqars)
+p_cosmos_interactive  <- ggplotly(g_cosmos)
+
+# Display
+p_wisqars_interactive
+p_cosmos_interactive
+```
