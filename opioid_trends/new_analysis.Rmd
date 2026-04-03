@@ -6,11 +6,12 @@ title: "opioid trends- new analysis" format: html editor: visual ---
 library(dplyr)
 library(ggplot2)
 library(arrow)
+library(openxlsx)
+library(plotly)
 
 ```
 
 ```{r}
-library(arrow)
 
 # Base GitHub raw URL
 base_url <- "https://github.com/PopHIVE/Ingest/raw/refs/heads/main/data/bundle_injury_overdose/dist/"
@@ -23,6 +24,7 @@ d4 <- read_parquet(paste0(base_url, "overdose_by_geography_and_source_state_year
 d5 <- read_parquet(paste0(base_url, "overdose_deaths_county.parquet"))
 d6 <- read_parquet(paste0(base_url, "overdose_deaths_state.parquet"))
 d7 <- read_parquet(paste0(base_url, "state_opioid_by_source.parquet"))
+d8 <- read_parquet(paste0(base_url, "overdose_by_demographics.parquet"))
 ```
 
 ```{r}
@@ -238,4 +240,146 @@ p_wisqars_interactive
 p_cosmos_interactive
 ```
 
-======= title: "new_analysis" output: html_document ---
+```{r}
+#Demography data
+library(dplyr)
+library(ggplot2)
+library(plotly)
+
+p_sex_national <- d8 %>%
+  filter(
+    sex %in% c("Male", "Female")
+  ) %>%
+  group_by(time, sex) %>%
+  summarise(
+    mean_rate = mean(wisqars_rate_drug_poisoning, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  ggplot(aes(x = time, y = mean_rate, color = sex)) +
+  geom_line(size = 1.2) +
+  geom_point(size = 2) +
+  labs(
+    title = "National Drug Poisoning Rates Over Time (Mean of States)",
+    x = "Year",
+    y = "Rate per 100,000",
+    color = "Sex"
+  ) +
+  theme_minimal(base_size = 14)
+
+ggplotly(p_sex_national)
+
+p_race_national <- d8 %>%
+  filter(race != "All",
+    sex %in% c("Male", "Female")
+  ) %>%
+  group_by(time, race) %>%
+  summarise(
+    mean_rate = mean(wisqars_rate_drug_poisoning, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  ggplot(aes(x = time, y = mean_rate, color = race)) +
+  geom_line(size = 1.2) +
+  geom_point(size = 2) +
+  labs(
+    title = "National Drug Poisoning Rates Over Time (Mean of States)",
+    x = "Year",
+    y = "Rate per 100,000",
+    color = "Race"
+  ) +
+  theme_minimal(base_size = 14)
+
+ggplotly(p_race_national)
+
+p_ethn_national <- d8 %>%
+  filter(
+    sex %in% c("Male", "Female")
+  ) %>%
+  group_by(time, ethnicity) %>%
+  summarise(
+    mean_rate = mean(wisqars_rate_drug_poisoning, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  ggplot(aes(x = time, y = mean_rate, color = ethnicity)) +
+  geom_line(size = 1.2) +
+  geom_point(size = 2) +
+  labs(
+    title = "National Drug Poisoning Rates Over Time (Mean of States)",
+    x = "Year",
+    y = "Rate per 100,000",
+    color = "Ethnicity"
+  ) +
+  theme_minimal(base_size = 14)
+
+ggplotly(p_ethn_national)
+
+p_sex_ethn <- d8 %>%
+  filter(
+    sex %in% c("Male", "Female")
+  ) %>%
+  group_by(ethnicity, time, sex) %>%
+  summarise(
+    mean_rate = mean(wisqars_rate_drug_poisoning, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  ggplot(aes(x = time, y = mean_rate, color = ethnicity)) +
+  geom_line(size = 1.2) +
+  geom_point(size = 2) +
+  facet_wrap(~ sex, ncol = 2) +
+  labs(
+    title = "Drug Poisoning Rates Over Time by Sex and Ethnicity",
+    x = "Year",
+    y = "Rate per 100,000",
+    color = "Ethnicity"
+  ) +
+  theme_minimal(base_size = 14)
+
+ggplotly(p_sex_ethn)
+
+p_race_sex <- d8 %>%
+  filter(
+    race != "All",
+    sex %in% c("Male", "Female")
+  ) %>%
+  group_by(race, time, sex) %>%
+  summarise(
+    mean_rate = mean(wisqars_rate_drug_poisoning, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  ggplot(aes(x = time, y = mean_rate, color = race)) +
+  geom_line(size = 1.2) +
+  geom_point(size = 2) +
+  facet_wrap(~ sex, ncol = 2) +
+  labs(
+    title = "Drug Poisoning Rates Over Time by Sex and Race",
+    x = "Year",
+    y = "Mean Rate per 100,000",
+    color = "Race"
+  ) +
+  theme_minimal(base_size = 14)
+
+ggplotly(p_race_sex)
+
+p_age_sex <- d8 %>%
+  filter(
+        sex %in% c("Male", "Female")
+  ) %>%
+  group_by(age, time, sex) %>%
+  summarise(
+    mean_rate = mean(wisqars_rate_drug_poisoning, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  ggplot(aes(x = time, y = mean_rate, color = age)) +
+  geom_line(size = 1.2) +
+  geom_point(size = 2) +
+  facet_wrap(~ sex, ncol = 2) +
+  labs(
+    title = "Drug Poisoning Rates Over Time by Sex and age",
+    x = "Year",
+    y = "Mean Rate per 100,000",
+    color = "Race"
+  ) +
+  theme_minimal(base_size = 14)
+
+ggplotly(p_age_sex)
+
+```
