@@ -29,46 +29,6 @@ d8 <- read_parquet(paste0(base_url, "overdose_by_demographics.parquet"))
 
 ```{r}
 library(arrow)
-library(openxlsx)
-
-# Output directory
-out_dir <- "C:/Users/ampof/Desktop/New PopHIVE/Insights/opioid_trends/files for tableau"
-# if (!dir.exists(out_dir)) dir.create(out_dir, recursive = TRUE)
-
-# Base GitHub raw URL
-base_url <- "https://github.com/PopHIVE/Ingest/raw/refs/heads/main/data/bundle_injury_overdose/dist/"
-
-# 1. overdose_by_demographics
-df11 <- read_parquet(paste0(base_url, "overdose_by_demographics.parquet"))
-write.xlsx(df11, file.path(out_dir, "overdose_by_demographics.xlsx"))
-
-# 2. overdose_by_geography_and_source
-df12 <- read_parquet(paste0(base_url, "overdose_by_geography_and_source.parquet"))
-write.xlsx(df12, file.path(out_dir, "overdose_by_geography_and_source.xlsx"))
-
-# 3. overdose_by_geography_and_source_county
-df13 <- read_parquet(paste0(base_url, "overdose_by_geography_and_source_county.parquet"))
-write.xlsx(df13, file.path(out_dir, "overdose_by_geography_and_source_county.xlsx"))
-
-# 4. overdose_by_geography_and_source_state_year
-df14 <- read_parquet(paste0(base_url, "overdose_by_geography_and_source_state_year.parquet"))
-write.xlsx(df14, file.path(out_dir, "overdose_by_geography_and_source_state_year.xlsx"))
-
-# 5. overdose_deaths_county
-df15 <- read_parquet(paste0(base_url, "overdose_deaths_county.parquet"))
-write.xlsx(df15, file.path(out_dir, "overdose_deaths_county.xlsx"))
-
-# 6. overdose_deaths_state
-df16 <- read_parquet(paste0(base_url, "overdose_deaths_state.parquet"))
-write.xlsx(df16, file.path(out_dir, "overdose_deaths_state.xlsx"))
-
-# 7. state_opioid_by_source
-df17 <- read_parquet(paste0(base_url, "state_opioid_by_source.parquet"))
-write.xlsx(df17, file.path(out_dir, "state_opioid_by_source.xlsx"))
-```
-
-```{r}
-library(arrow)
 library(dplyr)
 library(ggplot2)
 library(plotly) 
