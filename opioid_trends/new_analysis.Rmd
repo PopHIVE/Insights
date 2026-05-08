@@ -383,3 +383,33 @@ p_age_sex <- d8 %>%
 ggplotly(p_age_sex)
 
 ```
+
+```{r line-example, eval=FALSE}
+### Line Graph
+
+library(PopHivePlots)
+library(ggplot2)
+
+# Setup fonts
+setup_pophive_fonts()
+
+# Sample data
+df_line <- data.frame(
+  year = rep(2015:2024, 3),
+  value = c(runif(10, 20, 50), runif(10, 30, 60), runif(10, 25, 55)),
+  category = rep(c("Category A", "Category B", "Category C"), each = 10)
+)
+
+# Create line plot
+pophive_plot(
+  data = df_line,
+  plot_type = "line",
+  aes_mappings = aes(x = year, y = value, color = category, linetype = category),
+  title = "Trends Over Time",
+  subtitle = "Example line graph with custom PopHIVE theme",
+  caption = "Data source: sample data",
+  x_label = "Year",
+  y_label = "Value",
+  line_width = 0.8
+)
+```
