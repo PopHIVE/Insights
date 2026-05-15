@@ -38,7 +38,7 @@ age_keep <- c("15-24 Years", "25-44 Years", "45-64 Years", "65+ Years", "<15 Yea
 
 # Filter dataset
 d_filtered <- d4 %>%
-  filter(age %in% age_keep)
+  filter(age == "Total")
 
 # Split into 2 datasets by source
 d4_epic_cosmos <- d_filtered %>% filter(source == "Epic Cosmos")
@@ -98,20 +98,31 @@ ggplotly(p4_wisqars)
 ```
 
 ```{r}
+library(geofacet)
 # plots of Overdose Death Rate Trends by State (2015–2025)
 
+library(geofacet)
+
+
 d6 %>%
-  filter(!is.na(geography), geography != "United States") %>%   # remove NA and "United States"
+  filter(!is.na(geography), geography != "United States") %>%
   ggplot(aes(x = time, y = rate_deaths_overdose)) +
-  geom_line(color = "darkgreen", size = 0.8) +
+  geom_line(color = "#29125a", linewidth = 0.7, alpha = 0.9) +
   facet_wrap(~ geography, scales = "fixed") +
   labs(
     title = "Overdose Death Rate Trends by State (2015–2025)",
+    subtitle = "Each panel shows monthly overdose mortality trends for a single state",
+    caption = "Source: CDC WISQARS; rates per 100,000 population",
     x = "Year",
     y = "Deaths per 100,000"
   ) +
-  theme_minimal(base_size = 10) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  PopHivePlots:::theme_pophive_line() +
+  theme(
+    strip.text = element_text(size = 10, face = "bold"),
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    text = element_text(size = 12)
+  )
+
 ```
 
 ```{r}
@@ -372,4 +383,304 @@ pophive_plot(
   y_label = "Value",
   line_width = 0.8
 )
+```
+
+```{r, PopHive plots}
+library(PopHivePlots)
+library(ggplot2)
+library(dplyr)
+library(plotly)
+
+#setup_pophive_fonts()
+
+plot_region_ts_pophive <- function(df, title) {
+  
+  df_line <- df %>%
+    group_by(year, region) %>%
+    summarise(value = sum(value, na.rm = TRUE), .groups = "drop") %>%
+    mutate(year = as.numeric(year))
+
+  p <- pophive_plot(
+    data = df_line,
+    plot_type = "line",
+    aes_mappings = aes(
+      x = year,
+      y = value,
+      color = region,
+      linetype = region
+    ),
+    title = title,
+    subtitle = "Regional overdose trends",
+    caption = "Data source: PopHIVE pipeline",
+    x_label = "Year",
+    y_label = "Value",
+    line_width = 0.9
+  )
+
+  # Make interactive
+  ggplotly(p)
+}
+
+p4_cosmos <- plot_region_ts_pophive(
+  d4_epic_cosmos,
+  "Epic Cosmos: Opioid-related ED Visits by Region"
+)
+p4_cosmos
+
+p4_wisqars <- plot_region_ts_pophive(
+  d4_cdc_wisqars,
+  "CDC/WISQARS: Overdose Deaths by Region"
+)
+p4_wisqars
+
+```
+
+```{r}
+library(PopHivePlots)
+library(ggplot2)
+library(dplyr)
+library(plotly)
+library(ggstar)
+
+pophive_region_cols <- c(
+  "Northeast" = "#29125a",
+  "Midwest"   = "#6b1d80",
+  "South"     = "#ad347c",
+  "West"      = "#e95661"
+)
+
+df_dot <- d4_epic_cosmos %>% filter(region != "Other")
+
+p <- ggplot(df_dot) +
+  geom_point(
+    aes(
+      x = factor(year),
+      y = value,
+      color = region,
+       text = paste0(
+        "State: ", geography, "<br>",
+        "Region: ", region, "<br>",
+        "Year: ", year, "<br>",
+       "Value: ", round(value, 1)
+      )
+      ),
+    size = 3,
+    alpha = 0.8,
+    position = position_dodge(width = 0.6)
+  ) +
+  scale_color_manual(values = pophive_region_cols) +
+  PopHivePlots:::theme_pophive_line() +
+  labs(
+    title = "Epic Cosmos: State-level ED Visits (per 100,000)",
+    subtitle = "Non-fatal and fatal emergency department visits related to overdoses (T40.*)
+    Each dot = one state; grouped by year, separated by region",
+    caption = "Source: Epic Cosmos; cases per 100,000 population",
+    x = "Year",
+    y = "Cases per 100,000"
+  ) +
+  scale_y_continuous(
+    limits = c(0, 600),
+    breaks = seq(0, 600, by = 100),
+    expand = expansion(mult = c(0, 0.20))
+  )+
+  theme(
+  plot.title = element_text(size = 18),
+  plot.subtitle = element_text(size = 14),
+  axis.text = element_text(size = 14),
+  axis.title = element_text(size = 16),
+  legend.text = element_text(size = 14),
+  legend.title = element_text(size = 16)
+  )
+
+##Alaska is not present in epic cosmos
+
+p
+
+g <- ggplotly(p)
+
+#for(i in seq_along(g$x$data)) {
+#  g$x$data[[i]]$hovertemplate <- paste(
+#    "Region: %{customdata[1]}<br>",
+#    "Year: %{x}<br>",
+#    "Value: %{y}<br>",
+#    "<extra></extra>"
+#  )
+#}
+g
+
+
+
+
+
+```
+
+```{r}
+library(PopHivePlots)
+library(ggplot2)
+library(dplyr)
+library(plotly)
+library(patchwork)
+
+
+pophive_region_cols <- c(
+  "Northeast" = "#29125a",
+  "Midwest"   = "#6b1d80",
+  "South"     = "#ad347c",
+  "West"      = "#e95661"
+)
+
+df_dot2 <- d4_cdc_wisqars %>% 
+  filter(region != "Other", year %in% 2018:2025)
+
+
+p2 <- ggplot(df_dot2) +
+  geom_point(
+    aes(
+      x = factor(year),
+      y = value,
+      color = region,
+      text = paste0(
+        "State: ", geography, "<br>",
+        "Region: ", region, "<br>",
+        "Year: ", year, "<br>",
+       "Value: ", round(value, 1)
+      )
+    ),
+    size = 3,
+    alpha = 0.8,
+    position = position_dodge(width = 0.6)
+  ) +
+  scale_color_manual(values = pophive_region_cols) +
+  PopHivePlots:::theme_pophive_line() +
+  labs(
+    title = "CDC WISQARS: State-level Overdose-Related Death Rate (per 100,000)",
+    subtitle = "Rates of death due to drug overdoses, any type (crude-rate)
+    Each dot = one state; grouped by year, separated by region",
+    caption = "Source: CDC WISQARS; rates per 100,000 population",
+    x = "Year",
+    y = "Death rate per 100,000"
+  ) +
+  scale_y_continuous(
+    limits = c(0, NA),
+    breaks = seq(0, 100, by = 10),
+    expand = expansion(mult = c(0, 0.20))
+  ) +
+  theme(
+  plot.title = element_text(size = 18),
+  plot.subtitle = element_text(size = 14),
+  axis.text = element_text(size = 14),
+  axis.title = element_text(size = 16),
+  legend.text = element_text(size = 14),
+  legend.title = element_text(size = 16)
+  )
+
+ggplotly(p) 
+ggplotly(p2)
+
+```
+
+```{r}
+library(geofacet)
+
+
+d6 %>%
+  filter(!is.na(geography), geography != "United States") %>%
+  ggplot(aes(x = time, y = rate_deaths_overdose)) +
+  geom_line(color = "#29125a", linewidth = 0.7, alpha = 0.9) +
+  facet_wrap(~ geography, scales = "fixed") +
+  labs(
+    title = "CDC NHCS: Overdose Death Rate Trends by State (2015–2024)",
+    subtitle = "Each panel shows monthly overdose mortality trends for a single state",
+    caption = "Source: CDC NHCS; rates per 100,000 population",
+    x = "Year",
+    y = "Deaths per 100,000"
+  ) +
+  PopHivePlots:::theme_pophive_line() +
+  theme(
+  plot.title = element_text(size = 20),
+  plot.subtitle = element_text(size = 16),
+  axis.text = element_text(size = 14),
+  axis.title = element_text(size = 16),
+  legend.text = element_text(size = 14),
+  legend.title = element_text(size = 16),
+  strip.text = element_text(size = 14)
+
+  )
+
+
+```
+
+```{r}
+
+pophive_age_cols <- c(
+  "<15 Years"   = "#000004",  # darkest
+  "15-24 Years" = "#29125a",
+  "25-44 Years" = "#6b1d80",
+  "45-64 Years" = "#ad347c",
+  "65+ Years"   = "#e95661",
+  "Total"       = "#fe9e6d"   # lightest
+)
+
+p3 <- d8 %>%
+  filter(
+    geography == "United States",
+    age != "Total"
+  ) %>%
+  group_by(time, age) %>%
+  summarise(
+    mean_rate = mean(wisqars_rate_drug_poisoning, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  ggplot(aes(x = time, y = mean_rate, color = age)) +
+  geom_line(linewidth = 1.2) +
+  scale_color_manual(values = pophive_age_cols) +
+  labs(
+    title = "Death Rates due to Drug Overdose Over Time by Age Group",
+    subtitle = "United States, 2001–2023",
+    caption = "Source: CDC WISQARS; rates per 100,000 population",
+    x = "Year",
+    y = "Death rates per 100,000",
+    color = "Age Group"
+  ) +
+  PopHivePlots:::theme_pophive_line() +
+  theme(
+    plot.title = element_text(size = 18, face = "bold"),
+    plot.subtitle = element_text(size = 14),
+    plot.caption = element_text(size = 10),
+    axis.text = element_text(size = 14),
+    axis.title = element_text(size = 16),
+    legend.text = element_text(size = 14),
+    legend.title = element_text(size = 16)
+  )
+
+p4 <- d4 %>%
+  filter(
+    geography == "United States",
+    age != "Total",
+    source == "Epic Cosmos"
+  ) %>%
+  ggplot(aes(x = year, y = value, color = age)) +
+  geom_line(linewidth = 1.2) +
+  scale_color_manual(values = pophive_age_cols) +
+  labs(
+    title = "Opioid-related ED Visits Over Time by Age Group",
+    subtitle = "United States, 2018–2025",
+    caption = "Source: Epic Cosmos; cases per 100,000 population",
+    x = "Year",
+    y = "Cases per 100,000",
+    color = "Age Group"
+  ) +
+  PopHivePlots:::theme_pophive_line() +
+  theme(
+    plot.title = element_text(size = 18, face = "bold"),
+    plot.subtitle = element_text(size = 14),
+    plot.caption = element_text(size = 10),
+    axis.text = element_text(size = 18),
+    axis.title = element_text(size = 20),
+    legend.text = element_text(size = 14),
+    legend.title = element_text(size = 16)
+  )
+
+p3 
+p4
 ```
