@@ -449,7 +449,7 @@ pophive_region_cols <- c(
   "West"      = "#e95661"
 )
 
-df_dot <- d4_epic_cosmos %>% filter(region != "Other")
+df_dot <- d4_epic_cosmos %>% filter(region != "Other", age == "Total")
 
 p <- ggplot(df_dot) +
   geom_point(
@@ -530,7 +530,7 @@ pophive_region_cols <- c(
 )
 
 df_dot2 <- d4_cdc_wisqars %>% 
-  filter(region != "Other", year %in% 2018:2025)
+  filter(region != "Other", year %in% 0:2025, age== "Total")
 
 
 p2 <- ggplot(df_dot2) +
@@ -635,7 +635,7 @@ p3 <- d8 %>%
   geom_line(linewidth = 1.2) +
   scale_color_manual(values = pophive_age_cols) +
   labs(
-    title = "Death Rates due to Drug Overdose Over Time by Age Group",
+    title = "CDC WISQARS: Death Rates due to Drug Overdose Over Time by Age Group",
     subtitle = "United States, 2001–2023",
     caption = "Source: CDC WISQARS; rates per 100,000 population",
     x = "Year",
@@ -643,15 +643,22 @@ p3 <- d8 %>%
     color = "Age Group"
   ) +
   PopHivePlots:::theme_pophive_line() +
-  theme(
-    plot.title = element_text(size = 18, face = "bold"),
-    plot.subtitle = element_text(size = 14),
-    plot.caption = element_text(size = 10),
-    axis.text = element_text(size = 14),
-    axis.title = element_text(size = 16),
+  scale_y_continuous(
+    limits = c(0, 60),
+    breaks = seq(0, 60, by = 20),
+    expand = expansion(mult = c(0, 0.20))
+    )+
+ theme(
+    plot.title = element_text(size = 25, face = "bold"),
+    plot.subtitle = element_text(size = 20),
+    plot.caption = element_text(size = 16),
+  axis.text.x = element_text(size = 18),
+  axis.text.y = element_text(size = 18),
+  axis.title.x = element_text(size = 20),
+  axis.title.y = element_text(size = 20),
     legend.text = element_text(size = 14),
     legend.title = element_text(size = 16)
-  )
+ )
 
 p4 <- d4 %>%
   filter(
@@ -663,7 +670,7 @@ p4 <- d4 %>%
   geom_line(linewidth = 1.2) +
   scale_color_manual(values = pophive_age_cols) +
   labs(
-    title = "Opioid-related ED Visits Over Time by Age Group",
+    title = "Epic Cosmos: Opioid-related ED Visits Over Time by Age Group",
     subtitle = "United States, 2018–2025",
     caption = "Source: Epic Cosmos; cases per 100,000 population",
     x = "Year",
@@ -671,16 +678,145 @@ p4 <- d4 %>%
     color = "Age Group"
   ) +
   PopHivePlots:::theme_pophive_line() +
+  scale_y_continuous(
+    limits = c(0, 550),
+    breaks = seq(0, 500, by = 100),
+    expand = expansion(mult = c(0, 0.20))
+    ) +
   theme(
-    plot.title = element_text(size = 18, face = "bold"),
-    plot.subtitle = element_text(size = 14),
-    plot.caption = element_text(size = 10),
-    axis.text = element_text(size = 18),
-    axis.title = element_text(size = 20),
+    plot.title = element_text(size = 25, face = "bold"),
+    plot.subtitle = element_text(size = 20),
+    plot.caption = element_text(size = 16),
+  axis.text.x = element_text(size = 18),
+  axis.text.y = element_text(size = 18),
+  axis.title.x = element_text(size = 20),
+  axis.title.y = element_text(size = 20),
     legend.text = element_text(size = 14),
     legend.title = element_text(size = 16)
   )
 
 p3 
 p4
+```
+
+```{r}
+st_top <- df_dot %>%
+  group_by(region) %>%
+  filter(year == max(year)) %>%
+  slice_max(value, n = 1) %>%
+  ungroup() %>%
+  pull(geography)
+
+st_highlighted <- df_dot %>%
+  mutate(highlight = if_else(geography %in% st_top, geography, "other"))
+
+st_labels_top <- df_dot %>%
+  filter(geography %in% st_top, year == max(year))
+
+pophive_plot(
+  data = filter(st_highlighted, highlight == "other"),
+  plot_type = "line",
+  aes_mappings = aes(x = year, y = value, group = geography),
+  title = "Epic Cosmos: State-level ED visits by U.S. Region Over Time",
+  subtitle = "Non-fatal and fatal emergency department visits related to overdoses (T40*)
+  Highest state per region highlighted in blue",
+  caption = "Data source: Epic Cosmos",
+  x_label = "Year",
+  y_label = "Cases per 100,000",
+  line_width = 0.6,
+  line_color = "grey70"
+) +
+  geom_line(
+    data = filter(st_highlighted, highlight != "other"),
+    aes(x = year, y = value, group = geography),
+    color = "#e95661", linewidth = 1.2
+  ) +
+  ggrepel::geom_text_repel(
+    data = st_labels_top,
+    aes(x = year, y = value, label = geography),
+    color = "#00356b",
+    size = 6,
+    nudge_x = 1,
+    nudge_y = 1.5,
+    direction = "y",
+    hjust = 0,
+    segment.color = "grey50"
+) +
+  facet_wrap(~ region, ncol = 2) +
+  PopHivePlots:::theme_pophive_line() +
+  theme(
+    plot.title = element_text(size = 25, face = "bold"),
+    plot.subtitle = element_text(size = 20),
+    plot.caption = element_text(size = 16),
+    axis.text.x = element_text(size = 18),
+  axis.text.y = element_text(size = 18),
+  axis.title.x = element_text(size = 20),
+  axis.title.y = element_text(size = 20),
+    strip.text = element_text(size = 18, face = "bold"),
+    legend.text = element_text(size = 18),
+    legend.title = element_text(size = 20),
+    legend.position = "none"
+  )
+```
+
+```{r}
+st_top2 <- df_dot2 %>%
+  group_by(region) %>%
+  filter(year == max(year)) %>%
+  slice_max(value, n = 1) %>%
+  ungroup() %>%
+  pull(geography)
+
+st_highlighted2 <- df_dot2 %>%
+  mutate(highlight = if_else(geography %in% st_top2, geography, "other"))
+
+st_labels_top2 <- df_dot2 %>%
+  filter(geography %in% st_top2, year == max(year))
+
+pophive_plot(
+  data = filter(st_highlighted2, highlight == "other"),
+  plot_type = "line",
+  aes_mappings = aes(x = year, y = value, group = geography),
+  title = "CDC WISQARS: State-level Death rates by U.S. Region Over Time",
+  subtitle = "Rates of death due to drug overdoses, any type (crude-rate)
+  Highest state per region highlighted in blue",
+  caption = "Data source: CDC WISQARS",
+  x_label = "Year",
+  y_label = "Death rate per 100,000",
+  line_width = 0.6,
+  line_color = "grey70"
+) +
+  geom_line(
+    data = filter(st_highlighted2, highlight != "other"),
+    aes(x = year, y = value, group = geography),
+    color = "#e95661", linewidth = 1.2
+  ) +
+  ggrepel::geom_text_repel(
+    data = st_labels_top2,
+    aes(x = year, y = value, label = geography),
+    color = "#00356b",
+    size = 6,
+    nudge_x = 1,
+    nudge_y = 1.5,
+    direction = "y",
+    hjust = 0,
+    segment.color = "grey50"
+) +
+  facet_wrap(~ region, ncol = 2) +
+  PopHivePlots:::theme_pophive_line() +
+  theme(
+    plot.title = element_text(size = 25, face = "bold"),
+    plot.subtitle = element_text(size = 20),
+    plot.caption = element_text(size = 16),
+    axis.text.x = element_text(size = 18),
+  axis.text.y = element_text(size = 18),
+  axis.title.x = element_text(size = 20),
+  axis.title.y = element_text(size = 20),
+    strip.text = element_text(size = 18, face = "bold"),
+    legend.text = element_text(size = 18),
+    legend.title = element_text(size = 20),
+    legend.position = "none",
+  panel.spacing = unit(3, "lines")
+
+  )
 ```
