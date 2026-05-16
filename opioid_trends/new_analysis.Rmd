@@ -449,7 +449,7 @@ pophive_region_cols <- c(
   "West"      = "#e95661"
 )
 
-df_dot <- d4_epic_cosmos %>% filter(region != "Other")
+df_dot <- d4_epic_cosmos %>% filter(region != "Other", age == "Total")
 
 p <- ggplot(df_dot) +
   geom_point(
@@ -530,7 +530,7 @@ pophive_region_cols <- c(
 )
 
 df_dot2 <- d4_cdc_wisqars %>% 
-  filter(region != "Other", year %in% 2018:2025)
+  filter(region != "Other", year %in% 2018:2025, age== "Total")
 
 
 p2 <- ggplot(df_dot2) +
@@ -683,4 +683,58 @@ p4 <- d4 %>%
 
 p3 
 p4
+```
+
+```{r}
+st_top <- df_dot %>%
+  group_by(region) %>%
+  filter(year == max(year)) %>%
+  slice_max(value, n = 1) %>%
+  ungroup() %>%
+  pull(geography)
+
+st_highlighted <- df_dot %>%
+  mutate(highlight = if_else(geography %in% st_top, geography, "other"))
+
+st_labels_top <- df_dot %>%
+  filter(geography %in% st_top, year == max(year))
+
+pophive_plot(
+  data = filter(st_highlighted, highlight == "other"),
+  plot_type = "line",
+  aes_mappings = aes(x = year, y = value, group = geography),
+  title = "Intentional Firearm Death Rates by U.S. Region Over Time",
+  subtitle = "Highest-rate state per region highlighted in blue",
+  caption = "Data source: CDC WISQARS",
+  x_label = "Year",
+  y_label = "Deaths per 100,000",
+  line_width = 0.3,
+  line_color = "grey70"
+) +
+  geom_line(
+    data = filter(st_highlighted, highlight != "other"),
+    aes(x = year, y = value, group = geography),
+    color = "#00356b", linewidth = 1.2
+  ) +
+  ggrepel::geom_text_repel(
+    data = st_labels_top,
+    aes(x = year, y = value, label = geography),
+    color = "#00356b",
+    size = 6,
+    nudge_x = 3,
+    nudge_y = 1.5,
+    direction = "y",
+    hjust = 0,
+    segment.color = "grey50"
+) +
+  facet_wrap(~ region, ncol = 2) +
+  theme(
+    plot.title      = element_text(size = 48, face = "plain"),
+    plot.subtitle   = element_text(size = 28),
+    strip.text      = element_text(size = 18, face = "bold"),
+    axis.text       = element_text(size = 35),
+    axis.title      = element_text(size = 42),
+    plot.caption    = element_text(size = 13),
+    legend.position = "none"
+  )
 ```
