@@ -717,6 +717,7 @@ pophive_plot(
   data = filter(st_highlighted, highlight == "other"),
   plot_type = "line",
   aes_mappings = aes(x = year, y = value, group = geography),
+<<<<<<< HEAD
   title = "Epic Cosmos: State-level ED visits by U.S. Region Over Time",
   subtitle = "Non-fatal and fatal emergency department visits related to overdoses (T40*)
   Highest state per region highlighted in blue",
