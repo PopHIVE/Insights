@@ -3,6 +3,11 @@
 title: "opioid trends- new analysis" format: html editor: visual ---
 
 ```{r}
+devtools::install_github("PopHIVE/pophive_plots")
+library(PopHivePlots)
+library(ggplot2)
+setup_pophive_fonts()
+
 library(dplyr)
 library(ggplot2)
 library(arrow)
@@ -100,6 +105,8 @@ ggplotly(p4_wisqars)
 ```{r}
 library(geofacet)
 # plots of Overdose Death Rate Trends by State (2015–2025)
+
+theme_update(text = element_text(family = "Inter"))
 
 library(geofacet)
 
@@ -597,13 +604,15 @@ d6 %>%
   ) +
   PopHivePlots:::theme_pophive_line() +
   theme(
-  plot.title = element_text(size = 20),
-  plot.subtitle = element_text(size = 16),
+  plot.title = element_text(size = 22),
+  plot.subtitle = element_text(size = 20),
   axis.text = element_text(size = 14),
-  axis.title = element_text(size = 16),
+  axis.title.x = element_text(size = 20),
+  axis.title.y = element_text(size = 20),
+  axis.text.x = element_text(angle = 45, hjust = 1),
   legend.text = element_text(size = 14),
   legend.title = element_text(size = 16),
-  strip.text = element_text(size = 14)
+  strip.text = element_text(size = 18)
 
   )
 
@@ -700,27 +709,23 @@ p4
 ```
 
 ```{r}
-st_top <- df_dot %>%
-  group_by(region) %>%
-  filter(year == max(year)) %>%
-  slice_max(value, n = 1) %>%
-  ungroup() %>%
-  pull(geography)
+highlight_states <- c("Ohio", "West Virginia", "Maine", "Alaska")
 
 st_highlighted <- df_dot %>%
-  mutate(highlight = if_else(geography %in% st_top, geography, "other"))
+  mutate(highlight = if_else(geography %in% highlight_states, "highlight", "other"))
 
-st_labels_top <- df_dot %>%
-  filter(geography %in% st_top, year == max(year))
+st_labels_top <- st_highlighted %>%
+  filter(highlight == "highlight") %>%
+  group_by(geography) %>%
+  filter(year == max(year)) %>%
+  ungroup()
 
 pophive_plot(
   data = filter(st_highlighted, highlight == "other"),
   plot_type = "line",
   aes_mappings = aes(x = year, y = value, group = geography),
-<<<<<<< HEAD
   title = "Epic Cosmos: State-level ED visits by U.S. Region Over Time",
-  subtitle = "Non-fatal and fatal emergency department visits related to overdoses (T40*)
-  Highest state per region highlighted in blue",
+  subtitle = "Highlighted states: Ohio (Midwest), West Virginia (South), Maine (Northeast), Alaska (West)",
   caption = "Data source: Epic Cosmos",
   x_label = "Year",
   y_label = "Cases per 100,000",
@@ -728,7 +733,7 @@ pophive_plot(
   line_color = "grey70"
 ) +
   geom_line(
-    data = filter(st_highlighted, highlight != "other"),
+    data = filter(st_highlighted, highlight == "highlight"),
     aes(x = year, y = value, group = geography),
     color = "#e95661", linewidth = 1.2
   ) +
@@ -742,7 +747,7 @@ pophive_plot(
     direction = "y",
     hjust = 0,
     segment.color = "grey50"
-) +
+  ) +
   facet_wrap(~ region, ncol = 2) +
   PopHivePlots:::theme_pophive_line() +
   theme(
@@ -750,14 +755,13 @@ pophive_plot(
     plot.subtitle = element_text(size = 20),
     plot.caption = element_text(size = 16),
     axis.text.x = element_text(size = 18),
-  axis.text.y = element_text(size = 18),
-  axis.title.x = element_text(size = 20),
-  axis.title.y = element_text(size = 20),
+    axis.text.y = element_text(size = 18),
+    axis.title.x = element_text(size = 20),
+    axis.title.y = element_text(size = 20),
     strip.text = element_text(size = 18, face = "bold"),
-    legend.text = element_text(size = 18),
-    legend.title = element_text(size = 20),
     legend.position = "none"
   )
+
 ```
 
 ```{r}
